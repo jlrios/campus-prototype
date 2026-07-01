@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="stylesheet" href="./css/app.css">
+  <link rel="stylesheet" href="./css/sidebar.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/map.css">
+  <link rel="stylesheet" href="./css/campus.css">
+  <script defer src="./js/sidebar.js"></script>
+  <!-- <script defer src="./js/sector-h.js"></script> //-->
+  <script defer src="./js/campus.js"></script>
+  <script defer src="./js/components.js"></script>
+  <title>Plantel 20 - Mapa Interactivo</title>
+</head>
+<body>
+  <div class="app">
+    <div class="container">
+      <div class="wrap">
+        <aside class="sidebar">
+          <nav>
+            <ul class="logo">
+              <li>
+                <i class="fa-solid fa-bars"></i>
+                <label for="">Campus 20</label>
+              </li>
+            </ul>
+            <ul class="main">
+              <li class="active">
+                <i class="fa-solid fa-home"></i>
+                <label for="">Inicio</label>
+              </li>
+              <li>
+                <i class="fa-solid fa-gear"></i>
+                <label for="">Configuración</label>
+              </li>
+              <li>
+                <i class="fa-solid fa-user"></i>
+                <label for="">Perfil</label>
+              </li>
+              <li>
+                <i class="fa-solid fa-book"></i>
+                <label for="">Ayuda</label>
+              </li>
+              <li>
+                <i class="fa-solid fa-info-circle"></i>
+                <label for="">Acerca de</label>
+              </li>
+            </ul>
+          </nav>
+          <div class="bottom">
+            <ul>
+              <li class="mode">
+                <i class="fa-solid fa-moon"></i>
+                <label for="">Apariencia</label>
+              </li>
+              <li>
+                <i class="fa-solid fa-sign-out-alt"></i>
+                <label for="">Cerrar sesión</label>
+              </li>
+            </ul>
+          </div>
+        </aside>
+        <main>
+          <div class="map">
+            <div class="top-bar">
+              <div class="input-search">
+                <input 
+                  type="text" 
+                  placeholder="Buscar aula, docente, alumno..."
+                  spellcheck="false"
+                  autocomplete="off"
+                >
+                <button>
+                  <i class="fa-solid fa-magnifying-glass fa-2x"></i>
+                </button>
+              </div>
+            </div>
+            <div id="tooltip_container" class="content">
+              <section class="map-section">
+                <div class="map-area">
+                  <div id="buildingHF1" class="floor active"></div>
+                  <!-- <div id="buildingHF2" class="floor"></div> -->
+                  <!-- <div id="campus20" class="floor"></div>-->
+                </div>
+                <span id="tooltip" class="tooltip hidden">
+                  SECTOR H
+                </span>
+                <div class="toolbar">
+                  <div class="center-title">
+                    <!-- <h2>SECTOR H > EDIFICIO H</h2> //-->
+                    <h2>Campus 20 Oriente</h2>
+                    <!-- <p>Av Central y Av. Tabalaopa s/n, Chihuahua, Chih. Teléfono: (614) 618-0780</p> -->
+                  </div>
+
+                  <div class="toolbar-actions">
+                    <div class="select-menu">
+                      <div class="select-btn">
+                        <span class="sel-btn-text">
+                          Simbología
+                          <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                      </div>
+                      <ul class="options">
+                        <li class="option">
+                          <i class="fa-solid fa-kit-medical fa-lg"></i>
+                          <span class="option-text">Botiquín</span>
+                        </li>
+                        <li class="option">
+                          <i class="fa-solid fa-person-walking-arrow-right fa-lg"></i>
+                          <span class="option-text">Salidas de emergencia</span>
+                        </li>
+                        <li class="option">
+                          <i class="fa-solid fa-circle-arrow-right fa-lg"></i>
+                          <span class="option-text">Rutas de evacuación</span>
+                        </li>
+                        <li class="option">
+                          <i class="fa-solid fa-arrows-to-circle fa-lg"></i>
+                          <span class="option-text">Puntos de reunión</span>
+                        </li>
+                        <li class="option">
+                          <i class="fa-solid fa-fire-extinguisher fa-lg"></i>
+                          <span class="option-text">Extintores</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!--
+                  <div class="toolbar-actions">
+                    <button id="btnHF1">
+                      Planta 1
+                      <i class="fa-solid fa-angle-down fa-lg"></i>
+                    </button>
+                    <button id="btnHF2">
+                      Planta 2
+                      <i class="fa-solid fa-angle-up fa-lg"></i>
+                    </button>
+                  </div> //-->
+                </div>
+              </section>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- Panel here -->
+    <div class="wrapper side-panel-open">
+    <div class="info-panel">
+
+    </div>
+    <button class="side-panel-toggle">
+            <i class="fa-solid fa-angles-left fa-lg sp-icon-open"></i>
+      <i class="fa-solid fa-angles-right fa-lg sp-icon-close"></i>
+    </button>
+    <div class="side-panel">
+     <div style="
+      background-color: #f0f0f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+      width: 100%;
+      height: 100%;
+    ">
+      <div>
+        <i class="fa-solid fa-circle-info fa-4x"></i>
+        <h2>No hay información para mostrar</h2>
+      </div>
+    </div>
+      
+    </div>
+  </div>   
+
+
+
+  </div>
+
+</body>
+</html>

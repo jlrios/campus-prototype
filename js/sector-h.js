@@ -1,0 +1,36 @@
+const btnHF1 = document.getElementById("btnHF1");
+const btnHF2 = document.getElementById("btnHF2");
+
+const floorHF1 = document.getElementById("buildingHF1");
+const floorHF2 = document.getElementById("buildingHF2");
+
+function showFloor(n) {
+    const isFl = n === 1;
+    console.log("isFl: " + n);
+    floorHF1.classList.toggle("active", isFl);
+    floorHF2.classList.toggle("active", !isFl);
+    btnHF1.classList.toggle("active", isFl);
+    btnHF2.classList.toggle("active", !isFl);
+}
+
+async function loadSvgInto(el, url) {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Failed to load ${url}`);
+    el.innerHTML = await res.text();
+}
+
+(async function init() {
+    await Promise.all([
+        loadSvgInto(floorHF1, "./assets/maps/sectorH/BuildingHF1.svg"),
+        loadSvgInto(floorHF2, "./assets/maps/sectorH/BuildingHF2.svg"),
+    ]);
+})().catch(console.error);
+
+btnHF1.addEventListener("click", () => showFloor(1));
+btnHF2.addEventListener("click", () => showFloor(2));
+
+/*document.querySelector(".wrap").addEventListener("click", (e) => {
+  const classroom = e.target.closest(".classroom");
+  if (!classroom) return;
+  console.log("clicked:", classroom.dataset.index);
+});*/
