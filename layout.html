@@ -1,74 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    html, body {
-      margin: 0;
-      height: 100%;
-    }
-    .app {
-      height: 100vh;
-    }
-    .container {
-      display: flex;
-      justify-content: center; 
-      align-items: center;     
-      min-height: 100vh;
-      width: 100%;           
-    }
-    .wrap {
-      display: flex;
-      flex-direction: row;
-    }
-    .sidebar {
-      position: relative;
-      top: 0;
-      left: 0;
-      /*width: 260px; */             
-      z-index: 20;
-      overflow: hidden;
-    }
-    .main {
-      display: flex;
-      flex-direction: column;
-      height: 100vh;       
-      width: 100%;
-    }
-    .bottom-bar {
-      margin-top: auto;    
-      width: 100%;
-    }
-    /* .top-bar {
-    } */
-    .content {
-      flex: 1;               
-      overflow: auto;        
-    }
-  </style>
-</head>
-<body>
-  <div class="app">
-    <div class="container">
-      <div class="wrap">
-        <aside class="sidebar">
-          Aside
-        </aside>
-        <div class="main">
-          <div class="top-bar">
-            Top bar
-          </div>
-          <div class="content">
-            Content
-          </div>
-          <div class="bottom-bar">
-            Bottom bar
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script defer src="./js/campus.js"></script>
+    <script defer src="./js/components.js"></script>
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+    <title>Ejercicio barra de navegación lateral y panel informativo</title>
+  </head>
+  <body>
+    <!-- ===========================
+      Header
+    ============================ -->
+    <header>
+      <div class="left">
+        <!-- Menu button -->
+        <button
+          id="menu"
+          class="menu"
+          aria-label="Abrir menú lateral"
+          aria-expanded="false"
+          aria-controls="sidebar"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <!-- Brand -->
+        <a href="/" class="brand">
+          <img src="assets/icons/dragon.svg" alt="Dragon Campus" class="logo" />
+          <span class="name">Campus 20 Oriente</span>
+        </a>
+      </div>
+      <div class="center">
+<div class="input-search">
+                <input 
+                  type="text" 
+                  placeholder="Buscar aula, docente, alumno..."
+                  spellcheck="false"
+                  autocomplete="off"
+                >
+                <button>
+                  <i class="fa-solid fa-magnifying-glass fa-2x"></i>
+                </button>
+              </div>
+
+
+        </div>
+
+      <div class="right">
+        <!-- Notifications -->
+        <a href="#" aria-label="Notificaciones">
+          <img src="assets/icons/notification.svg" alt="" />
+        </a>
+        <!-- User avatar -->
+        <img src="assets/icons/user.svg" alt="Perfil del usuario" class="user" />
+        <!-- Open panel button -->
+        <button
+          class="info-panel-button"
+          aria-controls="info-panel"
+          aria-expanded="false"
+        >
+          Ver panel
+        </button>
+      </div>
+    </header>
+    <!-- ===========================
+      Sidebar
+    ============================ -->
+    <aside id="sidebar" class="sidebar">
+      <nav aria-label="Navegación principal">
+        <ul>
+          <li>
+            <a href="#" class="selected" aria-current="page">
+              <img src="assets/icons/home.svg" alt="" />
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="assets/icons/tools.svg" alt="" />
+              <span>Configuración</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="assets/icons/sun.svg" alt="" />
+              <span>Tema</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="assets/icons/book.svg" alt="" />
+              <span>Ayuda</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="assets/icons/information.svg" alt="" />
+              <span>Acerca de</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- ===========================
+      Main content
+    ============================ -->
+    <main id="main">
+      <div class="map-container">
+        <div class="map-area">
+          <div id="buildingHF1" class="map-sector"></div>
+          <div>
+              <button class="symbology-button">Mostrar simbología</button>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</body>
+    </main>
+    <!-- ===========================
+      Information panel
+    ============================ -->
+    <aside id="info-panel" class="info-panel" aria-labelledby="panel-title">
+      <button class="panel-close-button" aria-label="Cerrar panel">
+        &times;
+      </button>
+      <div>
+        <h2 id="panel-title">Información</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </aside>
+  </body>
 </html>
