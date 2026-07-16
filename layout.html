@@ -125,17 +125,135 @@
       <button class="panel-close-button" aria-label="Cerrar panel">
         &times;
       </button>
-      <div>
-        <h2 id="panel-title">Información</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+      <div class="panel-container">
+        <div class="panel-header">
+          <div class="panel-title">
+            <i class="fa-regular fa-building fa-2x"></i>
+            <div class="panel-title-text"">
+              <h2>Sector H (sector principal)</h2>
+              <span>Información general</span>
+            </div>
+          </div>
+        </div>
+        <!--<section class="wrapper-tabs">
+          <input type="radio" name="slider" checked id="information">
+          <input type="radio" name="slider" id="gallery">
+          <nav>
+            <label for="information" class="home"><i class="fa-regular fa-circle-question fa-2x"></i>Información</label>
+            <label for="gallery" class="home"><i class="fa-regular fa-image fa-2x"></i>Galería</label>
+          </nav>
+          <section>
+            
+          </section>
+        </section>-->
+        <section class="wrapper-tabs">
+          <h3>Servicios e instalaciones</h3>
+          <nav class="panel-tabs">
+            <input type="radio" class="panel-tabs-radio" name="tabs-sector-h" checked id="information">
+            <label for="information" class="tabs-label"><i class="fa-regular fa-circle-question"></i>Información</label>
+            <div class="tabs-content">
+              El Sector H es el área principal del plantel. Integra el Edificio H, el Taller de Mantenimiento y un
+              espacio de cafetería al aire libre. A continuación, encontrará las instalaciones y servicios disponibles en este sector.
+              <section class="services-grid">
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-utensils"></i>
+                  </div>
+                  <span>Espacio de cafetería</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-desktop"></i>
+                  </div>
+                  <span>Laboratorio de cómputo</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-flask"></i>
+                  </div>
+                  <span>Laboratorio de ciencias</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-restroom"></i>
+                  </div>
+                  <span>Sanitarios</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-money-check-dollar"></i>
+                  </div>
+                  <span>Finanzas</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-users"></i>
+                  </div>
+                  <span>Subdirección</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-box-archive"></i>
+                  </div>
+                  <span>Bodega</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-box-archive"></i>
+                  </div>
+                  <span>Intendencia</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-broom"></i>
+                  </div>
+                  <span>Aula de matenimiento</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-building-columns"></i>
+                  </div>
+                  <span>Dirección</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-address-card"></i>
+                  </div>
+                  <span>Servicios escolares</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-regular fa-clipboard"></i>
+                  </div>
+                  <span>Control académico</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                  </div>
+                  <span>Biblioteca</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                  </div>
+                  <span>Prefectura</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-chalkboard"></i>
+                  </div>
+                  <span>Aulas de la H1 a la H8</span>
+                </div>
+              </section>
+            </div>
+            <input type="radio" class="panel-tabs-radio" name="tabs-sector-h" id="gallery">
+            <label for="gallery" class="tabs-label"><i class="fa-regular fa-image"></i>Galería</label>
+            <div class="tabs-content">
+              CRAYOLA
+            </div>
+          </nav>
+        </section>
       </div>
     </aside>
   </body>
