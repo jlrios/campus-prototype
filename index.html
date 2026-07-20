@@ -1,72 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-  <link rel="stylesheet" href="./css/app.css">
-  <link rel="stylesheet" href="./css/sidebar.css">
-  <link rel="stylesheet" href="./css/components.css">
-  <link rel="stylesheet" href="./css/map-copy.css">
-  <link rel="stylesheet" href="./css/campus.css">
-  <script defer src="./js/sidebar.js"></script>
-  <!-- <script defer src="./js/sector-h.js"></script> //-->
-  <script defer src="./js/campus.js"></script>
-  <script defer src="./js/components.js"></script>
-  <title>Plantel 20 - Mapa Interactivo</title>
-</head>
-<body>
-  <div class="app">
-    <div class="container">
-      <div class="wrap">
-        <aside class="sidebar">
-          <nav>
-            <ul class="logo">
-              <li>
-                <i class="fa-solid fa-bars"></i>
-                <label for="">Campus 20</label>
-              </li>
-            </ul>
-            <ul class="main">
-              <li class="active">
-                <i class="fa-solid fa-home"></i>
-                <label for="">Inicio</label>
-              </li>
-              <li>
-                <i class="fa-solid fa-gear"></i>
-                <label for="">Configuración</label>
-              </li>
-              <li>
-                <i class="fa-solid fa-user"></i>
-                <label for="">Perfil</label>
-              </li>
-              <li>
-                <i class="fa-solid fa-book"></i>
-                <label for="">Ayuda</label>
-              </li>
-              <li>
-                <i class="fa-solid fa-info-circle"></i>
-                <label for="">Acerca de</label>
-              </li>
-            </ul>
-          </nav>
-          <div class="bottom">
-            <ul>
-              <li class="mode">
-                <i class="fa-solid fa-moon"></i>
-                <label for="">Apariencia</label>
-              </li>
-              <li>
-                <i class="fa-solid fa-sign-out-alt"></i>
-                <label for="">Cerrar sesión</label>
-              </li>
-            </ul>
-          </div>
-        </aside>
-        <main>
-          <div class="map">
-            <div class="top-bar">
-              <div class="input-search">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="dist/css/winbox.min.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="./js/campus.js"></script>
+    <script defer src="./js/components.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="dist/js/winbox.min.js"></script>
+    <title>Plantel 20 Oriente - Campus interactivo</title>
+  </head>
+  <body>
+    <!-- ===========================
+      Header
+    ============================ -->
+    <header>
+      <div class="left">
+        <!-- Menu button -->
+        <button
+          id="menu"
+          class="menu"
+          aria-label="Abrir menú lateral"
+          aria-expanded="false"
+          aria-controls="sidebar"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <!-- Brand -->
+        <a href="/" class="brand">
+          <img src="assets/icons/dragon.svg" alt="Dragon Campus" class="logo" />
+          <span class="name">Campus 20 Oriente</span>
+        </a>
+      </div>
+      <div class="center">
+<div class="input-search">
                 <input 
                   type="text" 
                   placeholder="Buscar aula, docente, alumno..."
@@ -77,106 +50,226 @@
                   <i class="fa-solid fa-magnifying-glass fa-2x"></i>
                 </button>
               </div>
-            </div>
-            <div id="tooltip_container" class="content">
-              <section class="map-section">
-                <div class="map-area">
-                  <div id="buildingHF1" class="floor active"></div>
-                  <!-- <div id="buildingHF2" class="floor"></div> -->
-                  <!-- <div id="campus20" class="floor"></div>-->
-                </div>
-                <span id="tooltip" class="tooltip hidden">
-                  SECTOR H
-                </span>
-                <div class="toolbar">
-                  <div class="center-title">
-                    <!-- <h2>SECTOR H > EDIFICIO H</h2> //-->
-                    <h2>Campus 20 Oriente</h2>
-                    <!-- <p>Av Central y Av. Tabalaopa s/n, Chihuahua, Chih. Teléfono: (614) 618-0780</p> -->
-                  </div>
 
-                  <div class="toolbar-actions">
-                    <div class="select-menu">
-                      <div class="select-btn">
-                        <span class="sel-btn-text">
-                          Simbología
-                          <i class="fa-solid fa-chevron-down"></i>
-                        </span>
-                      </div>
-                      <ul class="options">
-                        <li class="option">
-                          <i class="fa-solid fa-kit-medical fa-lg"></i>
-                          <span class="option-text">Botiquín</span>
-                        </li>
-                        <li class="option">
-                          <i class="fa-solid fa-person-walking-arrow-right fa-lg"></i>
-                          <span class="option-text">Salidas de emergencia</span>
-                        </li>
-                        <li class="option">
-                          <i class="fa-solid fa-circle-arrow-right fa-lg"></i>
-                          <span class="option-text">Rutas de evacuación</span>
-                        </li>
-                        <li class="option">
-                          <i class="fa-solid fa-arrows-to-circle fa-lg"></i>
-                          <span class="option-text">Puntos de reunión</span>
-                        </li>
-                        <li class="option">
-                          <i class="fa-solid fa-fire-extinguisher fa-lg"></i>
-                          <span class="option-text">Extintores</span>
-                        </li>
-                      </ul>
-                    </div>
+
+        </div>
+
+      <div class="right">
+        <!-- Notifications -->
+        <a href="#" aria-label="Notificaciones">
+          <img src="assets/icons/notification.svg" alt="" />
+        </a>
+        <!-- User avatar -->
+        <img src="assets/icons/user.svg" alt="Perfil del usuario" class="user" />
+        <!-- Open panel button -->
+        <button
+          class="info-panel-button"
+          aria-controls="info-panel"
+          aria-expanded="false"
+        >
+          Panel inf.
+        </button>
+      </div>
+    </header>
+    <!-- ===========================
+      Sidebar
+    ============================ -->
+    <aside id="sidebar" class="sidebar">
+      <nav aria-label="Navegación principal">
+        <ul>
+          <li>
+            <a href="#" class="selected" aria-current="page">
+              <img src="assets/icons/home.svg" alt="" />
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="assets/icons/tools.svg" alt="" />
+              <span>Configuración</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="assets/icons/sun.svg" alt="" />
+              <span>Tema</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="assets/icons/book.svg" alt="" />
+              <span>Ayuda</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="assets/icons/information.svg" alt="" />
+              <span>Acerca de</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- ===========================
+      Main content
+    ============================ -->
+    <main id="main">
+      <div class="map-container">
+        <div class="map-area">
+          <div id="buildingHF1" class="map-sector"></div>
+        </div>
+      </div>
+    </main>
+    <!-- ===========================
+      Information panel
+    ============================ -->
+    <aside id="info-panel" class="info-panel" aria-labelledby="panel-title">
+      <button class="panel-close-button" aria-label="Cerrar panel">
+        &times;
+      </button>
+      <div class="panel-container">
+        <div class="panel-header">
+          <div class="panel-title">
+            <i class="fa-regular fa-building fa-2x"></i>
+            <div class="panel-title-text"">
+              <h2>Sector H (sector principal)</h2>
+              <span>Información general</span>
+            </div>
+          </div>
+        </div>
+        <!--<section class="wrapper-tabs">
+          <input type="radio" name="slider" checked id="information">
+          <input type="radio" name="slider" id="gallery">
+          <nav>
+            <label for="information" class="home"><i class="fa-regular fa-circle-question fa-2x"></i>Información</label>
+            <label for="gallery" class="home"><i class="fa-regular fa-image fa-2x"></i>Galería</label>
+          </nav>
+          <section>
+            
+          </section>
+        </section>-->
+        <section class="wrapper-tabs">
+          <h3>Servicios e instalaciones</h3>
+          <nav class="panel-tabs">
+            <input type="radio" class="panel-tabs-radio" name="tabs-sector-h" checked id="information">
+            <label for="information" class="tabs-label"><i class="fa-regular fa-circle-question"></i>Información</label>
+            <div class="tabs-content">
+              El Sector H es el área principal del plantel. Integra el Edificio H, el Taller de Mantenimiento y un
+              espacio de cafetería al aire libre. A continuación, encontrará las instalaciones y servicios disponibles en este sector.
+              <section class="services-grid">
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-utensils"></i>
                   </div>
-                  <!--
-                  <div class="toolbar-actions">
-                    <button id="btnHF1">
-                      Planta 1
-                      <i class="fa-solid fa-angle-down fa-lg"></i>
-                    </button>
-                    <button id="btnHF2">
-                      Planta 2
-                      <i class="fa-solid fa-angle-up fa-lg"></i>
-                    </button>
-                  </div> //-->
+                  <span>Espacio de cafetería</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-desktop"></i>
+                  </div>
+                  <span>Laboratorio de cómputo</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-flask"></i>
+                  </div>
+                  <span>Laboratorio de ciencias</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-restroom"></i>
+                  </div>
+                  <span>Sanitarios</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-money-check-dollar"></i>
+                  </div>
+                  <span>Finanzas</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-users"></i>
+                  </div>
+                  <span>Subdirección</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-box-archive"></i>
+                  </div>
+                  <span>Bodega</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-box-archive"></i>
+                  </div>
+                  <span>Intendencia</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-broom"></i>
+                  </div>
+                  <span>Aula de matenimiento</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-building-columns"></i>
+                  </div>
+                  <span>Dirección</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-address-card"></i>
+                  </div>
+                  <span>Servicios escolares</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-regular fa-clipboard"></i>
+                  </div>
+                  <span>Control académico</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                  </div>
+                  <span>Biblioteca</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                  </div>
+                  <span>Prefectura</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-chalkboard"></i>
+                  </div>
+                  <span>Aulas de la H1 a la H8</span>
                 </div>
               </section>
             </div>
-          </div>
-        </main>
+            <input type="radio" class="panel-tabs-radio" name="tabs-sector-h" id="gallery">
+            <label for="gallery" class="tabs-label"><i class="fa-regular fa-image"></i>Galería</label>
+            <!-- Panl tab gallery -->
+            <div class="tabs-content">
+              <section>
+                <div class="panel-gallery">
+                  <img src="/assets/images/gallery/thumbnails/plantel-20-01-m.png" alt="">
+                  <img src="/assets/images/gallery/thumbnails/plantel-20-02-m.png" alt="">
+                  <img src="/assets/images/gallery/thumbnails/plantel-20-04-m.png" alt="">
+                  <img src="/assets/images/gallery/thumbnails/plantel-20-04-m.png" alt="">
+                  <img src="/assets/images/gallery/thumbnails/plantel-20-03-m.png" alt="">
+                  <img src="/assets/images/gallery/thumbnails/plantel-20-02-m.png" alt="">
+                  <img src="/assets/images/gallery/thumbnails/plantel-20-01-m.png" alt="">
+                  <img src="/assets/images/gallery/thumbnails/plantel-20-02-m.png" alt="">
+                  <img src="/assets/images/gallery/thumbnails/plantel-20-04-m.png" alt="">
+                </div>
+              </section>
+            </div>
+          </nav>
+        </section>
       </div>
-    </div>
-    <!-- Panel here -->
-    <div class="wrapper side-panel-open">
-    <div class="info-panel">
-
-    </div>
-    <button class="side-panel-toggle">
-            <i class="fa-solid fa-angles-left fa-lg sp-icon-open"></i>
-      <i class="fa-solid fa-angles-right fa-lg sp-icon-close"></i>
-    </button>
-    <div class="side-panel">
-     <div style="
-      background-color: #f0f0f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 10px;
-      width: 100%;
-      height: 100%;
-    ">
-      <div>
-        <i class="fa-solid fa-circle-info fa-4x"></i>
-        <h2>No hay información para mostrar</h2>
-      </div>
-    </div>
-      
-    </div>
-  </div>   
-
-
-
-  </div>
-
-</body>
+    </aside>
+  </body>
 </html>
