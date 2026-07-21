@@ -86,6 +86,7 @@
 }
 
 .service-icon {
+  border: 1px solid #3E6D35;
   width:45px;
   height:45px;
   border-radius:50%;
@@ -128,5 +129,105 @@
 .panel-gallery img:hover {
   transform: scale(1.03);
 }
+
+/*
+  Image viewer
+*/
+.image-viewer {
+    width: 100vw;
+    height: 100vh;
+
+    max-width: none;
+    max-height: none;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: rgba(0,0,0,.92);
+
+    overflow: hidden;
+}
+
+.image-viewer::backdrop{
+    background: rgba(0,0,0,.92);
+}
+
+/* Imagen */
+
+.image-viewer__image{
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    display:block;
+
+    user-select:none;
+}
+
+/* Botón cerrar */
+
+.image-viewer__close{
+  position:absolute;
+  top:18px;
+  right:18px;
+
+  width:46px;
+    height:46px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(0,0,0,.45);
+
+    color:white;
+
+    font-size:1.4rem;
+
+    cursor:pointer;
+
+    z-index:10;
+
+    transition:.25s;
+}
+
+.image-viewer__close:hover{
+  background:rgba(255,255,255,.20);
+  transform:scale(1.05);
+}
+
+/* Footer */
+.image-viewer__footer{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:18px 28px;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.80),
+        rgba(0,0,0,.45),
+        transparent
+    );
+
+    color:white;
+
+    backdrop-filter:blur(4px);
+}
+
+.image-viewer__footer p{
+
+    margin:0;
+
+    font-size:1rem;
+
+    text-align:center;
+}
+
 
 

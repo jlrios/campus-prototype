@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="dist/css/winbox.min.css">
+    <!--<link rel="stylesheet" href="dist/css/winbox.min.css">-->
     <link rel="stylesheet" href="css/map.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/style.css" />
     <script defer src="./js/campus.js"></script>
     <script defer src="./js/components.js"></script>
-    <script src="js/script.js" defer></script>
-    <script src="dist/js/winbox.min.js"></script>
+    <script defer src="js/script.js" defer></script>
+    <!--<script src="dist/js/winbox.min.js"></script>-->
     <title>Plantel 20 Oriente - Campus interactivo</title>
   </head>
   <body>
@@ -119,6 +119,22 @@
           <div id="buildingHF1" class="map-sector"></div>
         </div>
       </div>
+      <dialog id="imageViewer" class="image-viewer">
+        <button
+          class="image-viewer__close"
+          type="button"
+          aria-label="Cerrar imagen">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img
+          id="viewerImage"
+          class="image-viewer__image"
+          src=""
+          alt="">
+        <footer class="image-viewer__footer">
+          <p id="viewerCaption"></p>
+        </footer>
+      </dialog>
     </main>
     <!-- ===========================
       Information panel
@@ -137,17 +153,6 @@
             </div>
           </div>
         </div>
-        <!--<section class="wrapper-tabs">
-          <input type="radio" name="slider" checked id="information">
-          <input type="radio" name="slider" id="gallery">
-          <nav>
-            <label for="information" class="home"><i class="fa-regular fa-circle-question fa-2x"></i>Información</label>
-            <label for="gallery" class="home"><i class="fa-regular fa-image fa-2x"></i>Galería</label>
-          </nav>
-          <section>
-            
-          </section>
-        </section>-->
         <section class="wrapper-tabs">
           <h3>Servicios e instalaciones</h3>
           <nav class="panel-tabs">
@@ -255,15 +260,20 @@
             <div class="tabs-content">
               <section>
                 <div class="panel-gallery">
-                  <img src="/assets/images/gallery/thumbnails/plantel-20-01-m.png" alt="">
+                  <img src="/assets/images/gallery/thumbnails/plantel-20-01-m.png" alt=""
+                    onclick="openImage(
+                    '/assets/images/gallery/pictures/plantel-20-01.png',
+                    'Fachada principal del edificio H. Cuenta con laboratorios, aulas, sanitarios, biblioteca y servicios administrativos.',
+                    'Edificio H'
+                  )">
                   <img src="/assets/images/gallery/thumbnails/plantel-20-02-m.png" alt="">
                   <img src="/assets/images/gallery/thumbnails/plantel-20-04-m.png" alt="">
-                  <img src="/assets/images/gallery/thumbnails/plantel-20-04-m.png" alt="">
+                  <img src="/assets/images/gallery/thumbnails/plantel-20-05-m.png" alt="">
                   <img src="/assets/images/gallery/thumbnails/plantel-20-03-m.png" alt="">
-                  <img src="/assets/images/gallery/thumbnails/plantel-20-02-m.png" alt="">
-                  <img src="/assets/images/gallery/thumbnails/plantel-20-01-m.png" alt="">
-                  <img src="/assets/images/gallery/thumbnails/plantel-20-02-m.png" alt="">
-                  <img src="/assets/images/gallery/thumbnails/plantel-20-04-m.png" alt="">
+                  <img src="/assets/images/gallery/thumbnails/plantel-20-08-m.png" alt="">
+                  <img src="/assets/images/gallery/thumbnails/plantel-20-07-m.png" alt="">
+                  <img src="/assets/images/gallery/thumbnails/plantel-20-09-m.png" alt="">
+                  <img src="/assets/images/gallery/thumbnails/plantel-20-10-m.png" alt="">
                 </div>
               </section>
             </div>
