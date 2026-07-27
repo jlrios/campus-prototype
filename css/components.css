@@ -128,6 +128,7 @@
 
 .panel-gallery img:hover {
   transform: scale(1.03);
+  cursor: pointer;
 }
 
 /*
@@ -141,7 +142,7 @@
     max-height: none;
 
     margin: 0;
-    padding: 0;
+    padding: 15px;
 
     border: none;
     outline: none;

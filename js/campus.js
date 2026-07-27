@@ -9,13 +9,46 @@
 
 const floorHF1 = document.getElementById("buildingHF1");
 
+let sectorH;
+
+
 async function loadSvgInto(el, url) {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Failed to load ${url}`);
-    el.innerHTML = await res.text();
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Failed to load ${url}`);
+  el.innerHTML = await res.text();
   const svg = document.querySelector("svg");
-document.querySelector(".wrapper").classList.toggle("side-panel-open");
+
+  sectorH = document.getElementById("sector-h");
+
+  console.log("Sector H: " + sectorH);
+  
+  //document.querySelector(".wrapper").classList.toggle("side-panel-open");
     initSvg(svg);
+  
+    svg.addEventListener("click", (e) => {
+
+    const sector = e.target.closest(".sector");
+    console.log("SECTOR: " + sector.id)
+    if (!sector) return;
+
+
+    switch(sector.id) {
+      case "sector-h":
+        panel.classList.add("open");
+        break;
+    }
+
+
+    /*document.getElementById("title").textContent =
+        sector.dataset.name;
+
+    document.querySelector(".wrapper")
+        .classList.add("side-panel-open");*/
+});
+  
+
+
+
 }
 
 (async function init() {
@@ -23,7 +56,13 @@ document.querySelector(".wrapper").classList.toggle("side-panel-open");
         loadSvgInto(floorHF1, "./assets/maps/campus20/campus-test.svg"),
         //loadSvgInto(floorHF1, "./assets/maps/campus20/campus-test.svg"),
     ]);
+
 })().catch(console.error);
+
+/*sectorH.addEventListener("click", () => {
+  "FC-No puede ser..."
+})*/
+
 
 //btnHF1.addEventListener("click", () => showFloor(1));
 //btnHF2.addEventListener("click", () => showFloor(2));
@@ -99,9 +138,9 @@ console.log(e.target.className);
 }*/
 
 function initSvg(svg) {
-  const tooltip = document.getElementById("tooltip");
+ // const tooltip = document.getElementById("tooltip");
 
-  svg.addEventListener("mouseover", (e) => {
+  /*svg.addEventListener("mouseover", (e) => {
     const sector = e.target.closest?.(".sector");
     if (!sector) return;
 
@@ -121,16 +160,14 @@ function initSvg(svg) {
     if (!sector) return;
 
     tooltip.classList.add("hidden");
-  });
+  });*/
 }
 
-function drawerPanel() {
-  
-}
-document.querySelector(".side-panel-toggle").addEventListener("click", () => {
+
+/*document.querySelector(".side-panel-toggle").addEventListener("click", () => {
   let drawer = document.querySelector(".wrapper")
   console.log(drawer)
-  /*if (drawer.classList.contains("wrapper") && drawer.classList.length === 1) {
+  if (drawer.classList.contains("wrapper") && drawer.classList.length === 1) {
     console.log(drawer.classList.value);
     console.log("if")
   document.querySelector(".wrapper").classList.toggle("side-panel-open");
@@ -139,7 +176,7 @@ document.querySelector(".side-panel-toggle").addEventListener("click", () => {
     console.log(drawer.classList.value)
       document.querySelector(".wrapper").classList.toggle("side-panel-open");
 
-  }*/
+  }
     document.querySelector(".wrapper").classList.toggle("side-panel-open");
 
-});
+});*/
