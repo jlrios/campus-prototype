@@ -34,3 +34,44 @@
   stroke: #FF0000;
 }
 
+
+/*
+  Sector toast
+ */
+.sector-toast {
+  color: #FFF;
+  position: fixed;
+  bottom: -150px;
+  width: 25%;
+  display: flex;
+  background-color: #000;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.2);
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 280ms ease;
+  opacity: 90%;
+}
+
+.sector-toast h3 {
+  font-weight: 800;
+  line-height: 1.5;
+  font-size: 20px;
+  color: #FFF;
+}
+
+.sector-text {
+  width: 100%;
+}
+
+.sector-icon {
+  padding: 10px;
+}
+
+.sector-toast.active {
+  bottom: 10px;
+}
+

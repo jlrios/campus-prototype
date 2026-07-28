@@ -59,5 +59,3 @@ options.forEach(option => {
 /*
   Image viewer
 */
-
-
