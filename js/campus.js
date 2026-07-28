@@ -104,7 +104,7 @@ async function loadSvgInto(el, url) {
     loadSvgInto(floorHF1, "./assets/maps/campus20/campus-test.svg"),
   ]);
 
-  const response = await fetch("/data/toast-sectors.json");
+  const response = await fetch("../data/toast-sectors.json");
 
   toastSectors = await response.json();
 
