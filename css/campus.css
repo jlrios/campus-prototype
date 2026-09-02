@@ -42,11 +42,11 @@
   color: #FFF;
   position: fixed;
   bottom: -150px;
-  width: 25%;
+  width: 20%;
   display: flex;
   background-color: #000;
   align-items: center;
-  text-align: center;
+  /*text-align: center;*/
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.2);
@@ -64,11 +64,12 @@
 }
 
 .sector-text {
+  padding-left: 15px;
   width: 100%;
 }
 
 .sector-icon {
-  padding: 10px;
+  padding-left: 20px;
 }
 
 .sector-toast.active {

@@ -4,6 +4,13 @@ const sectorSelected = document.querySelector("#sector-toast");
 
 let sectorH;
 let toastSectors = {};
+let sectorIdentifiers = [
+  "sector-c1",
+  "sector-h",
+  "sector-d",
+  "sector-m",
+  "sector-c2"
+]
 
 
 async function loadSvgInto(el, url) {
@@ -65,23 +72,8 @@ async function loadSvgInto(el, url) {
     svg.addEventListener("pointerout", (e) => {
       const sector = e.target.closest(".sector");
       if (!sector) return;
-      switch(sector.id) {
-        case "sector-h":
-          sectorToast.classList.remove("active");
-          break;
-        case "sector-d":
-          sectorToast.classList.remove("active");
-          break;
-        case "sector-c1":
-          sectorToast.classList.remove("active");
-          break;
-        case "sector-c2":
-          sectorToast.classList.remove("active");
-          break;
-        case "sector-m":
-          sectorToast.classList.remove("active");
-          break;
-        }
+ sectorToast.classList.remove("active");
+     
     });
 
     svg.addEventListener("click", (e) => {
@@ -89,9 +81,22 @@ async function loadSvgInto(el, url) {
     const sector = e.target.closest(".sector");
     if (!sector) return;
 
+    console.log("-> " + sector.id)
 
     switch(sector.id) {
       case "sector-h":
+        panel.classList.add("open");
+        break;
+      case "sector-d":
+        panel.classList.add("open");
+        break;
+      case "sector-m":
+        panel.classList.add("open");
+        break;
+      case "sector-c1":
+        panel.classList.add("open");
+        break;
+      case "sector-c2":
         panel.classList.add("open");
         break;
     }
