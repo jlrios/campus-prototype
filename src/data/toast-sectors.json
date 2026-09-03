@@ -1,0 +1,27 @@
+{
+  "c1": {
+    "title": "Sector C1",
+    "description": "Caseta acceso principal",
+    "icon": "fa-solid fa-tower-observation fa-2x"
+  },
+  "h": {
+    "title": "Sector H",
+    "description": "Sector principal",
+    "icon": "fa-regular fa-building fa-2x"
+  },
+  "d": {
+    "title": "Sector D",
+    "description": "Orientación y domo deportivo",
+    "icon": "fa-solid fa-landmark-dome fa-2x"
+  },
+  "m": {
+    "title": "Sector M",
+    "description": "Aulas móviles",
+    "icon": "fa-solid fa-people-roof fa-2x"
+  },
+  "c2": {
+    "title": "Sector C2",
+    "description": "Caseta acceso estacionamiento",
+    "icon": "fa-solid fa-tower-observation fa-2x"
+  }
+}

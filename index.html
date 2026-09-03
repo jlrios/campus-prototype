@@ -4,15 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <!--<link rel="stylesheet" href="dist/css/winbox.min.css">-->
-    <link rel="stylesheet" href="css/map.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/campus.css">
-    <link rel="stylesheet" href="css/style.css" />
-    <script defer src="./js/campus.js"></script>
-    <script defer src="./js/components.js"></script>
-    <script defer src="js/script.js" defer></script>
-    <!--<script src="dist/js/winbox.min.js"></script>-->
+    <link rel="stylesheet" href="./src/css/map.css">
+    <link rel="stylesheet" href="./src/css/components.css">
+    <link rel="stylesheet" href="./src/css/campus.css">
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <script defer src="./src/js/campus.js"></script>
+    <script defer src="./src/js/components.js"></script>
+    <script defer src="./src/js/script.js" defer></script>
     <title>Plantel 20 Oriente - Campus interactivo</title>
   </head>
   <body>
@@ -35,7 +33,7 @@
         </button>
         <!-- Brand -->
         <a href="/" class="brand">
-          <img src="assets/icons/dragon.svg" alt="Dragon Campus" class="logo" />
+          <img src="./public/icons/dragon.svg" alt="Dragon Campus" class="logo" />
           <span class="name">Campus 20 Oriente</span>
         </a>
       </div>
@@ -58,10 +56,10 @@
       <div class="right">
         <!-- Notifications -->
         <a href="#" aria-label="Notificaciones">
-          <img src="assets/icons/notification.svg" alt="" />
+          <img src="./public/icons/notification.svg" alt="" />
         </a>
         <!-- User avatar -->
-        <img src="assets/icons/user.svg" alt="Perfil del usuario" class="user" />
+        <img src="./public/icons/user.svg" alt="Perfil del usuario" class="user" />
         <!-- Open panel button -->
         <button
           class="info-panel-button"
@@ -80,31 +78,31 @@
         <ul>
           <li>
             <a href="#" class="selected" aria-current="page">
-              <img src="assets/icons/home.svg" alt="" />
+              <img src="./public/icons/home.svg" alt="" />
               <span>Inicio</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="assets/icons/tools.svg" alt="" />
+              <img src="./public/icons/tools.svg" alt="" />
               <span>Configuración</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="assets/icons/sun.svg" alt="" />
+              <img src="./public/icons/sun.svg" alt="" />
               <span>Tema</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="assets/icons/book.svg" alt="" />
+              <img src="./public/icons/book.svg" alt="" />
               <span>Ayuda</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="assets/icons/information.svg" alt="" />
+              <img src="./public/icons/information.svg" alt="" />
               <span>Acerca de</span>
             </a>
           </li>
@@ -158,7 +156,7 @@
         &times;
       </button>
       <div class="panel-container">
-        <!--<div class="panel-header">
+        <div class="panel-header">
           <div class="panel-title">
             <i class="fa-regular fa-building fa-2x"></i>
             <div class="panel-title-text"">
@@ -166,8 +164,10 @@
               <span>Información general</span>
             </div>
           </div>
-        </div>-->
-        <!--<section class="wrapper-tabs">
+        </div>
+      </div>
+      <template id="panel-h">
+        <section class="wrapper-tabs">
           <h3>Servicios e instalaciones</h3>
           <nav class="panel-tabs">
             <input type="radio" class="panel-tabs-radio" name="tabs-sector-h" checked id="information">
@@ -270,34 +270,36 @@
             </div>
             <input type="radio" class="panel-tabs-radio" name="tabs-sector-h" id="gallery">
             <label for="gallery" class="tabs-label"><i class="fa-regular fa-image"></i>Galería</label>
-            <!-- Panl tab gallery -->
-            <!--<div class="tabs-content">
+            <!-- Panl tab gallery-->
+            <div class="tabs-content">
               <section>
                 <div class="panel-gallery">
-                  <img src="./assets/images/gallery/thumbnails/plantel-20-01-m.png" alt=""
+                  <img src="./src/assets/images/gallery/thumbnails/plantel-20-01-m.png" alt=""
                     onclick="openImage(
-                    './assets/images/gallery/pictures/plantel-20-01.png',
+                    './src/assets/images/gallery/pictures/plantel-20-01.png',
                     'Fachada principal del edificio H. Cuenta con laboratorios, aulas, sanitarios, biblioteca y oficinas administrativos.',
                     'Edificio H'
                   )">
-                  <img src="./assets/images/gallery/thumbnails/plantel-20-02-m.png" alt="">
-                  <img src="./assets/images/gallery/thumbnails/plantel-20-04-m.png" alt="">
-                  <img src="./assets/images/gallery/thumbnails/plantel-20-05-m.png" alt="">
-                  <img src="./assets/images/gallery/thumbnails/plantel-20-03-m.png" alt="">
-                  <img src="./assets/images/gallery/thumbnails/plantel-20-08-m.png" alt="">
-                  <img src="./assets/images/gallery/thumbnails/plantel-20-07-m.png" alt="">
-                  <img src="./assets/images/gallery/thumbnails/plantel-20-09-m.png" alt="">
-                  <img src="./assets/images/gallery/thumbnails/plantel-20-10-m.png" alt="">
+                  <img src="./src/assets/images/gallery/thumbnails/plantel-20-02-m.png" alt="">
+                  <img src="./src/assets/images/gallery/thumbnails/plantel-20-04-m.png" alt="">
+                  <img src="./src/assets/images/gallery/thumbnails/plantel-20-05-m.png" alt="">
+                  <img src="./src/assets/images/gallery/thumbnails/plantel-20-03-m.png" alt="">
+                  <img src="./src/assets/images/gallery/thumbnails/plantel-20-08-m.png" alt="">
+                  <img src="./src/assets/images/gallery/thumbnails/plantel-20-07-m.png" alt="">
+                  <img src="./src/assets/images/gallery/thumbnails/plantel-20-09-m.png" alt="">
+                  <img src="./src/assets/images/gallery/thumbnails/plantel-20-10-m.png" alt="">
                 </div>
               </section>
             </div>
           </nav>
-        </section>-->
-        <div style="display: grid; margin-top: 50px;">
+        </section>
+        </template>
+      <template id="not-implemented">       
+          <div style="display: grid; margin-top: 50px;">
           <div style="align-self: center; justify-self: center; text-align: center;">
             <h2>No hay información para mostrar</h2>
             <h3>Funcionalidad no implementada</h3>
-            <img src="./assets/images/no-information.png" alt="" style="width: 240px; height: auto;">
+            <img src="./src/assets/images/no-information.png" alt="" style="width: 240px; height: auto;">
             <div style="text-align: left; padding: 30px;">
               <ul>
                 <li>
@@ -316,7 +318,7 @@
             </div>
           </div>
         </div>
-      </div>
+        </template>
     </aside>
   </body>
 </html>
