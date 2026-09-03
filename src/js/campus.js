@@ -86,29 +86,30 @@ async function loadSvgInto(el, url) {
 
     console.log("-> " + sector.id);
 
+    panelContainer.innerHTML = "";
+
     switch (sector.id) {
       case "sector-h":
-        panelContainer.innerHTML = "";
         panelContainer.appendChild(clonH)
         panel.classList.add("open");
         break;
       case "sector-d":
-        panelContainer.innerHTML = "";
+        //panelContainer.innerHTML = "";
         panelContainer.appendChild(clon);
         panel.classList.add("open");
         break;
       case "sector-m":
-        panelContainer.innerHTML = "";
+        //panelContainer.innerHTML = "";
         panelContainer.appendChild(clon);
         panel.classList.add("open");
         break;
       case "sector-c1":
-        panelContainer.innerHTML = "";
+        //panelContainer.innerHTML = "";
         panelContainer.appendChild(clon);
         panel.classList.add("open");
         break;
       case "sector-c2":
-        panelContainer.innerHTML = "";
+        //panelContainer.innerHTML = "";
         panelContainer.appendChild(clon);
         panel.classList.add("open");
         break;
