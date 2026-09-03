@@ -1,0 +1,77 @@
+.sector rect {
+  /*fill: #4a90e2;*/
+  /*transition: fill .2s ease, stroke .2s ease;*/
+}
+
+.sector:hover rect {
+  cursor: pointer;
+  stroke-width: 3;
+  opacity: 30%;
+}
+
+.sector-d:hover rect {
+  fill: #FFA500;
+  stroke: #FF8C00;
+}
+
+.sector-h:hover rect {
+  fill: #1E90FF;
+  stroke: #4682B4;
+}
+
+.sector-c1:hover rect {
+  fill: #00FF00;
+  stroke: #32CD32;
+}
+
+.sector-c2:hover rect {
+  fill: #EE82EE;
+  stroke: #BA55D3;
+}
+
+.sector-m:hover rect {
+  fill: #DC143C;
+  stroke: #FF0000;
+}
+
+
+/*
+  Sector toast
+ */
+.sector-toast {
+  color: #FFF;
+  position: fixed;
+  bottom: -150px;
+  width: 25%;
+  display: flex;
+  background-color: #000;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.2);
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 280ms ease;
+  opacity: 90%;
+}
+
+.sector-toast h3 {
+  font-weight: 800;
+  line-height: 1.5;
+  font-size: 20px;
+  color: #FFF;
+}
+
+.sector-text {
+  width: 100%;
+}
+
+.sector-icon {
+  padding: 10px;
+}
+
+.sector-toast.active {
+  bottom: 10px;
+}
+
