@@ -20,8 +20,6 @@ async function loadSvgInto(el, url) {
 
   sectorH = document.getElementById("sector-h");
 
-  //initSvg(svg);
-
   svg.addEventListener("pointerover", (e) => {
     const sector = e.target.closest(".sector");
     if (!sector) return;
@@ -90,31 +88,51 @@ async function loadSvgInto(el, url) {
 
     switch (sector.id) {
       case "sector-h":
-        panelContainer.appendChild(clonH)
-        panel.classList.add("open");
+        showInformationPanel(panelContainer, clonH, "Sector H", "fa-solid fa-building fa-2x")
         break;
       case "sector-d":
-        //panelContainer.innerHTML = "";
-        panelContainer.appendChild(clon);
-        panel.classList.add("open");
+        showInformationPanel(panelContainer, clon, "Sector D", "fa-solid fa-landmark-dome fa-2x")
         break;
       case "sector-m":
-        //panelContainer.innerHTML = "";
-        panelContainer.appendChild(clon);
-        panel.classList.add("open");
+        showInformationPanel(panelContainer, clon, "Sector M", "fa-solid fa-people-roof fa-2x")
         break;
       case "sector-c1":
-        //panelContainer.innerHTML = "";
-        panelContainer.appendChild(clon);
-        panel.classList.add("open");
+        showInformationPanel(panelContainer, clon, "Sector C1", "fa-solid fa-tower-observation fa-2x")
         break;
       case "sector-c2":
-        //panelContainer.innerHTML = "";
-        panelContainer.appendChild(clon);
-        panel.classList.add("open");
+        showInformationPanel(panelContainer, clon, "Sector C2", "fa-solid fa-tower-observation fa-2x")
         break;
     }
+
+    // Click in button to expand the sector
+   // console.log("-> " + expandSector);  
+    if (sector.id === "sector-h") {
+      const expandSector = document.getElementById("expand-sector");
+      expandSector.addEventListener("click", () => {
+        panel.classList.remove("open");
+        loadSectorSVG(sector.id);
+      });
+    }
   });
+}
+
+async function loadSectorSVG(_sectorId) {
+    const url = "../../src/assets/maps/sectorH/BuildingHF1.svg"
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Failed to load ${url}`);
+  floorHF1.innerHTML = await res.text();
+  // const svg = document.querySelector("svg");
+
+  console.log(floorHF1);
+}
+
+function showInformationPanel(_panelContainer, _clon, _sectorName, _icon) {
+  _panelContainer.appendChild(_clon);
+  const titlePanel = document.querySelector(".panel-title-text h2");
+  const iconPanel = document.querySelector(".panel-title i")
+  titlePanel.textContent = _sectorName;
+  iconPanel.className = _icon;
+  panel.classList.add("open");
 }
 
 (async function init() {

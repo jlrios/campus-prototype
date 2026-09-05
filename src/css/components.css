@@ -229,3 +229,25 @@
 
     text-align:center;
 }
+
+/* Panel button */
+.button-panel {
+  border: 1px solid #3E6D35;
+  background: #E6F4D7;
+  padding: 8px;
+  border-radius: 6px;
+  color: #000;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  transition: transform 0.2s ease;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button-panel:active {
+  transform: scale(0.96);
+}
