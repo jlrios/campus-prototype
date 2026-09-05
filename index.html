@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="./src/css/map.css">
-    <link rel="stylesheet" href="./src/css/components.css">
-    <link rel="stylesheet" href="./src/css/campus.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./src/css/map.css" />
+    <link rel="stylesheet" href="./src/css/components.css" />
+    <link rel="stylesheet" href="./src/css/campus.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
     <script defer src="./src/js/campus.js"></script>
     <script defer src="./src/js/components.js"></script>
-    <script defer src="./src/js/script.js" defer></script>
+    <script defer src="./src/js/script.js"></script>
     <title>Plantel 20 Oriente - Campus interactivo</title>
   </head>
   <body>
@@ -33,25 +36,27 @@
         </button>
         <!-- Brand -->
         <a href="/" class="brand">
-          <img src="./public/icons/dragon.svg" alt="Dragon Campus" class="logo" />
+          <img
+            src="./public/icons/dragon.svg"
+            alt="Dragon Campus"
+            class="logo"
+          />
           <span class="name">Campus 20 Oriente</span>
         </a>
       </div>
       <div class="center">
-<div class="input-search">
-                <input 
-                  type="text" 
-                  placeholder="Buscar aula, docente, alumno..."
-                  spellcheck="false"
-                  autocomplete="off"
-                >
-                <button>
-                  <i class="fa-solid fa-magnifying-glass fa-2x"></i>
-                </button>
-              </div>
-
-
+        <div class="input-search">
+          <input
+            type="text"
+            placeholder="Buscar aula, docente, alumno..."
+            spellcheck="false"
+            autocomplete="off"
+          />
+          <button>
+            <i class="fa-solid fa-magnifying-glass fa-2x"></i>
+          </button>
         </div>
+      </div>
 
       <div class="right">
         <!-- Notifications -->
@@ -59,7 +64,11 @@
           <img src="./public/icons/notification.svg" alt="" />
         </a>
         <!-- User avatar -->
-        <img src="./public/icons/user.svg" alt="Perfil del usuario" class="user" />
+        <img
+          src="./public/icons/user.svg"
+          alt="Perfil del usuario"
+          class="user"
+        />
         <!-- Open panel button -->
         <button
           class="info-panel-button"
@@ -113,8 +122,11 @@
       Main content
     ============================ -->
     <main id="main">
+      <!-- ===========================
+            Maps
+      ============================ -->
       <div class="map-container">
-        <div class="map-area">
+        <div class="map-area"> 
           <div id="buildingHF1" class="map-sector"></div>
         </div>
       </div>
@@ -122,16 +134,11 @@
         <button
           class="image-viewer__close"
           type="button"
-          aria-label="Cerrar imagen">
+          aria-label="Cerrar imagen"
+        >
           <i class="fa-solid fa-xmark"></i>
         </button>
-        <!--<div style="background-color: red;">Mola</div>-->
-        <img
-          id="viewerImage"
-          class="image-viewer__image"
-          src=""
-          alt="">
-          <!--<div style="background-color: red;">dsa</div>-->
+        <img id="viewerImage" class="image-viewer__image" src="" alt="" />
         <footer class="image-viewer__footer">
           <p id="viewerCaption"></p>
         </footer>
@@ -141,9 +148,7 @@
           <i class="fa-regular fa-building fa-2x"></i>
         </div>
         <div class="sector-text">
-          <h3>
-            Sector H
-          </h3>
+          <h3>Sector H</h3>
           <p>Edificio principal usos múltiples</p>
         </div>
       </div>
@@ -155,14 +160,12 @@
       <button class="panel-close-button" aria-label="Cerrar panel">
         &times;
       </button>
-      <div class="panel-container">
-        
-      </div>
+      <div class="panel-container"></div>
       <template id="panel-h">
         <div class="panel-header">
           <div class="panel-title">
             <i class="fa-regular fa-building fa-2x"></i>
-            <div class="panel-title-text"">
+            <div class="panel-title-text">
               <h2>Sector H (sector principal)</h2>
               <span>Información general</span>
             </div>
@@ -171,11 +174,21 @@
         <section class="wrapper-tabs">
           <h3>Servicios e instalaciones</h3>
           <nav class="panel-tabs">
-            <input type="radio" class="panel-tabs-radio" name="tabs-sector-h" checked id="information">
-            <label for="information" class="tabs-label"><i class="fa-regular fa-circle-question"></i>Información</label>
+            <input
+              type="radio"
+              class="panel-tabs-radio"
+              name="tabs-sector-h"
+              checked
+              id="information"
+            />
+            <label for="information" class="tabs-label"
+              ><i class="fa-regular fa-circle-question"></i>Información</label
+            >
             <div class="tabs-content">
-              El Sector H es el área principal del plantel. Integra el Edificio H, el Taller de Mantenimiento y un
-              espacio de cafetería al aire libre. A continuación, encontrará las instalaciones y servicios disponibles en este sector.
+              El Sector H es el área principal del plantel. Integra el Edificio
+              H, el Taller de Mantenimiento y un espacio de cafetería al aire
+              libre. A continuación, encontrará las instalaciones y servicios
+              disponibles en este sector.
               <section class="services-grid">
                 <div class="service-item">
                   <div class="service-icon">
@@ -267,59 +280,125 @@
                   </div>
                   <span>Aulas de la H1 a la H8</span>
                 </div>
+                <div>
+                  <button class="button-panel" id="expand-sector">
+                    <i class="fa-solid fa-expand fa-2x"></i>
+                    Ver a detalle
+                  </button>
+                </div>
               </section>
             </div>
-            <input type="radio" class="panel-tabs-radio" name="tabs-sector-h" id="gallery">
-            <label for="gallery" class="tabs-label"><i class="fa-regular fa-image"></i>Galería</label>
+            <input
+              type="radio"
+              class="panel-tabs-radio"
+              name="tabs-sector-h"
+              id="gallery"
+            />
+            <label for="gallery" class="tabs-label"
+              ><i class="fa-regular fa-image"></i>Galería</label
+            >
             <!-- Panl tab gallery-->
             <div class="tabs-content">
               <section>
                 <div class="panel-gallery">
-                  <img src="./src/assets/images/gallery/thumbnails/plantel-20-01-m.png" alt=""
-                    onclick="openImage(
-                    './src/assets/images/gallery/pictures/plantel-20-01.png',
-                    'Fachada principal del edificio H. Cuenta con laboratorios, aulas, sanitarios, biblioteca y oficinas administrativos.',
-                    'Edificio H'
-                  )">
-                  <img src="./src/assets/images/gallery/thumbnails/plantel-20-02-m.png" alt="">
-                  <img src="./src/assets/images/gallery/thumbnails/plantel-20-04-m.png" alt="">
-                  <img src="./src/assets/images/gallery/thumbnails/plantel-20-05-m.png" alt="">
-                  <img src="./src/assets/images/gallery/thumbnails/plantel-20-03-m.png" alt="">
-                  <img src="./src/assets/images/gallery/thumbnails/plantel-20-08-m.png" alt="">
-                  <img src="./src/assets/images/gallery/thumbnails/plantel-20-07-m.png" alt="">
-                  <img src="./src/assets/images/gallery/thumbnails/plantel-20-09-m.png" alt="">
-                  <img src="./src/assets/images/gallery/thumbnails/plantel-20-10-m.png" alt="">
+                  <img
+                    src="./src/assets/images/gallery/thumbnails/plantel-20-01-m.png"
+                    alt=""
+                    onclick="
+                      openImage(
+                        './src/assets/images/gallery/pictures/plantel-20-01.png',
+                        'Fachada principal del edificio H. Cuenta con laboratorios, aulas, sanitarios, biblioteca y oficinas administrativas.',
+                        'Edificio H',
+                      )
+                    "
+                  />
+                  <img
+                    src="./src/assets/images/gallery/thumbnails/plantel-20-02-m.png"
+                    alt=""
+                  />
+                  <img
+                    src="./src/assets/images/gallery/thumbnails/plantel-20-04-m.png"
+                    alt=""
+                  />
+                  <img
+                    src="./src/assets/images/gallery/thumbnails/plantel-20-05-m.png"
+                    alt=""
+                  />
+                  <img
+                    src="./src/assets/images/gallery/thumbnails/plantel-20-03-m.png"
+                    alt=""
+                  />
+                  <img
+                    src="./src/assets/images/gallery/thumbnails/plantel-20-08-m.png"
+                    alt=""
+                  />
+                  <img
+                    src="./src/assets/images/gallery/thumbnails/plantel-20-07-m.png"
+                    alt=""
+                  />
+                  <img
+                    src="./src/assets/images/gallery/thumbnails/plantel-20-09-m.png"
+                    alt=""
+                  />
+                  <img
+                    src="./src/assets/images/gallery/thumbnails/plantel-20-10-m.png"
+                    alt=""
+                  />
                 </div>
               </section>
             </div>
           </nav>
         </section>
-        </template>
-      <template id="not-implemented">       
-          <div style="display: grid; margin-top: 50px;">
-          <div style="align-self: center; justify-self: center; text-align: center;">
-            <h2>No hay información para mostrar</h2>
-            <h3>Funcionalidad no implementada</h3>
-            <img src="./src/assets/images/no-information.png" alt="" style="width: 240px; height: auto;">
-            <div style="text-align: left; padding: 30px;">
-              <ul>
-                <li>
-                  Este mapa presenta una implementación parcial con fines de demostración
-                </li>
-                <li>
-                  El sector habilitado muestra la interfaz y las funcionalidades previstas para todo el campus
-                </li>
-                <li>
-                  Los sectores sin información no forman parte de esta versión del prototipo, pero seguirán el mismo diseño y comportamiento cuando sean incorporados
-                </li>
-              </ul>
-              <br>
-              <p>Seleccione el <strong>Sector H</strong> si desea probar las funcionalidades disponibles.</p>
-              <a href="#">Ir al sector H</a>
+      </template>
+      <template id="not-implemented">
+        <div class="panel-header">
+          <div class="panel-title">
+            <i class="fa-regular fa-building fa-2x"></i>
+            <div class="panel-title-text">
+              <h2>Sector H (sector principal)</h2>
+              <span>Información general</span>
             </div>
           </div>
         </div>
-        </template>
+        <div style="display: grid; margin-top: 50px">
+          <div
+            style="align-self: center; justify-self: center; text-align: center"
+          >
+            <h2>No hay información para mostrar</h2>
+            <h3>Funcionalidad no implementada</h3>
+            <img
+              src="./src/assets/images/no-information.png"
+              alt=""
+              style="width: 240px; height: auto"
+            />
+            <div style="text-align: left; padding: 30px">
+              <ul>
+                <li>
+                  Este mapa presenta una implementación parcial con fines de
+                  demostración.
+                </li>
+                <li>
+                  Los sectores sin información no forman parte de esta versión
+                  del prototipo, pero seguirán el mismo diseño y comportamiento
+                  cuando sean incorporados.
+                </li>
+                <li>
+                  El sector habilitado muestra la interfaz y las funcionalidades
+                  previstas para todo el campus.
+                </li>
+              </ul>
+              <br />
+              <p>
+                Seleccione el <strong>Sector H</strong> si desea probar las
+                funcionalidades disponibles.
+              </p>
+              <div style="margin-top:20px; width:100%; justify-content:center; display:flex;">
+                <button class="button-panel"><i class="fa-regular fa-map fa-2x"></i>Ir al sector H</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
     </aside>
   </body>
 </html>
