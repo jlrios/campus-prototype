@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./src/css/components.css" />
     <link rel="stylesheet" href="./src/css/campus.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
-    <script defer src="./src/js/campus.js"></script>
+    <script defer type="module" src="./src/js/sectors.js"></script>
     <script defer src="./src/js/components.js"></script>
     <script defer src="./src/js/script.js"></script>
     <title>Plantel 20 Oriente - Campus interactivo</title>
@@ -126,8 +126,8 @@
             Maps
       ============================ -->
       <div class="map-container">
-        <div class="map-area"> 
-          <div id="buildingHF1" class="map-sector"></div>
+        <div class="map-area">
+          <div id="sector-map" class="sector-map"></div>
         </div>
       </div>
       <dialog id="imageViewer" class="image-viewer">
@@ -392,8 +392,17 @@
                 Seleccione el <strong>Sector H</strong> si desea probar las
                 funcionalidades disponibles.
               </p>
-              <div style="margin-top:20px; width:100%; justify-content:center; display:flex;">
-                <button class="button-panel"><i class="fa-regular fa-map fa-2x"></i>Ir al sector H</button>
+              <div
+                style="
+                  margin-top: 20px;
+                  width: 100%;
+                  justify-content: center;
+                  display: flex;
+                "
+              >
+                <button class="button-panel">
+                  <i class="fa-regular fa-map fa-2x"></i>Ir al sector H
+                </button>
               </div>
             </div>
           </div>

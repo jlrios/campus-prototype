@@ -1,4 +1,4 @@
-const floorHF1 = document.getElementById("buildingHF1");
+const floorHF1 = document.getElementById("sector-map");
 const sectorToast = document.querySelector(".sector-toast");
 const sectorSelected = document.querySelector("#sector-toast");
 
@@ -74,7 +74,7 @@ async function loadSvgInto(el, url) {
 
   svg.addEventListener("click", (e) => {
     const notImplemented = document.getElementById("not-implemented");
-    const panelH = document.getElementById("panel-h")
+    const panelH = document.getElementById("panel-h");
     const panelContainer = document.querySelector(".panel-container");
     const clon = notImplemented.content.cloneNode(true);
     const clonH = panelH.content.cloneNode(true);
@@ -88,48 +88,72 @@ async function loadSvgInto(el, url) {
 
     switch (sector.id) {
       case "sector-h":
-        showInformationPanel(panelContainer, clonH, "Sector H", "fa-solid fa-building fa-2x")
+        showInformationPanel(
+          panelContainer,
+          clonH,
+          "Sector H",
+          "fa-solid fa-building fa-2x",
+        );
         break;
       case "sector-d":
-        showInformationPanel(panelContainer, clon, "Sector D", "fa-solid fa-landmark-dome fa-2x")
+        showInformationPanel(
+          panelContainer,
+          clon,
+          "Sector D",
+          "fa-solid fa-landmark-dome fa-2x",
+        );
         break;
       case "sector-m":
-        showInformationPanel(panelContainer, clon, "Sector M", "fa-solid fa-people-roof fa-2x")
+        showInformationPanel(
+          panelContainer,
+          clon,
+          "Sector M",
+          "fa-solid fa-people-roof fa-2x",
+        );
         break;
       case "sector-c1":
-        showInformationPanel(panelContainer, clon, "Sector C1", "fa-solid fa-tower-observation fa-2x")
+        showInformationPanel(
+          panelContainer,
+          clon,
+          "Sector C1",
+          "fa-solid fa-tower-observation fa-2x",
+        );
         break;
       case "sector-c2":
-        showInformationPanel(panelContainer, clon, "Sector C2", "fa-solid fa-tower-observation fa-2x")
+        showInformationPanel(
+          panelContainer,
+          clon,
+          "Sector C2",
+          "fa-solid fa-tower-observation fa-2x",
+        );
         break;
     }
 
     // Click in button to expand the sector
-   // console.log("-> " + expandSector);  
+    // console.log("-> " + expandSector);
     if (sector.id === "sector-h") {
       const expandSector = document.getElementById("expand-sector");
+      const mapUrl = "../../src/assets/maps/sector-h/sector-map.svg";
       expandSector.addEventListener("click", () => {
         panel.classList.remove("open");
-        loadSectorSVG(sector.id);
+        loadSectorSVG(sector.id, mapUrl);
       });
     }
   });
 }
 
-async function loadSectorSVG(_sectorId) {
-    const url = "../../src/assets/maps/sectorH/BuildingHF1.svg"
-  const res = await fetch(url);
+async function loadSectorSVG(_sectorIdm, _mapUrl) {
+  const res = await fetch(_mapUrl);
+  console.log(res);
   if (!res.ok) throw new Error(`Failed to load ${url}`);
   floorHF1.innerHTML = await res.text();
-  // const svg = document.querySelector("svg");
-
-  console.log(floorHF1);
+  const svg = document.querySelector("svg");
 }
 
 function showInformationPanel(_panelContainer, _clon, _sectorName, _icon) {
   _panelContainer.appendChild(_clon);
   const titlePanel = document.querySelector(".panel-title-text h2");
-  const iconPanel = document.querySelector(".panel-title i")
+  const iconPanel = document.querySelector(".panel-title i");
   titlePanel.textContent = _sectorName;
   iconPanel.className = _icon;
   panel.classList.add("open");
@@ -137,7 +161,7 @@ function showInformationPanel(_panelContainer, _clon, _sectorName, _icon) {
 
 (async function init() {
   await Promise.all([
-    loadSvgInto(floorHF1, "../../src/assets/maps/campus20/campus-test.svg"),
+    // loadSvgInto(floorHF1, "../../src/assets/maps/campus/campus-map.svg"),
   ]);
 
   const response = await fetch("../../src/data/toast-sectors.json");
