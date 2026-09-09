@@ -29,6 +29,14 @@
   stroke: #BA55D3;
 }
 
+.sector-selected rect {
+  fill: #1e90ff;
+  stroke: #4682b4;
+  opacity: 30%;
+}
+
+
+
 .sector-m:hover rect {
   fill: #DC143C;
   stroke: #FF0000;
@@ -45,8 +53,6 @@
   width: auto;
   display: flex;
   background-color: #000;
-  align-items: center;
-  text-align: center;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.2);
