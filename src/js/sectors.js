@@ -96,7 +96,7 @@ const icon = sectorSelected.querySelector(".sector-icon i");
 
 campusSVG.addEventListener("pointerover", (e) => {
   const sector = e.target.closest(".sector");
-  
+
   if (!sector) return;
 
   const sectorKey = sector.id.replace("sector-", "");
@@ -111,5 +111,82 @@ campusSVG.addEventListener("pointerover", (e) => {
   sectorToast.classList.add("active");
 });
 
+campusSVG.addEventListener("pointerout", (e) => {
+  const sector = e.target.closest(".sector");
+  if (!sector) return;
+  sectorToast.classList.remove("active");
+});
+
+const panelContainer = document.querySelector(".panel-container");
+
+const notImplemented = document.getElementById("not-implemented");
+const panelH = document.getElementById("panel-h");
+
+const sectorPanels = {
+  "sector-h": {
+    template: panelH,
+    title: "Sector H",
+    icon: "fa-solid fa-building fa-2x",
+  },
+
+  "sector-d": {
+    template: notImplemented,
+    title: "Sector D",
+    icon: "fa-solid fa-landmark-dome fa-2x",
+  },
+
+  "sector-m": {
+    template: notImplemented,
+    title: "Sector M",
+    icon: "fa-solid fa-people-roof fa-2x",
+  },
+
+  "sector-c1": {
+    template: notImplemented,
+    title: "Sector C1",
+    icon: "fa-solid fa-tower-observation fa-2x",
+  },
+
+  "sector-c2": {
+    template: notImplemented,
+    title: "Sector C2",
+    icon: "fa-solid fa-tower-observation fa-2x",
+  },
+};
+
+campusSVG.addEventListener("click", (e) => {
+  const sector = e.target.closest(".sector");
+
+  if (!sector) return;
+
+  const sectorData = sectorPanels[sector.id];
+
+  if (!sectorData) return;
+
+  console.log(sector.id);
+
+  const clone = sectorData.template.content.cloneNode(true);
+
+  panelContainer.innerHTML = "";
+
+  showInfoPanel(
+    panelContainer,
+    clone,
+    sectorData.title,
+    sectorData.icon,
+  );
+});
+
+function showInfoPanel(panelContainer, clone, sectorTitle, sectorIcon) {
+  panelContainer.appendChild(clone);
+  
+  const titlePanel = document.querySelector(".panel-title-text h2");
+  const iconPanel = document.querySelector(".panel-title i");
+  
+  titlePanel.textContent = sectorTitle;
+  iconPanel.className = sectorIcon;
+  
+  panel.classList.add("open");
+}
 
 
