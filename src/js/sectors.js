@@ -154,6 +154,10 @@ const sectorPanels = {
   },
 };
 
+// Current sector selected
+
+let selectedSector = null;
+
 campusSVG.addEventListener("click", (e) => {
   const sector = e.target.closest(".sector");
 
@@ -165,16 +169,55 @@ campusSVG.addEventListener("click", (e) => {
 
   console.log(sector.id);
 
+  // -----------------------------------------
+  // 1. Click sobre el mismo sector
+  // -----------------------------------------
+
+  if (selectedSector === sector.id) {
+    // Quitar selección
+    selectedSector = null;
+
+    // Quitar clase visual
+    sector.classList.remove("sector-selected");
+    sector.classList.add(sector.id)
+
+    // Limpiar panel
+    panelContainer.innerHTML = "";
+
+    return;
+  }
+
+  // -----------------------------------------
+  // 2. Si había otro sector seleccionado
+  // -----------------------------------------
+
+  if (selectedSector) {
+    const previousSector = campusSVG.querySelector(
+      `#${CSS.escape(selectedSector)}`,
+    );
+
+  console.log(previousSector.id);
+
+    if (previousSector) {
+      previousSector.classList.remove("sector-selected");
+      previousSector.classList.add(previousSector.id)
+    }
+  }
+
+  // -----------------------------------------
+  // 3. Seleccionar nuevo sector
+  // -----------------------------------------
+
+  selectedSector = sector.id;
+
+  sector.classList.remove(sector.id)
+  sector.classList.add("sector-selected");
+
   const clone = sectorData.template.content.cloneNode(true);
 
   panelContainer.innerHTML = "";
 
-  showInfoPanel(
-    panelContainer,
-    clone,
-    sectorData.title,
-    sectorData.icon,
-  );
+  showInfoPanel(panelContainer, clone, sectorData.title, sectorData.icon);
 });
 
 function showInfoPanel(panelContainer, clone, sectorTitle, sectorIcon) {
