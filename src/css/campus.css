@@ -1,45 +1,43 @@
-/*.sector rect {
-  fill: #4a90e2;
-  transition: fill .2s ease, stroke .2s ease;
-}*/
-
 .sector:hover rect {
   cursor: zoom-in;
-  stroke-width: 3;
+  stroke-width: 5;
   opacity: 30%;
 }
 
 .sector-d:hover rect {
-  fill: #FFA500;
-  stroke: #FF8C00;
+  fill: #FFB74D;
+  stroke: #FFA726;
 }
 
 .sector-h:hover rect {
-  fill: #1E90FF;
-  stroke: #4682B4;
+  fill: #2196F3;
+  stroke: #1565C0;
 }
 
 .sector-c1:hover rect {
-  fill: #00FF00;
-  stroke: #32CD32;
+  fill: #4CAF50;
+  stroke: #388E3C;
 }
 
 .sector-c2:hover rect {
-  fill: #EE82EE;
-  stroke: #BA55D3;
+  fill: #BC9A8F;
+  stroke: #A47C6E;
 }
 
 .sector-selected rect {
-  fill: #00B8D9;
-  stroke: #4682b4;
+  fill: #00695C;
+  stroke: #004D40;
   opacity: 30%;
 }
 
-
-
 .sector-m:hover rect {
-  fill: #DC143C;
-  stroke: #FF0000;
+  fill: #00BCD4;
+  stroke: #00838F;
+}
+
+.image-select-sector {
+  width: 340px;
+  height: 340px;
 }
 
 
@@ -80,4 +78,3 @@
 .sector-toast.active {
   bottom: 10px;
 }
-

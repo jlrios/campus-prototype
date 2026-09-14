@@ -367,9 +367,9 @@
             <h2>No hay información para mostrar</h2>
             <h3>Funcionalidad no implementada</h3>
             <img
-              src="./src/assets/images/no-information.png"
+              src="./src/assets/images/no-information.svg"
               alt=""
-              style="width: 240px; height: auto"
+              style="width: 240px; height: auto; margin-top: 50px;"
             />
             <div style="text-align: left; padding: 30px">
               <ul>
@@ -408,6 +408,37 @@
           </div>
         </div>
       </template>
+      <template id="empty-state">
+      <div style="display: grid; margin-top: 50px;">
+        <div
+          style="align-self: center; justify-self: center; text-align: center;"
+        >
+        <img
+          src="./src/assets/images/select-sector.svg"
+          alt=""
+          style="width: 280px; height: auto"
+        />
+        <h3 style="margin-top: 50px;">Seleccione un sector</h3>
+        <div style="text-align: left; padding: 15px">
+          <p>
+            Pase el puntero sobre el mapa para explorar los sectores. Haga clic en un sector para visualizar su información.
+          </p>
+          <!--<div
+            style="
+              margin-top: 20px;
+              width: 100%;
+              justify-content: center;
+              display: flex;
+              "
+            >
+              <button class="button-panel">
+                <i class="fa-regular fa-map fa-2x"></i>Ir al sector H
+              </button>
+            </div>
+          </div>-->
+        </div>
+      </div>      
+    </template>
     </aside>
   </body>
 </html>
