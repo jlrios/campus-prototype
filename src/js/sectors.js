@@ -67,7 +67,6 @@ await Promise.all([
     maps.H.mainBuilding.upperFloor.urlMap,
   ),
 ]);
-
 // Finished loading maps /
 
 const sectorMap = document.getElementById("sector-map");
@@ -87,7 +86,6 @@ loadSectorToasts();
 showMap(maps.C.id);
 
 // Events main map (campus)
-
 const campusSVG = document.querySelector("svg");
 
 const title = sectorSelected.querySelector(".sector-text h3");
@@ -155,7 +153,6 @@ const sectorPanels = {
 };
 
 // Current sector selected
-
 let selectedSector = null;
 
 campusSVG.addEventListener("click", (e) => {
@@ -170,47 +167,43 @@ campusSVG.addEventListener("click", (e) => {
   console.log(sector.id);
 
   // -----------------------------------------
-  // 1. Click sobre el mismo sector
+  // 1. Click on the same sector
   // -----------------------------------------
-
   if (selectedSector === sector.id) {
-    // Quitar selección
+    // Remove selection
     selectedSector = null;
 
-    // Quitar clase visual
+    // Remove visual class
     sector.classList.remove("sector-selected");
-    sector.classList.add(sector.id)
+    sector.classList.add(sector.id);
 
-    // Limpiar panel
+    // Clear panel
+    panel.classList.remove("open")
     panelContainer.innerHTML = "";
 
     return;
   }
 
   // -----------------------------------------
-  // 2. Si había otro sector seleccionado
+  // 2. If there was another selected sector
   // -----------------------------------------
-
   if (selectedSector) {
     const previousSector = campusSVG.querySelector(
       `#${CSS.escape(selectedSector)}`,
     );
 
-  console.log(previousSector.id);
-
     if (previousSector) {
       previousSector.classList.remove("sector-selected");
-      previousSector.classList.add(previousSector.id)
+      previousSector.classList.add(previousSector.id);
     }
   }
 
   // -----------------------------------------
-  // 3. Seleccionar nuevo sector
+  // 3. Select new sector
   // -----------------------------------------
-
   selectedSector = sector.id;
 
-  sector.classList.remove(sector.id)
+  sector.classList.remove(sector.id);
   sector.classList.add("sector-selected");
 
   const clone = sectorData.template.content.cloneNode(true);
@@ -231,5 +224,3 @@ function showInfoPanel(panelContainer, clone, sectorTitle, sectorIcon) {
   
   panel.classList.add("open");
 }
-
-
