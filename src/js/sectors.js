@@ -78,7 +78,7 @@ function showMap(map) {
 }
 
 async function loadSectorToasts() {
-  const sectorRes = await fetch("../../src/data/toast-sectors.json");
+  const sectorRes = await fetch("./../src/data/toast-sectors.json");
   sectorToasts = await sectorRes.json();
 }
 

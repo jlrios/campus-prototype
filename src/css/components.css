@@ -232,11 +232,12 @@
 
 /* Panel button */
 .button-panel {
-  border: 1px solid #3E6D35;
-  background: #E6F4D7;
+  /* border: 1px solid #c94a12; */
+  border: none;
+  background: #f57e3a;
   padding: 8px;
   border-radius: 6px;
-  color: #000;
+  color: #fff;
   cursor: pointer;
   font-size: 14px;
   font-weight: 400;
