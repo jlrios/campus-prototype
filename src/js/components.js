@@ -1,24 +1,18 @@
-// Dropdown menu
-/*const optionMenu = document.querySelector(".select-menu");
-const selectBtn = optionMenu.querySelector(".select-btn");
-const options = optionMenu.querySelectorAll(".option");
-const selBtnText = optionMenu.querySelector("sel-btn-text");*/
-
 const imageViewer = document.getElementById("imageViewer");
 const viewerImage = document.getElementById("viewerImage");
 const viewerCaption = document.getElementById("viewerCaption");
 const closeButton = document.querySelector(".image-viewer__close");
 
 function openImage(src, description, alt = "") {
-    viewerImage.src = src;
-    viewerImage.alt = alt;
-    viewerCaption.textContent = description;
+  viewerImage.src = src;
+  viewerImage.alt = alt;
+  viewerCaption.textContent = description;
 
-    imageViewer.showModal();
+  imageViewer.showModal();
 }
 
 function closeImage() {
-    imageViewer.close();
+  imageViewer.close();
 }
 
 closeButton.addEventListener("click", closeImage);

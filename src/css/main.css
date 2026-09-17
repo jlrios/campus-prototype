@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 
-/*===========================
-  Variables
-===========================*/
+/*
+  ===========================
+    Variables
+  ===========================
+*/
 :root {
   /* Layout */
   --header-height: 4rem;
@@ -31,13 +33,17 @@
 
   --border-color: #696969;
   
-  /*--button-border-color: #3d6413;*/
+  /* button-border-color: #3d6413;*/
 
   --text-color: #32363b;
-  --text-title-color: #f05f06;
+  --text-title-color: #e25619;
   --text-selected-color: #355cc0;
 
   --menu-color: #707780;
+
+  /* Sectors */ 
+  --background-sector-c2: #D2B48C;
+  --border-sector-c2: #DEB887;
 }
 
 /*===========================
