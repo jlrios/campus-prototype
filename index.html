@@ -13,9 +13,11 @@
     <title>Plantel 20 Oriente - Campus interactivo</title>
   </head>
   <body>
-    <!-- ===========================
-      Header
-    ============================ -->
+    <!--
+    ===========================
+    Header
+    ============================
+    -->
     <header>
       <div class="left">
         <!-- Menu button -->
@@ -75,14 +77,16 @@
         </button>
       </div>
     </header>
-    <!-- ===========================
-      Sidebar
-    ============================ -->
+    <!-- 
+    ============================
+    Sidebar
+    ============================
+    -->
     <aside id="sidebar" class="sidebar">
       <nav aria-label="Navegación principal">
         <ul>
           <li>
-            <a href="#" class="selected" aria-current="page">
+            <a id="campus-home" href="#" class="selected" aria-current="page">
               <img src="./public/icons/home.svg" alt="" />
               <span>Inicio</span>
             </a>
@@ -115,15 +119,23 @@
       </nav>
     </aside>
     <!-- ===========================
-      Main content
+    Main content
     ============================ -->
     <main id="main">
-      <!-- ===========================
-            Maps
-      ============================ -->
+      <!--
+      ===========================
+      Maps
+      ============================
+      -->
       <div class="map-container">
+        <div id="navigation-left" class="slide-map-button">
+          <i id="nav-map-left" class="fa-solid fa-angle-left fa-2x"></i>
+        </div>
         <div class="map-area">
           <div id="sector-map" class="sector-map"></div>
+        </div>
+        <div id="navigation-right" class="slide-map-button">
+          <i id="nav-map-right" class="fa-solid fa-angle-right fa-2x"></i>
         </div>
       </div>
       <dialog id="imageViewer" class="image-viewer">
@@ -277,7 +289,7 @@
                   <span>Aulas de la H1 a la H8</span>
                 </div>
                 <div>
-                  <button class="button-panel" id="expand-sector">
+                  <button class="button-panel" id="expand-sector-h">
                     <i class="fa-solid fa-expand fa-2x"></i>
                     Ver a detalle
                   </button>
@@ -290,9 +302,9 @@
               name="tabs-sector-h"
               id="gallery"
             />
-            <label for="gallery" class="tabs-label"
-              ><i class="fa-regular fa-image"></i>Galería</label
-            >
+            <label for="gallery" class="tabs-label">
+              <i class="fa-regular fa-image"></i>Galería
+            </label>
             <!-- Panl tab gallery-->
             <div class="tabs-content">
               <section>
@@ -351,7 +363,7 @@
           <div class="panel-title">
             <i class="fa-regular fa-building fa-2x"></i>
             <div class="panel-title-text">
-              <h2>Sector H (sector principal)</h2>
+              <h2></h2>
               <span>Información general</span>
             </div>
           </div>
@@ -368,25 +380,20 @@
               style="width: 240px; height: auto; margin-top: 50px;"
             />
             <div style="text-align: left; padding: 30px">
-              <ul>
-                <li>
-                  Este mapa presenta una implementación parcial con fines de
-                  demostración.
-                </li>
-                <li>
-                  Los sectores sin información no forman parte de esta versión
-                  del prototipo, pero seguirán el mismo diseño y comportamiento
-                  cuando sean incorporados.
-                </li>
-                <li>
-                  El sector habilitado muestra la interfaz y las funcionalidades
-                  previstas para todo el campus.
-                </li>
-              </ul>
-              <br />
+              <p>
+                Este mapa presenta una implementación parcial con fines demostrativos. 
+                Los sectores que actualmente no cuentan con información, tendrán funcionalidad 
+                completa en la aplicación de producción.
+              </p>
+              <br>
+              <p>
+                El sector habilitado permite visualizar la
+                interfaz y las funcionalidades previstas para el resto del campus.
+              </p>
+              <br>
               <p>
                 Seleccione el <strong>Sector H</strong> si desea probar las
-                funcionalidades disponibles.
+                funcionalidad disponible.
               </p>
               <div
                 style="
@@ -424,5 +431,25 @@
       </div> 
     </template>
     </aside>
+    <!-- 
+    ===========================
+    Templates.
+    ===========================
+    -->
+    <template id="empty-state-map">
+      <div style="vertical-align: middle; width: 1280px; height:720px; display:grid; place-items:center;">
+        <h2>Campus > Sector H > Cooperativa</h2>
+        <h3>Mapa no implementado</h3>
+        <img src="./src/assets/images/building_burz.svg" alt="" style="width: 384px;">
+        <div style="display: flex; align-items:center; gap: 10px; width: 45%; background: #E6F4D7; padding: 10px; border:1px solid #3E6D35; border-radius: 6px;">
+          <i class="fa-solid fa-circle-info fa-2x" style="color: #3E6D35"></i>
+          <p style="color:#333">
+            El Campus Interactivo es una aplicación parcial desarrollada con fines demostrativos. 
+            Su funcionalidad se limita a presentar, de manera representativa, las características 
+            y el tipo de funcionalidades que integrará la aplicación de producción.
+          </p>
+        </div>
+      </div>
+    </template>
   </body>
 </html>
