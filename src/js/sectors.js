@@ -8,10 +8,9 @@ import bldgHGrndMap from "../../src/assets/maps/sector-h/main-bldg-ground.svg";
 import bldgHUpperMap from "../../src/assets/maps/sector-h/main-bldg-upper.svg";
 
 // Campus sector data toasts
-const mainMapToasts = "../data/toast-sectors.json";
+import mainMapToasts from "../data/toast-sectors.json";
 
 let loadedMaps = {};
-let sectorToasts = {};
 
 export const maps = {
   C: {
@@ -74,15 +73,26 @@ const sectorToast = document.querySelector(".sector-toast");
 const sectorSelected = document.querySelector("#sector-toast");
 
 function showMap(map) {
+  console.log(map);
+
+  sectorMap.innerHTML = "";
   sectorMap.innerHTML = getSVGMap(map);
+
+  const svg = sectorMap.querySelector("svg");
+
+  requestAnimationFrame(() => {
+    svg.classList.add("is-visible");
+  });
+
+  if (map === "mainMap") {
+    document.getElementById("navigation-left").style.display = "none";
+    document.getElementById("navigation-right").style.display = "none";
+  } else {
+    document.getElementById("navigation-left").style.display = "flex";
+    document.getElementById("navigation-right").style.display = "flex";
+  }
 }
 
-async function loadSectorToasts() {
-  const sectorRes = await fetch("./../src/data/toast-sectors.json");
-  sectorToasts = await sectorRes.json();
-}
-
-loadSectorToasts();
 showMap(maps.C.id);
 
 // Events main map (campus)
@@ -98,7 +108,7 @@ campusSVG.addEventListener("pointerover", (e) => {
   if (!sector) return;
 
   const sectorKey = sector.id.replace("sector-", "");
-  const sectorData = sectorToasts[sectorKey];
+  const sectorData = mainMapToasts[sectorKey];
 
   if (!sectorData) return;
 
@@ -164,8 +174,6 @@ campusSVG.addEventListener("click", (e) => {
 
   if (!sectorData) return;
 
-  console.log(sector.id);
-
   // -----------------------------------------
   // 1. Click on the same sector
   // -----------------------------------------
@@ -210,10 +218,10 @@ campusSVG.addEventListener("click", (e) => {
 
   panelContainer.innerHTML = "";
 
-  showInfoPanel(panelContainer, clone, sectorData.title, sectorData.icon);
+  showInfoPanel(panelContainer, clone, sectorData.title, sectorData.icon, sector.id);
 });
 
-function showInfoPanel(panelContainer, clone, sectorTitle, sectorIcon) {
+function showInfoPanel(panelContainer, clone, sectorTitle, sectorIcon, sector) {
   panelContainer.appendChild(clone);
   
   const titlePanel = document.querySelector(".panel-title-text h2");
@@ -221,6 +229,70 @@ function showInfoPanel(panelContainer, clone, sectorTitle, sectorIcon) {
   
   titlePanel.textContent = sectorTitle;
   iconPanel.className = sectorIcon;
-  
+
+  expandSectors(sector, panelContainer)
+
   panel.classList.add("open");
+}
+
+function expandSectors(sector) {
+  const expandSector = document.getElementById(`expand-${sector}`);
+  
+  if (!expandSector) return;
+
+  expandSector.addEventListener("click", () => {
+    // Load sector map.
+
+    // Temp.
+    showMap(maps.H.mainBuilding.groundFloor.id);
+
+    const navMapLeft = document.getElementById("nav-map-left");
+    const navMapRight = document.getElementById("nav-map-right");
+
+    let mapIndex = 1;
+
+    navMapLeft.addEventListener("click", () => {
+      mapIndex -= 1;
+      
+      if (mapIndex < 0 ) {
+        mapIndex = 0;
+        return;
+      };
+
+      showCurrentLayout(mapIndex);
+    });
+
+    navMapRight.addEventListener("click", () => {
+      mapIndex += 1;
+
+      if (mapIndex > 2) {
+        mapIndex = 2;
+        return;
+      }
+
+      showCurrentLayout(mapIndex);
+    });
+  });
+}
+
+function showCurrentLayout(mapIndex) {
+  if (mapIndex === 0 || mapIndex === 2) {
+    const currentMap = document.getElementById("empty-state-map");
+    const sectorMap = document.getElementById("sector-map");
+    const cloneMap = currentMap.content.cloneNode(true);
+
+    let sectorPatio = "Campus > Sector H > Cooperativa";
+    let sectorWorkshop = "Campus > Sector H > Taller de mantenimiento";
+
+    mapIndex === 0
+      ? cloneMap.querySelector("h2").textContent =
+        sectorPatio
+      : cloneMap.querySelector("h2").textContent =
+        sectorWorkshop; 
+
+            sectorMap.innerHTML = "";
+    sectorMap.appendChild(cloneMap);
+  } else {
+    showMap(maps.H.mainBuilding.groundFloor.id);
+  }
 }
