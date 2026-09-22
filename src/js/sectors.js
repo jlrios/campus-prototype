@@ -241,8 +241,12 @@ function expandSectors(sector) {
   if (!expandSector) return;
 
   expandSector.addEventListener("click", () => {
-    // Load sector map.
+    // panel.innerHTML = "";
 
+    panel.classList.remove("open");
+    
+    // Load sector map.
+    
     // Temp.
     showMap(maps.H.mainBuilding.groundFloor.id);
 
