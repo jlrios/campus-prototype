@@ -110,12 +110,12 @@
   transform: translateY(0);
 }
 
-.symbology-button {
-  margin-top: 5px;
-  margin-bottom: 5px;
+.change-floor-button {
   padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #000;
+  border-radius: 6px;
+  /*border: 1px solid gray;*/
+  border: none;
+  background: #d6e9bc;
 }
 
 /* Map slider */
@@ -133,4 +133,28 @@
 
 .slide-map-button.is-visible {
   display: flex;
+}
+
+/*
+==============================
+Map legends.
+==============================
+*/
+.map-legend {
+  border: 1px solid #000;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+  padding: 5px;
+  margin-top: 13px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
 }
