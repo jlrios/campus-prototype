@@ -131,9 +131,76 @@
         <div id="navigation-left" class="slide-map-button">
           <i id="nav-map-left" class="fa-solid fa-angle-left fa-2x"></i>
         </div>
+
         <div class="map-area">
-          <div id="sector-map" class="sector-map"></div>
+          <div style="border:1px solid #000; border-radius:6px; padding:5px; display: flex; justify-content: space-between; margin-bottom:20px; box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.3);">
+            <div style="display: flex; align-items:center; gap:0.5rem;">
+              <i class="fa-solid fa-school-flag fa-2x" style="color:#e25619;"></i>
+              <span style="color:#333;">
+                <strong>Campus > Sector H > Edificio principal > Planta baja</strong>
+              </span>
+            </div>
+            <div>
+              <button class="change-floor-button">
+                <i class="fa-solid fa-angle-down"></i>
+                Planta baja
+              </button>
+              <button class="change-floor-button">
+                <i class="fa-solid fa-angle-up"></i>
+                Planta alta
+              </button>
+            </div>
+          </div>
+
+          <div id="sector-map" class="sector-map"></div> 
+
+          <div class="map-legend">
+            <div class="legend-item"> 
+              <i class="fa-solid fa-square fa-2x" style="color:#A4C4EF;"></i>
+              <span class="legend-color">
+                Biblioteca
+              </span>
+            </div>
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #9DE0C7;"></i>
+              <span>
+                Oficinas admvas.
+              </span>
+            </div>
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color:#E0E4EB;"></i>
+              <span>
+                Intendencia y mtto.
+              </span>
+            </div>
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #FED274"></i>
+              <span>
+                Laboratorios y aulas
+              </span>
+            </div>
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color:#9DD1F6;"></i>
+              <span>
+                Sanitarios H.
+              </span>
+            </div> 
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #FDA4A7;"></i>
+              <span>
+                Sanitarios M.
+              </span>
+            </div>  
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #CBBFF3"></i>
+              <span>
+                Sistemas
+              </span>
+            </div>
+          </div>
+          
         </div>
+
         <div id="navigation-right" class="slide-map-button">
           <i id="nav-map-right" class="fa-solid fa-angle-right fa-2x"></i>
         </div>
