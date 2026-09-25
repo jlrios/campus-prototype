@@ -128,12 +128,118 @@
       ============================
       -->
       <div class="map-container">
+        <!-- 
+          ==============================
+          Widgets
+          ==============================
+          -->
+          
+          <div style="
+          
+            width: 320px;
+            padding:0 10px 10px;">
+            
+            <div style="width: 100%; padding:10px;
+            border:1px solid #000; border-radius: 6px;">
+            
+            <div class="notices-widget">
+
+              <!-- Widget header -->
+              <div class="notices-header">
+          
+                  <div class="notices-title">
+                      <i class="fa-solid fa-bullhorn"></i>
+                      <span>Avisos</span>
+                  </div>
+          
+                  <span class="notices-link">
+                      Ver todos
+                      <i class="fa-solid fa-chevron-right"></i>
+                  </span>
+          
+              </div>
+          
+              <!-- Notices list -->
+              <div class="notices-list">
+          
+                  <!-- Notice -->
+                  <div class="notice-item">
+          
+                      <span class="notice-indicator notice-orange"></span>
+          
+                      <div class="notice-content">
+          
+                          <div class="notice-title">
+                              Junta de padres de familia
+                          </div>
+          
+                          <div class="notice-meta">
+                              <i class="fa-regular fa-calendar"></i>
+                              <span>25 sep. · 17:00 h</span>
+                          </div>
+          
+                      </div>
+          
+                  </div>
+          
+                  <!-- Notice -->
+                  <div class="notice-item">
+          
+                      <span class="notice-indicator notice-green"></span>
+          
+                      <div class="notice-content">
+          
+                          <div class="notice-title">
+                              Honores a la Bandera
+                          </div>
+          
+                          <div class="notice-meta">
+                              <i class="fa-regular fa-calendar"></i>
+                              <span>29 sep. · 08:00 h</span>
+                          </div>
+          
+                      </div>
+          
+                  </div>
+          
+                  <!-- Notice -->
+                  <div class="notice-item">
+          
+                      <span class="notice-indicator notice-blue"></span>
+          
+                      <div class="notice-content">
+          
+                          <div class="notice-title">
+                              Reunión de docentes
+                          </div>
+          
+                          <div class="notice-meta">
+                              <i class="fa-regular fa-calendar"></i>
+                              <span>2 oct. · 14:00 h</span>
+                          </div>
+          
+                      </div>
+          
+                  </div>
+          
+              </div>
+          
+          </div>  
+
+
+
+            </div>
+
+
+            
+          </div>
+        
         <div id="navigation-left" class="slide-map-button">
           <i id="nav-map-left" class="fa-solid fa-angle-left fa-2x"></i>
         </div>
 
         <div class="map-area">
-          <div style="border:1px solid #000; border-radius:6px; padding:5px; display: flex; justify-content: space-between; margin-bottom:20px; box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.3);">
+          <!--<div style="border:1px solid #000; border-radius:6px; padding:5px; display: flex; justify-content: space-between; margin-bottom:20px; box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.3);">
             <div style="display: flex; align-items:center; gap:0.5rem;">
               <i class="fa-solid fa-school-flag fa-2x" style="color:#e25619;"></i>
               <span style="color:#333;">
@@ -141,20 +247,26 @@
               </span>
             </div>
             <div>
-              <button class="change-floor-button">
-                <i class="fa-solid fa-angle-down"></i>
+              <button id="ground-floor" class="change-floor-button">
+                <i class="fa-solid fa-turn-down"></i>
                 Planta baja
               </button>
-              <button class="change-floor-button">
-                <i class="fa-solid fa-angle-up"></i>
+              <button id="upper-floor" class="change-floor-button">
+                <i class="fa-solid fa-turn-up"></i>
                 Planta alta
               </button>
             </div>
-          </div>
+          </div>-->
 
+          <!--
+          ==============================
+          Map render.
+          ==============================
+          -->
           <div id="sector-map" class="sector-map"></div> 
+          <!-- End map render -->
 
-          <div class="map-legend">
+          <!--<div class="map-legend">
             <div class="legend-item"> 
               <i class="fa-solid fa-square fa-2x" style="color:#A4C4EF;"></i>
               <span class="legend-color">
@@ -197,7 +309,7 @@
                 Sistemas
               </span>
             </div>
-          </div>
+          </div>-->
           
         </div>
 
@@ -205,6 +317,7 @@
           <i id="nav-map-right" class="fa-solid fa-angle-right fa-2x"></i>
         </div>
       </div>
+
       <dialog id="imageViewer" class="image-viewer">
         <button
           class="image-viewer__close"

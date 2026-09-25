@@ -111,12 +111,13 @@
 }
 
 .change-floor-button {
+  background: #d6e9bc;
   padding: 10px;
   border-radius: 6px;
-  /*border: 1px solid gray;*/
   border: none;
-  background: #d6e9bc;
 }
+
+
 
 /* Map slider */
 .slide-map-button {

@@ -300,3 +300,19 @@ function showCurrentLayout(mapIndex) {
     showMap(maps.H.mainBuilding.groundFloor.id);
   }
 }
+
+// Cambiar entre planta alta y baja cuando el sector es el 
+// edificio principal.
+const groundFloor = document.getElementById("ground-floor");
+const upperFloor = document.getElementById("upper-floor");
+
+console.log(groundFloor);
+console.log(upperFloor);
+
+groundFloor.addEventListener("click", () =>  {
+  showMap(maps.H.mainBuilding.groundFloor.id);
+});
+
+upperFloor.addEventListener("click", () => {
+  showMap(maps.H.mainBuilding.upperFloor.id);
+});
