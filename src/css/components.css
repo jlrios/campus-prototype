@@ -251,3 +251,147 @@
 .button-panel:active {
   transform: scale(0.96);
 }
+
+/*
+==============================
+Widgets
+==============================
+*/
+/* ================================
+   Notices widget
+   ================================ */
+
+.notices-widget {
+    width: 100%;
+}
+
+/* Widget header */
+
+.notices-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.notices-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #e25619;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.notices-title i {
+    font-size: 18px;
+}
+
+.notices-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: default;
+}
+
+.notices-link i {
+    font-size: 14px;
+}
+
+
+/* ================================
+   Notices list
+   ================================ */
+
+.notices-list {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Individual notice */
+
+.notice-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #e9ecef;
+}
+
+.notice-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+
+/* Colored indicator */
+
+.notice-indicator {
+    flex: 0 0 auto;
+
+    width: 8px;
+    height: 8px;
+
+    margin-top: 6px;
+
+    border-radius: 50%;
+}
+
+
+/* Notice colors */
+
+.notice-orange {
+    background-color: #e25619;
+}
+
+.notice-green {
+    background-color: #4b8b2b;
+}
+
+.notice-blue {
+    background-color: #607d8b;
+}
+
+
+/* Notice content */
+
+.notice-content {
+    min-width: 0;
+}
+
+.notice-title {
+    color: #263238;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+
+/* Date and time */
+
+.notice-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 7px;
+
+    color: #64748b;
+
+    font-size: 12px;
+    line-height: 1;
+}
+
+.notice-meta i {
+    font-size: 12px;
+}
