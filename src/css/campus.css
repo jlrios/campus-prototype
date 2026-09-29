@@ -159,3 +159,16 @@ Map legends.
   justify-content: center;
   gap: 0.4rem;
 }
+
+.camera-window {
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+
+/* .winbox.max {
+  border-radius: 0;
+}*/
+
+.camera-window.max {
+  border-radius: 0;
+}
