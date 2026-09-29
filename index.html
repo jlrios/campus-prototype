@@ -1,13 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="./src/css/components.css" />
     <link rel="stylesheet" href="./src/css/campus.css" />
     <link rel="stylesheet" href="./src/css/main.css" />
-    <link rel="stylesheet" href="./src/css/calendar.css">
+    <link rel="stylesheet" href="./src/css/calendar.css" />
     <script defer type="module" src="./src/js/sectors.js"></script>
     <script defer src="./src/js/components.js"></script>
     <script defer src="./src/js/navigation.js"></script>
@@ -58,24 +61,19 @@
         </div>
       </div>
 
-
-
-
-      
       <div class="right">
         <!-- Notifications -->
 
-<div class="utility-bar">
+        <div class="utility-bar">
+          <div class="weather">
+            <i class="fa-solid fa-sun"></i>
 
-                <div class="weather">
-                    <i class="fa-solid fa-sun"></i>
-
-                    <div>
-                        <strong>25 °C</strong>
-                        <small>Despejado | <i class="fa-solid fa-wind"></i>10 km/h</small>
-                    </div>
-                </div>
+            <div>
+              <strong>25 °C</strong>
+              <small>Despejado | <i class="fa-solid fa-wind"></i>10 km/h</small>
             </div>
+          </div>
+        </div>
         <a href="#" aria-label="Notificaciones">
           <img src="./public/icons/notification.svg" alt="" />
         </a>
@@ -151,149 +149,135 @@
           Widgets
           ==============================
           -->
-          
-          <div style="
-          
-            width: 350px;
-            padding:0 10px 10px;">
-            
-            <div style="width: 100%; padding:10px;
-            border:none; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border-radius: 10px;">
-            
-            <div class="notices-widget">
 
+        <div style="width: 350px; padding: 0 10px 10px; background: white;">
+          <div
+            style="
+              width: 100%;
+              padding: 10px;
+              border: none;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+              border-radius: 10px;
+            "
+          >
+            <div class="notices-widget">
               <!-- Widget header -->
               <div class="notices-header">
-          
-                  <div class="notices-title">
-                      <i class="fa-solid fa-bullhorn fa-2x"></i>
-                      <span>Avisos</span>
-                  </div>
-          
-                  <span class="notices-link">
-                      Ver todos
-                      <i class="fa-solid fa-chevron-right"></i>
-                  </span>
-          
+                <div class="notices-title">
+                  <i class="fa-solid fa-bullhorn fa-2x"></i>
+                  <span>Avisos</span>
+                </div>
+
+                <span class="notices-link">
+                  Ver todos
+                  <i class="fa-solid fa-chevron-right"></i>
+                </span>
               </div>
-          
+
               <!-- Notices list -->
               <div class="notices-list">
-          
-                  <!-- Notice -->
-                  <div class="notice-item">
-          
-                      <span class="notice-indicator notice-orange"></span>
-          
-                      <div class="notice-content">
-          
-                          <div class="notice-title">
-                              Junta de padres de familia
-                          </div>
-          
-                          <div class="notice-meta">
-                              <i class="fa-regular fa-calendar"></i>
-                              <span>25 sep. · 17:00 h</span>
-                          </div>
-          
-                      </div>
-          
+                <!-- Notice -->
+                <div class="notice-item">
+                  <span class="notice-indicator notice-orange"></span>
+
+                  <div class="notice-content">
+                    <div class="notice-title">Junta de padres de familia</div>
+
+                    <div class="notice-meta">
+                      <i class="fa-regular fa-calendar"></i>
+                      <span>25 sep. · 17:00 h</span>
+                    </div>
                   </div>
-          
-                  <!-- Notice -->
-                  <div class="notice-item">
-          
-                      <span class="notice-indicator notice-green"></span>
-          
-                      <div class="notice-content">
-          
-                          <div class="notice-title">
-                              Honores a la Bandera
-                          </div>
-          
-                          <div class="notice-meta">
-                              <i class="fa-regular fa-calendar"></i>
-                              <span>29 sep. · 08:00 h</span>
-                          </div>
-          
-                      </div>
-          
+                </div>
+
+                <!-- Notice -->
+                <div class="notice-item">
+                  <span class="notice-indicator notice-green"></span>
+
+                  <div class="notice-content">
+                    <div class="notice-title">Honores a la Bandera</div>
+
+                    <div class="notice-meta">
+                      <i class="fa-regular fa-calendar"></i>
+                      <span>29 sep. · 08:00 h</span>
+                    </div>
                   </div>
-          
-                  <!-- Notice -->
-                  <div class="notice-item">
-          
-                      <span class="notice-indicator notice-blue"></span>
-          
-                      <div class="notice-content">
-          
-                          <div class="notice-title">
-                              Reunión de docentes
-                          </div>
-          
-                          <div class="notice-meta">
-                              <i class="fa-regular fa-calendar"></i>
-                              <span>2 oct. · 14:00 h</span>
-                          </div>
-          
-                      </div>
-          
+                </div>
+
+                <!-- Notice -->
+                <div class="notice-item">
+                  <span class="notice-indicator notice-blue"></span>
+
+                  <div class="notice-content">
+                    <div class="notice-title">Reunión de docentes</div>
+
+                    <div class="notice-meta">
+                      <i class="fa-regular fa-calendar"></i>
+                      <span>2 oct. · 14:00 h</span>
+                    </div>
                   </div>
-          
+                </div>
               </div>
-          
-          </div>  
-
-
-
-
-
             </div>
-
-<div class="calendar">
-    <div class="calendar-header">
-      <button onclick="previousMonth();">
-        <i class="fa-solid fa-arrow-left"></i>
-      </button> 
-      <h2 id="month-year">Mes</h2>
-      <button onclick="nextMonth();">
-        <i class="fa-solid fa-arrow-right"></i>
-      </button>
-    </div>
-    <div class="day-names">
-      <div>D</div>
-      <div>L</div>
-      <div>M</div>
-      <div>M</div>
-      <div>J</div>
-      <div>V</div>
-      <div>S</div>
-    </div>
-    <div id="calendar-days" class="days">
-      <div class="today">1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-      <div>5</div>
-      <div>6</div>
-      <div>7</div>
-    </div>
-  </div>
-            
           </div>
-          
-        
+
+          <div class="calendar">
+            <div class="calendar-header">
+              <button onclick="previousMonth()">
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+              <h2 id="month-year">Mes</h2>
+              <button onclick="nextMonth()">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+            <div class="day-names">
+              <div>D</div>
+              <div>L</div>
+              <div>M</div>
+              <div>M</div>
+              <div>J</div>
+              <div>V</div>
+              <div>S</div>
+            </div>
+            <div id="calendar-days" class="days">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+            </div>
+          </div>
+        </div>
+
         <div id="navigation-left" class="slide-map-button">
           <i id="nav-map-left" class="fa-solid fa-angle-left fa-2x"></i>
         </div>
 
         <div class="map-area">
-          <div style="border:1px solid #000; border-radius:6px; padding:5px; display: flex; justify-content: space-between; margin-bottom:20px; box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.3);">
-            <div style="display: flex; align-items:center; gap:0.5rem;">
-              <i class="fa-solid fa-school-flag fa-2x" style="color:#e25619;"></i>
-              <span style="color:#333;">
-                <strong>Campus > Sector H > Edificio principal > Planta baja</strong>
+        <!--
+          <div
+            style="
+              border: 1px solid #000;
+              border-radius: 6px;
+              padding: 5px;
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 20px;
+              box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.3);
+            "
+          >
+            <div style="display: flex; align-items: center; gap: 0.5rem">
+              <i
+                class="fa-solid fa-school-flag fa-2x"
+                style="color: #e25619"
+              ></i>
+              <span style="color: #333">
+                <strong
+                  >Campus > Sector H > Edificio principal > Planta baja</strong
+                >
               </span>
             </div>
             <div>
@@ -307,60 +291,46 @@
               </button>
             </div>
           </div>
-
+          -->
           <!--
           ==============================
           Map render.
           ==============================
           -->
-          <div id="sector-map" class="sector-map"></div> 
+          <div id="sector-map" class="sector-map"></div>
           <!-- End map render -->
 
+          <!--
           <div class="map-legend">
-            <div class="legend-item"> 
-              <i class="fa-solid fa-square fa-2x" style="color:#A4C4EF;"></i>
-              <span class="legend-color">
-                Biblioteca
-              </span>
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #a4c4ef"></i>
+              <span class="legend-color"> Biblioteca </span>
             </div>
             <div class="legend-item">
-              <i class="fa-solid fa-square fa-2x" style="color: #9DE0C7;"></i>
-              <span>
-                Oficinas admvas.
-              </span>
+              <i class="fa-solid fa-square fa-2x" style="color: #9de0c7"></i>
+              <span> Oficinas admvas. </span>
             </div>
             <div class="legend-item">
-              <i class="fa-solid fa-square fa-2x" style="color:#E0E4EB;"></i>
-              <span>
-                Intendencia y mtto.
-              </span>
+              <i class="fa-solid fa-square fa-2x" style="color: #e0e4eb"></i>
+              <span> Intendencia y mtto. </span>
             </div>
             <div class="legend-item">
-              <i class="fa-solid fa-square fa-2x" style="color: #FED274"></i>
-              <span>
-                Laboratorios y aulas
-              </span>
+              <i class="fa-solid fa-square fa-2x" style="color: #fed274"></i>
+              <span> Laboratorios y aulas </span>
             </div>
             <div class="legend-item">
-              <i class="fa-solid fa-square fa-2x" style="color:#9DD1F6;"></i>
-              <span>
-                Sanitarios H.
-              </span>
-            </div> 
-            <div class="legend-item">
-              <i class="fa-solid fa-square fa-2x" style="color: #FDA4A7;"></i>
-              <span>
-                Sanitarios M.
-              </span>
-            </div>  
-            <div class="legend-item">
-              <i class="fa-solid fa-square fa-2x" style="color: #CBBFF3"></i>
-              <span>
-                Sistemas
-              </span>
+              <i class="fa-solid fa-square fa-2x" style="color: #9dd1f6"></i>
+              <span> Sanitarios H. </span>
             </div>
-          </div>
-          
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #fda4a7"></i>
+              <span> Sanitarios M. </span>
+            </div>
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #cbbff3"></i>
+              <span> Sistemas </span>
+            </div>
+          </div>-->
         </div>
 
         <div id="navigation-right" class="slide-map-button">
@@ -607,14 +577,16 @@
             <img
               src="./src/assets/images/no-information.svg"
               alt=""
-              style="width: 240px; height: auto; margin-top: 50px;"
+              style="width: 240px; height: auto; margin-top: 50px"
             />
             <div style="text-align: left; padding: 30px">
               <p>
-                El Campus Interactivo es una aplicación parcial desarrollada con fines demostrativos. 
-                Su funcionalidad se limita a presentar, de manera representativa, las características 
-                y el tipo de funcionalidades que integrará la aplicación de producción.   </p>
-              <br>
+                El Campus Interactivo es una aplicación parcial desarrollada con
+                fines demostrativos. Su funcionalidad se limita a presentar, de
+                manera representativa, las características y el tipo de
+                funcionalidades que integrará la aplicación de producción.
+              </p>
+              <br />
               <p>
                 Seleccione el <strong>Sector H</strong> si desea probar las
                 funcionalidad disponible.
@@ -636,24 +608,25 @@
         </div>
       </template>
       <template id="empty-state">
-      <div style="display: grid; margin-top: 50px;">
-        <div
-          style="align-self: center; justify-self: center; text-align: center;"
-        >
-        <img
-          src="./src/assets/images/select-sector.svg"
-          alt=""
-          style="width: 280px; height: auto"
-        />
-        <h3 style="margin-top: 50px;">Seleccione un sector</h3>
-        <div style="text-align: left; padding: 15px">
-          <p>
-            Pase el puntero sobre el mapa para explorar los sectores. Haga clic en un sector para visualizar su información.
-          </p>
+        <div style="display: grid; margin-top: 50px">
+          <div
+            style="align-self: center; justify-self: center; text-align: center"
+          >
+            <img
+              src="./src/assets/images/select-sector.svg"
+              alt=""
+              style="width: 280px; height: auto"
+            />
+            <h3 style="margin-top: 50px">Seleccione un sector</h3>
+            <div style="text-align: left; padding: 15px">
+              <p>
+                Pase el puntero sobre el mapa para explorar los sectores. Haga
+                clic en un sector para visualizar su información.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>     
-      </div> 
-    </template>
+      </template>
     </aside>
     <!-- 
     ===========================
@@ -661,16 +634,40 @@
     ===========================
     -->
     <template id="empty-state-map">
-      <div style="vertical-align: middle; width: 1280px; height:720px; display:grid; place-items:center;">
+      <div
+        style="
+          vertical-align: middle;
+          width: 1280px;
+          height: 720px;
+          display: grid;
+          place-items: center;
+        "
+      >
         <h2>Campus > Sector H > Cooperativa</h2>
         <h3>Mapa no implementado</h3>
-        <img src="./src/assets/images/building_burz.svg" alt="" style="width: 384px;">
-        <div style="display: flex; align-items:center; gap: 10px; width: 45%; background: #E6F4D7; padding: 10px; border:1px solid #3E6D35; border-radius: 6px;">
-          <i class="fa-solid fa-circle-info fa-2x" style="color: #3E6D35"></i>
-          <p style="color:#333">
-            El Campus Interactivo es una aplicación parcial desarrollada con fines demostrativos. 
-            Su funcionalidad se limita a presentar, de manera representativa, las características 
-            y el tipo de funcionalidades que integrará la aplicación de producción.
+        <img
+          src="./src/assets/images/building_burz.svg"
+          alt=""
+          style="width: 384px"
+        />
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 45%;
+            background: #e6f4d7;
+            padding: 10px;
+            border: 1px solid #3e6d35;
+            border-radius: 6px;
+          "
+        >
+          <i class="fa-solid fa-circle-info fa-2x" style="color: #3e6d35"></i>
+          <p style="color: #333">
+            El Campus Interactivo es una aplicación parcial desarrollada con
+            fines demostrativos. Su funcionalidad se limita a presentar, de
+            manera representativa, las características y el tipo de
+            funcionalidades que integrará la aplicación de producción.
           </p>
         </div>
       </div>

@@ -37,8 +37,8 @@
 
 .day-names div {
     padding: 10px 0;
-    font-weight: bold;
-    color: gray;
+    font-weight: bolder;
+    color: #333;
 }
 
 .days div {
@@ -50,12 +50,12 @@
 }
 
 .days div:hover {
-    background-color: orange;
-    color: white;
+    background-color: #E7F1E2;
+    color: #333;
 }
 
 .today {
-    background: yellowgreen;
+    background: #d6e9bc;
 }
 
 .empty:hover {
