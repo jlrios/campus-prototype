@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="./src/css/components.css" />
     <link rel="stylesheet" href="./src/css/campus.css" />
     <link rel="stylesheet" href="./src/css/main.css" />
+    <link rel="stylesheet" href="./src/css/calendar.css">
     <script defer type="module" src="./src/js/sectors.js"></script>
     <script defer src="./src/js/components.js"></script>
     <script defer src="./src/js/navigation.js"></script>
+    <script defer src="./src/dist/winbox.bundle.min.js"></script>
     <title>Plantel 20 Oriente - Campus interactivo</title>
   </head>
   <body>
@@ -56,8 +58,24 @@
         </div>
       </div>
 
+
+
+
+      
       <div class="right">
         <!-- Notifications -->
+
+<div class="utility-bar">
+
+                <div class="weather">
+                    <i class="fa-solid fa-sun"></i>
+
+                    <div>
+                        <strong>25 °C</strong>
+                        <small>Despejado · 10 km/h</small>
+                    </div>
+                </div>
+            </div>
         <a href="#" aria-label="Notificaciones">
           <img src="./public/icons/notification.svg" alt="" />
         </a>
@@ -136,11 +154,12 @@
           
           <div style="
           
-            width: 320px;
+            width: 350px;
             padding:0 10px 10px;">
             
             <div style="width: 100%; padding:10px;
-            border:1px solid #000; border-radius: 6px;">
+            border:none; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;">
             
             <div class="notices-widget">
 
@@ -148,7 +167,7 @@
               <div class="notices-header">
           
                   <div class="notices-title">
-                      <i class="fa-solid fa-bullhorn"></i>
+                      <i class="fa-solid fa-bullhorn fa-2x"></i>
                       <span>Avisos</span>
                   </div>
           
@@ -228,18 +247,49 @@
 
 
 
+
+
             </div>
 
-
+<div class="calendar">
+    <div class="calendar-header">
+      <button onclick="previousMonth();">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button> 
+      <h2 id="month-year">Mes</h2>
+      <button onclick="nextMonth();">
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+    <div class="day-names">
+      <div>D</div>
+      <div>L</div>
+      <div>M</div>
+      <div>M</div>
+      <div>J</div>
+      <div>V</div>
+      <div>S</div>
+    </div>
+    <div id="calendar-days" class="days">
+      <div class="today">1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+    </div>
+  </div>
             
           </div>
+          
         
         <div id="navigation-left" class="slide-map-button">
           <i id="nav-map-left" class="fa-solid fa-angle-left fa-2x"></i>
         </div>
 
         <div class="map-area">
-          <!--<div style="border:1px solid #000; border-radius:6px; padding:5px; display: flex; justify-content: space-between; margin-bottom:20px; box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.3);">
+          <div style="border:1px solid #000; border-radius:6px; padding:5px; display: flex; justify-content: space-between; margin-bottom:20px; box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.3);">
             <div style="display: flex; align-items:center; gap:0.5rem;">
               <i class="fa-solid fa-school-flag fa-2x" style="color:#e25619;"></i>
               <span style="color:#333;">
@@ -256,7 +306,7 @@
                 Planta alta
               </button>
             </div>
-          </div>-->
+          </div>
 
           <!--
           ==============================
@@ -266,7 +316,7 @@
           <div id="sector-map" class="sector-map"></div> 
           <!-- End map render -->
 
-          <!--<div class="map-legend">
+          <div class="map-legend">
             <div class="legend-item"> 
               <i class="fa-solid fa-square fa-2x" style="color:#A4C4EF;"></i>
               <span class="legend-color">
@@ -309,7 +359,7 @@
                 Sistemas
               </span>
             </div>
-          </div>-->
+          </div>
           
         </div>
 
