@@ -45,10 +45,14 @@ let date = new Date();
 function showCalendar() {
   const year = date.getFullYear();
   const month = date.getMonth();
+  
   const firstDay = new Date(year, month, 1).getDay();
   const lastDate = new Date(year, month + 1, 0).getDate();
 
+console.log(lastDate);
+
   calendarDays.innerHTML = "";
+
   monthYear.innerText = `${date.toLocaleDateString("default", {
     month: "long",
   })} ${year}`;
