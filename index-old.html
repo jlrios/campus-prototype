@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./src/css/components.css" />
+    <link rel="stylesheet" href="./src/css/campus.css" />
+    <link rel="stylesheet" href="./src/css/main.css" />
+    <link rel="stylesheet" href="./src/css/calendar.css" />
+    <script defer type="module" src="./src/js/sectors.js"></script>
+    <script defer src="./src/js/components.js"></script>
+    <script defer src="./src/js/navigation.js"></script>
+    <script defer src="./src/dist/winbox.bundle.min.js"></script>
+    <title>Plantel 20 Oriente - Campus interactivo</title>
+  </head>
+  <body>
+    <!--
+    ===========================
+    Header
+    ============================
+    -->
+    <header>
+      <div class="left">
+        <!-- Menu button -->
+        <button
+          id="menu"
+          class="menu"
+          aria-label="Abrir menú lateral"
+          aria-expanded="false"
+          aria-controls="sidebar"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <!-- Brand -->
+        <a href="/" class="brand">
+          <img
+            src="./public/icons/dragon.svg"
+            alt="Dragon Campus"
+            class="logo"
+          />
+          <span class="name">Campus 20 Oriente</span>
+        </a>
+      </div>
+      <div class="center">
+        <div class="input-search">
+          <input
+            type="text"
+            placeholder="Buscar aula, docente, alumno..."
+            spellcheck="false"
+            autocomplete="off"
+          />
+          <button>
+            <i class="fa-solid fa-magnifying-glass fa-2x"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="right">
+        <!-- Notifications -->
+
+        <div class="utility-bar">
+          <div class="weather">
+            <i class="fa-solid fa-sun"></i>
+
+            <div>
+              <strong>25 °C</strong>
+              <small>Despejado | <i class="fa-solid fa-wind"></i>10 km/h</small>
+            </div>
+          </div>
+        </div>
+        <a href="#" aria-label="Notificaciones">
+          <img src="./public/icons/notification.svg" alt="" />
+        </a>
+        <!-- User avatar -->
+        <img
+          src="./public/icons/user.svg"
+          alt="Perfil del usuario"
+          class="user"
+        />
+        <!-- Open panel button -->
+        <button
+          class="info-panel-button"
+          aria-controls="info-panel"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-table-columns fa-2x"></i>
+        </button>
+      </div>
+    </header>
+    <!-- 
+    ============================
+    Sidebar
+    ============================
+    -->
+    <aside id="sidebar" class="sidebar">
+      <nav aria-label="Navegación principal">
+        <ul>
+          <li>
+            <a id="campus-home" href="#" class="selected" aria-current="page">
+              <img src="./public/icons/home.svg" alt="" />
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./public/icons/tools.svg" alt="" />
+              <span>Configuración</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./public/icons/sun.svg" alt="" />
+              <span>Tema</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./public/icons/book.svg" alt="" />
+              <span>Ayuda</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./public/icons/information.svg" alt="" />
+              <span>Acerca de</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- ===========================
+    Main content
+    ============================ -->
+    <main id="main">
+      <!--
+      ===========================
+      Maps
+      ============================
+      -->
+      <div class="map-container">
+        <!-- 
+          ==============================
+          Widgets
+          ==============================
+          -->
+
+        <div style="width: 350px; padding: 0 10px 10px; background: white">
+          <div
+            style="
+              width: 100%;
+              padding: 10px;
+              border: none;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+              border-radius: 10px;
+            "
+          >
+            <div class="notices-widget">
+              <!-- Widget header -->
+              <div class="notices-header">
+                <div class="notices-title">
+                  <i class="fa-solid fa-bullhorn fa-2x"></i>
+                  <span>Avisos</span>
+                </div>
+
+                <span class="notices-link">
+                  Ver todos
+                  <i class="fa-solid fa-chevron-right"></i>
+                </span>
+              </div>
+
+              <!-- Notices list -->
+              <div class="notices-list">
+                <!-- Notice -->
+                <div class="notice-item">
+                  <span class="notice-indicator notice-orange"></span>
+
+                  <div class="notice-content">
+                    <div class="notice-title">Junta de padres de familia</div>
+
+                    <div class="notice-meta">
+                      <i class="fa-regular fa-calendar"></i>
+                      <span>25 sep. · 17:00 h</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Notice -->
+                <div class="notice-item">
+                  <span class="notice-indicator notice-green"></span>
+
+                  <div class="notice-content">
+                    <div class="notice-title">Honores a la Bandera</div>
+
+                    <div class="notice-meta">
+                      <i class="fa-regular fa-calendar"></i>
+                      <span>29 sep. · 08:00 h</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Notice -->
+                <div class="notice-item">
+                  <span class="notice-indicator notice-blue"></span>
+
+                  <div class="notice-content">
+                    <div class="notice-title">Reunión de docentes</div>
+
+                    <div class="notice-meta">
+                      <i class="fa-regular fa-calendar"></i>
+                      <span>2 oct. · 14:00 h</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="calendar">
+            <div class="calendar-header">
+              <button onclick="previousMonth()">
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+              <h2 id="month-year">Mes</h2>
+              <button onclick="nextMonth()">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+            <div class="day-names">
+              <div>D</div>
+              <div>L</div>
+              <div>M</div>
+              <div>M</div>
+              <div>J</div>
+              <div>V</div>
+              <div>S</div>
+            </div>
+            <div id="calendar-days" class="days">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="navigation-left" class="slide-map-button">
+          <i id="nav-map-left" class="fa-solid fa-angle-left fa-2x"></i>
+        </div>
+
+        <div class="map-area">
+          <!--
+          <div
+            style="
+              border: 1px solid #000;
+              border-radius: 6px;
+              padding: 5px;
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 20px;
+              box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.3);
+            "
+          >
+            <div style="display: flex; align-items: center; gap: 0.5rem">
+              <i
+                class="fa-solid fa-school-flag fa-2x"
+                style="color: #e25619"
+              ></i>
+              <span style="color: #333">
+                <strong
+                  >Campus > Sector H > Edificio principal > Planta baja</strong
+                >
+              </span>
+            </div>
+            <div>
+              <button id="ground-floor" class="change-floor-button">
+                <i class="fa-solid fa-turn-down"></i>
+                Planta baja
+              </button>
+              <button id="upper-floor" class="change-floor-button">
+                <i class="fa-solid fa-turn-up"></i>
+                Planta alta
+              </button>
+            </div>
+          </div>
+          -->
+          <!--
+          ==============================
+          Map render.
+          ==============================
+          -->
+          <div id="sector-map" class="sector-map"></div>
+          <!-- End map render -->
+
+          <!--
+          <div class="map-legend">
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #a4c4ef"></i>
+              <span class="legend-color"> Biblioteca </span>
+            </div>
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #9de0c7"></i>
+              <span> Oficinas admvas. </span>
+            </div>
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #e0e4eb"></i>
+              <span> Intendencia y mtto. </span>
+            </div>
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #fed274"></i>
+              <span> Laboratorios y aulas </span>
+            </div>
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #9dd1f6"></i>
+              <span> Sanitarios H. </span>
+            </div>
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #fda4a7"></i>
+              <span> Sanitarios M. </span>
+            </div>
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #cbbff3"></i>
+              <span> Sistemas </span>
+            </div>
+          </div>-->
+        </div>
+
+        <div id="navigation-right" class="slide-map-button">
+          <i id="nav-map-right" class="fa-solid fa-angle-right fa-2x"></i>
+        </div>
+      </div>
+
+      <dialog id="imageViewer" class="image-viewer">
+        <button
+          class="image-viewer__close"
+          type="button"
+          aria-label="Cerrar imagen"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="viewerImage" class="image-viewer__image" src="" alt="" />
+        <footer class="image-viewer__footer">
+          <p id="viewerCaption"></p>
+        </footer>
+      </dialog>
+      <div id="sector-toast" class="sector-toast">
+        <div class="sector-icon">
+          <i class="fa-regular fa-building fa-2x"></i>
+        </div>
+        <div class="sector-text">
+          <h3>Sector H</h3>
+          <p>Edificio principal usos múltiples</p>
+        </div>
+      </div>
+    </main>
+    <!-- ===========================
+      Information panel
+    ============================ -->
+    <aside id="info-panel" class="info-panel" aria-labelledby="panel-title">
+      <button class="panel-close-button" aria-label="Cerrar panel">
+        &times;
+      </button>
+      <div class="panel-container"></div>
+      <template id="panel-h">
+        <div class="panel-header">
+          <div class="panel-title">
+            <i class="fa-regular fa-building fa-2x"></i>
+            <div class="panel-title-text">
+              <h2>Sector H (sector principal)</h2>
+              <span>Información general</span>
+            </div>
+          </div>
+        </div>
+        <section class="wrapper-tabs">
+          <h3>Servicios e instalaciones</h3>
+          <nav class="panel-tabs">
+            <input
+              type="radio"
+              class="panel-tabs-radio"
+              name="tabs-sector-h"
+              checked
+              id="information"
+            />
+            <label for="information" class="tabs-label"
+              ><i class="fa-regular fa-circle-question"></i>Información</label
+            >
+            <div class="tabs-content">
+              El Sector H es el área principal del plantel. Integra el Edificio
+              H, el Taller de Mantenimiento y un espacio de cafetería al aire
+              libre. A continuación, encontrará las instalaciones y servicios
+              disponibles en este sector.
+              <section class="services-grid">
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-utensils"></i>
+                  </div>
+                  <span>Espacio de cafetería</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-desktop"></i>
+                  </div>
+                  <span>Laboratorio de cómputo</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-flask"></i>
+                  </div>
+                  <span>Laboratorio de ciencias</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-restroom"></i>
+                  </div>
+                  <span>Sanitarios</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-money-check-dollar"></i>
+                  </div>
+                  <span>Finanzas</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-users"></i>
+                  </div>
+                  <span>Subdirección</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-box-archive"></i>
+                  </div>
+                  <span>Bodega</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-box-archive"></i>
+                  </div>
+                  <span>Intendencia</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-broom"></i>
+                  </div>
+                  <span>Aula de matenimiento</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-building-columns"></i>
+                  </div>
+                  <span>Dirección</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-address-card"></i>
+                  </div>
+                  <span>Servicios escolares</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-regular fa-clipboard"></i>
+                  </div>
+                  <span>Control académico</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                  </div>
+                  <span>Biblioteca</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                  </div>
+                  <span>Prefectura</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-chalkboard"></i>
+                  </div>
+                  <span>Aulas de la H1 a la H8</span>
+                </div>
+                <div>
+                  <button class="button-panel" id="expand-sector-h">
+                    <i class="fa-solid fa-expand fa-2x"></i>
+                    Ver a detalle
+                  </button>
+                </div>
+              </section>
+            </div>
+            <input
+              type="radio"
+              class="panel-tabs-radio"
+              name="tabs-sector-h"
+              id="gallery"
+            />
+            <label for="gallery" class="tabs-label">
+              <i class="fa-regular fa-image"></i>Galería
+            </label>
+            <!-- Panl tab gallery-->
+            <div class="tabs-content">
+              <section>
+                <div class="panel-gallery">
+                  <img
+                    src="./src/assets/images/gallery/thumbnails/plantel-20-01-m.png"
+                    alt=""
+                    onclick="
+                      openImage(
+                        './src/assets/images/gallery/pictures/plantel-20-01.png',
+                        'Fachada principal del edificio H. Cuenta con laboratorios, aulas, sanitarios, biblioteca y oficinas administrativas.',
+                        'Edificio H',
+                      )
+                    "
+                  />
+                  <img
+                    src="./src/assets/images/gallery/thumbnails/plantel-20-02-m.png"
+                    alt=""
+                  />
+                  <img
+                    src="./src/assets/images/gallery/thumbnails/plantel-20-04-m.png"
+                    alt=""
+                  />
+                  <img
+                    src="./src/assets/images/gallery/thumbnails/plantel-20-05-m.png"
+                    alt=""
+                  />
+                  <img
+                    src="./src/assets/images/gallery/thumbnails/plantel-20-03-m.png"
+                    alt=""
+                  />
+                  <img
+                    src="./src/assets/images/gallery/thumbnails/plantel-20-08-m.png"
+                    alt=""
+                  />
+                  <img
+                    src="./src/assets/images/gallery/thumbnails/plantel-20-07-m.png"
+                    alt=""
+                  />
+                  <img
+                    src="./src/assets/images/gallery/thumbnails/plantel-20-09-m.png"
+                    alt=""
+                  />
+                  <img
+                    src="./src/assets/images/gallery/thumbnails/plantel-20-10-m.png"
+                    alt=""
+                  />
+                </div>
+              </section>
+            </div>
+          </nav>
+        </section>
+      </template>
+      <template id="not-implemented">
+        <div class="panel-header">
+          <div class="panel-title">
+            <i class="fa-regular fa-building fa-2x"></i>
+            <div class="panel-title-text">
+              <h2></h2>
+              <span>Información general</span>
+            </div>
+          </div>
+        </div>
+        <div style="display: grid; margin-top: 50px">
+          <div
+            style="align-self: center; justify-self: center; text-align: center"
+          >
+            <h2>No hay información para mostrar</h2>
+            <h3>Funcionalidad no implementada</h3>
+            <img
+              src="./src/assets/images/no-information.svg"
+              alt=""
+              style="width: 240px; height: auto; margin-top: 50px"
+            />
+            <div style="text-align: left; padding: 30px">
+              <p>
+                El Campus Interactivo es una aplicación parcial desarrollada con
+                fines demostrativos. Su funcionalidad se limita a presentar, de
+                manera representativa, las características y el tipo de
+                funcionalidades que integrará la aplicación de producción.
+              </p>
+              <br />
+              <p>
+                Seleccione el <strong>Sector H</strong> si desea probar las
+                funcionalidad disponible.
+              </p>
+              <div
+                style="
+                  margin-top: 20px;
+                  width: 100%;
+                  justify-content: center;
+                  display: flex;
+                "
+              >
+                <button class="button-panel">
+                  <i class="fa-regular fa-map fa-2x"></i>Ir al sector H
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+      <template id="empty-state">
+        <div style="display: grid; margin-top: 50px">
+          <div
+            style="align-self: center; justify-self: center; text-align: center"
+          >
+            <img
+              src="./src/assets/images/select-sector.svg"
+              alt=""
+              style="width: 280px; height: auto"
+            />
+            <h3 style="margin-top: 50px">Seleccione un sector</h3>
+            <div style="text-align: left; padding: 15px">
+              <p>
+                Pase el puntero sobre el mapa para explorar los sectores. Haga
+                clic en un sector para visualizar su información.
+              </p>
+            </div>
+          </div>
+        </div>
+      </template>
+    </aside>
+    <!-- 
+    ===========================
+    Templates.
+    ===========================
+    -->
+    <template id="empty-state-map">
+      <div
+        style="
+          vertical-align: middle;
+          width: 1280px;
+          height: 720px;
+          display: grid;
+          place-items: center;
+        "
+      >
+        <h2>Campus > Sector H > Cooperativa</h2>
+        <h3>Mapa no implementado</h3>
+        <img
+          src="./src/assets/images/building_burz.svg"
+          alt=""
+          style="width: 384px"
+        />
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 45%;
+            background: #e6f4d7;
+            padding: 10px;
+            border: 1px solid #3e6d35;
+            border-radius: 6px;
+          "
+        >
+          <i class="fa-solid fa-circle-info fa-2x" style="color: #3e6d35"></i>
+          <p style="color: #333">
+            El Campus Interactivo es una aplicación parcial desarrollada con
+            fines demostrativos. Su funcionalidad se limita a presentar, de
+            manera representativa, las características y el tipo de
+            funcionalidades que integrará la aplicación de producción.
+          </p>
+        </div>
+      </div>
+    </template>
+  </body>
+</html>

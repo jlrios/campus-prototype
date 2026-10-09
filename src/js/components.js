@@ -1,4 +1,4 @@
-const imageViewer = document.getElementById("imageViewer");
+/*const imageViewer = document.getElementById("imageViewer");
 const viewerImage = document.getElementById("viewerImage");
 const viewerCaption = document.getElementById("viewerCaption");
 const closeButton = document.querySelector(".image-viewer__close");
@@ -30,7 +30,7 @@ imageViewer.addEventListener("click", (e) => {
   if (!inside) {
     imageViewer.close();
   }
-});
+});*/
 
 /*
 ==============================
@@ -57,8 +57,11 @@ console.log(lastDate);
     month: "long",
   })} ${year}`;
 
+  console.log(`First day: ${firstDay}`);
+
   for (let i = 0; i < firstDay; i++) {
-    calendarDays.innerHTML = '<div class="empty"></div>';
+    console.log(i);
+    calendarDays.innerHTML += '<div class="empty"></div>';
   }
 
   for (let d = 1; d <= lastDate; d++) {
@@ -68,6 +71,8 @@ console.log(lastDate);
       year === today.getFullYear() &&
       month === today.getMonth();
 
+      console.log(d);
+      
     calendarDays.innerHTML += `<div class="${isToday ? "today" : ""}">${d}</div>`;
   }
 }

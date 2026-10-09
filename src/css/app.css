@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+:root {
+    --background-app: #E6F4D7;
+    --border-component: #DCDCDC;
+    --sidebar-a: #333;
+    --sidebar-a-hover: #DCDCDC;
+    --side-menu: #FFF;
+    --title-text: #1C1C1C;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-app);
+    display: grid;
+    font-family: "Nunito Sans", sans-serif;
+    grid-template-columns: 110px 1fr;
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: var(--side-menu);
+    border-right: 1px solid var(--border-component);
+    box-shadow: 4px 0 8px -3px rgba(0, 0, 0, 0.25);
+    left: 0;
+    min-height: 100vh;
+    padding: 10px 20px;
+    position: fixed;
+    transition: width 0.5s ease;
+    top: 0;
+    width: 90px;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    width: 240px;
+}
+
+/* Logo and menu button */
+.logo-content {
+    height: 50px;
+    position: relative;
+}
+
+.logo-content .logo {
+    align-items: center;
+    display: flex;
+    height: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    width: 100%;
+}
+
+.sidebar.active .logo-content .logo {
+    opacity: 1;
+}
+
+.logo-content .logo .logo-name {
+    font-size: 22px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.logo-content .fa-bars {
+    cursor: pointer;
+    font-size: 26px;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 50px;
+}
+
+/* Navigation */
+.sidebar ul {
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    height: 50px;
+    line-height: 50px;
+    list-style: none;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.sidebar ul li a {
+    align-items: center;
+    border-radius: 6px;
+    color: var(--sidebar-a);
+    display: flex;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: var(--sidebar-a-hover);
+    color: var(--sidebar-a);
+}
+
+.sidebar ul li a i {
+    border-radius: 10px;
+    font-size: 1.6rem;
+    height: 50px;
+    line-height: 50px;
+    min-width: 50px;
+    text-align: center;
+}
+
+/* Menu labels */
+.sidebar ul li a .link-menu {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    visibility: hidden;
+    white-space: nowrap;
+}
+
+.sidebar.active ul li a .link-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Tooltips */
+.sidebar ul li {
+    position: relative;
+}
+
+.sidebar ul li .tooltip {
+    background-color: var(--side-menu);
+    border-radius: 6px;
+    box-shadow: 4px 0 8px -3px rgba(0, 0, 0, 0.25);
+    color: var(--sidebar-a);
+    height: 40px;
+    left: 75px;
+    line-height: 40px;
+    opacity: 0;
+    padding: 0 10px;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    top: 5px;
+    transition: opacity 0.2s ease;
+    width: 150px;
+    white-space: nowrap;
+}
+
+.sidebar ul li:hover .tooltip {
+    opacity: 1;
+}
+
+.sidebar.active ul li:hover .tooltip {
+    opacity: 0;
+}
+
+/* Main */
+.container {
+    /*background-color: #DCDCDC;*/
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 10px;
+    width: 100%;
+}
+
+.top-bar {
+    align-items: center;
+    /*background-color: aqua;*/
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.column-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.column-content {
+    /*background-color: bisque;*/
+    /*flex: 1;*/
+    padding-top: 10px;
+}
