@@ -49,7 +49,6 @@ function showCalendar() {
   const firstDay = new Date(year, month, 1).getDay();
   const lastDate = new Date(year, month + 1, 0).getDate();
 
-console.log(lastDate);
 
   calendarDays.innerHTML = "";
 
@@ -57,10 +56,8 @@ console.log(lastDate);
     month: "long",
   })} ${year}`;
 
-  console.log(`First day: ${firstDay}`);
 
   for (let i = 0; i < firstDay; i++) {
-    console.log(i);
     calendarDays.innerHTML += '<div class="empty"></div>';
   }
 
@@ -71,8 +68,7 @@ console.log(lastDate);
       year === today.getFullYear() &&
       month === today.getMonth();
 
-      console.log(d);
-      
+     
     calendarDays.innerHTML += `<div class="${isToday ? "today" : ""}">${d}</div>`;
   }
 }

@@ -64,14 +64,13 @@ await Promise.all([
 
 
 function showMap(map) {
-  console.log(map);
-
   mapArea.innerHTML = "";
   mapArea.innerHTML = getSVGMap(map);
 
-  initializeMapSignage();
-  
+  initializeMapSignage(); 
 }
+
+
 
 // Load main campus map /
 showMap(maps.C.id);

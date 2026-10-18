@@ -1,4 +1,4 @@
-.input-search {
+/*.input-search {
   display: flex;
   width: 75%;
 }
@@ -22,7 +22,7 @@
   border-radius: 50%;
   cursor: pointer;
   outline: none;
-}
+}*/
 
 /*
   Tabs
@@ -233,7 +233,7 @@
 .button-panel {
   /* border: 1px solid #c94a12; */
   border: none;
-  background: #f57e3a;
+  background-color: #64748B;
   padding: 8px;
   border-radius: 6px;
   color: #fff;

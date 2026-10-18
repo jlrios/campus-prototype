@@ -11,9 +11,12 @@
     <link rel="stylesheet" href="/src/css/header.css" />
     <link rel="stylesheet" href="/src/css/map.css" />
     <link rel="stylesheet" href="/src/css/widgets.css" />
+    <link rel="stylesheet" href="/src/css/components.css" />
     <script defer src="/src/js/app.js"></script>
     <script type="module" defer src="/src/js/campus.js"></script>
     <script defer src="/src/js/components.js"></script>
+    <script defer src="./src/dist/winbox.bundle.min.js"></script>
+
     <!--<script type="module" defer src="/src/js/map.js"></script>-->
     <title>Plantel 20 Oriente - Campus Interactivo</title>
   </head>
@@ -231,8 +234,9 @@
               font-size: larger;
             ">
             <i class=""></i>
-            PLANTEL 20 ORIENTE<i class="fa-solid fa-angle-right"></i>MAPA PRINCIPAL</div>
-            <div class="map-container">
+            PLANTEL 20 ORIENTE<i class="fa-solid fa-angle-right"></i>PLANO GENERAL
+          </div>
+            <div id="map-container" class="map-container">
               <div id="map-area" class="map-area"></div>
               <div>
               <div class="simbology-bar">
@@ -255,15 +259,31 @@
                     <input id="mp-signage" type="checkbox" class="toggle-check">    
                   </li>
                 </ul>
-                
-              </div>
+                <span>Opciones</span>
+                <button id="print-map" style="padding: 5px;gap: 5px; width: 100%; display: flex; justify-content: center;">
+                  <i class="fa-solid fa-print" style="font-size: 1.35rem;"></i>
+                </button>
+                <button id="print-map" style="padding: 5px;gap: 5px; width: 100%; display: flex; justify-content: center; margin-top: 10px;">
+                  <i class="fa-solid fa-file-pdf" style="font-size: 1.35rem"></i>
+                </button>
+                </div>
               </div>
             </div>
           </div>
           <!-- End map -->
-
         </div>
       </div>
     </main>
+    <div id="print-map-root">
+  <header class="map-print-header">
+    <h1>PLANTEL 20 ORIENTE > MAPA GENERAL</h1>
+    <p>Distribución de espacios e instalaciones</p>
+  </header>
+
+  <main id="print-map-content" class="map-print-content">
+    <!-- The cloned SVG will be inserted here -->
+  </main>
+</div>
+
   </body>
 </html>
