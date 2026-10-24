@@ -1,25 +1,36 @@
-.sector:hover rect {
+/*.sector:hover rect {
+  cursor: zoom-in;
+  stroke-width: 5;
+  opacity: 30%;
+}*/
+
+
+/*.sector-d:hover rect {
+  fill: #FFB74D;
+  stroke: #FFA726;
+}*/
+[data-cell-id^="sector-"]:hover rect {
   cursor: zoom-in;
   stroke-width: 5;
   opacity: 30%;
 }
 
-.sector-d:hover rect {
+[data-cell-id="sector-d"]:hover rect {
   fill: #FFB74D;
   stroke: #FFA726;
 }
 
-.sector-h:hover rect {
+[data-cell-id="sector-h"]:hover rect {
   fill: #2196F3;
   stroke: #1565C0;
 }
 
-.sector-c1:hover rect {
+[data-cell-id="sector-c1"]:hover rect {
   fill: #4CAF50;
   stroke: #388E3C;
 }
 
-.sector-c2:hover rect {
+[data-cell-id="sector-c2"]:hover rect {
   fill: var(--background-sector-c2);
   stroke: var(--border-sector-c2)
 }
@@ -30,7 +41,7 @@
   opacity: 30%;
 }
 
-.sector-m:hover rect {
+[data-cell-id="sector-m"]:hover rect {
   fill: #00BCD4;
   stroke: #00838F;
 }
@@ -49,7 +60,7 @@
   position: fixed;
   bottom: -150px;
   width: auto;
-  display: flex;
+  display: none;
   background-color: #000;
   padding: 15px;
   border-radius: 10px;
@@ -76,6 +87,7 @@
 }
 
 .sector-toast.active {
+  display: flex;
   bottom: 10px;
 }
 
@@ -94,7 +106,7 @@
   height: 720px;
 }
 
-.sector-map svg {
+/*.sector-map svg {
   display: block;
   width: 1280px;
   height: 720px;
@@ -108,7 +120,7 @@
 .sector-map svg.is-visible {
   opacity: 1;
   transform: translateY(0);
-}
+}*/
 
 .change-floor-button {
   background: #d6e9bc;

@@ -241,6 +241,7 @@
   font-size: 14px;
   font-weight: 400;
   transition: transform 0.2s ease;
+  margin-bottom: 10px;
   display: flex;
   gap: 8px;
   align-items: center;

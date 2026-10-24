@@ -1,16 +1,16 @@
 // Start loading maps /
 
 // Campus map
-import mainMap from "../../src/assets/maps/campus/campus-map.svg";
+//import mainMap from "../../src/assets/maps/campus/campus-map.svg";
 
 // Sector H
-import bldgHGrndMap from "../../src/assets/maps/sector-h/main-bldg-ground.svg";
-import bldgHUpperMap from "../../src/assets/maps/sector-h/main-bldg-upper.svg";
+//import bldgHGrndMap from "../../src/assets/maps/sector-h/main-bldg-ground.svg";
+//import bldgHUpperMap from "../../src/assets/maps/sector-h/main-bldg-upper.svg";
 
 // Campus sector data toasts
 import mainMapToasts from "../data/toast-sectors.json";
 
-let loadedMaps = {};
+// let loadedMaps = {};
 
 export const maps = {
   C: {
@@ -35,7 +35,7 @@ export const maps = {
   },
 };
 
-export async function loadSVGMap(mapId, mapSVG) {
+/*export async function loadSVGMap(mapId, mapSVG) {
   try {
     const resMap = await fetch(mapSVG);
 
@@ -65,10 +65,10 @@ await Promise.all([
     maps.H.mainBuilding.upperFloor.id,
     maps.H.mainBuilding.upperFloor.urlMap,
   ),
-]);
+]);*/
 // Finished loading maps /
 
-const sectorMap = document.getElementById("sector-map");
+/*const sectorMap = document.getElementById("sector-map");
 const sectorToast = document.querySelector(".sector-toast");
 const sectorSelected = document.querySelector("#sector-toast");
 
@@ -93,7 +93,7 @@ function showMap(map) {
   }
 }
 
-showMap(maps.C.id);
+showMap(maps.C.id);*/
 
 // Events main map (campus)
 const campusSVG = document.querySelector("svg");

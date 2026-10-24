@@ -8,6 +8,8 @@ import bldgHUpperMap from "../../src/assets/maps/sector-h/main-bldg-upper.svg";
 // Map functions /
 import { initializeMapSignage } from "./map.js"; 
 
+// Campus sector data toasts
+import mainMapToasts from "../data/toast-sectors.json";
 
 // Map area /
 const mapArea = document.getElementById("map-area");
@@ -70,7 +72,42 @@ function showMap(map) {
   initializeMapSignage(); 
 }
 
-
-
 // Load main campus map /
 showMap(maps.C.id);
+
+/*
+==============================
+Sector toasts
+==============================
+*/
+//const sectorMap = document.getElementById("sector-map");
+const sectorToast = document.querySelector(".sector-toast");
+const sectorSelected = document.querySelector("#sector-toast");
+
+const campusSVG = document.querySelector("svg");
+const title = sectorSelected.querySelector(".sector-text h3");
+const description = sectorSelected.querySelector(".sector-text p");
+const icon = sectorSelected.querySelector(".sector-icon i");
+
+campusSVG.addEventListener("pointerover", (e) => {
+  //const sector = e.target.closest(".sector");
+  const sector = e.target.closest('[data-cell-id^="sector-"]');
+
+  console.log(sector.getAttribute("data-cell-id"));
+
+  if (!sector) return;
+
+  //const sectorKey = sector.id.replace("sector-", "");
+  const sectorKey = sector.getAttribute("data-cell-id").replace("sector-", "");
+  const sectorData = mainMapToasts[sectorKey];
+
+  console.log(sectorData)
+
+  if (!sectorData) return;
+
+  title.textContent = sectorData.title;
+  description.textContent = sectorData.description;
+  icon.className = sectorData.icon;
+
+  sectorToast.classList.add("active");
+});

@@ -152,12 +152,13 @@ Signage
 ==============================
 */
 /* Hide signage visually while keeping it animatable */
-g[data-cell-id^="er-"],
-g[data-cell-id^="fe-"],
-g[data-cell-id^="ee-"],
+[data-cell-id^="er-"],
+[data-cell-id^="fe-"],
+[data-cell-id^="ee-"],
 [data-cell-id="no-01"],
 [data-cell-id="mp-01"],
 [data-cell-id="mp-02"] {
+  cursor: pointer;
   opacity: 0;
   visibility: hidden;
   transform: scale(0.9);
@@ -172,9 +173,9 @@ g[data-cell-id^="ee-"],
 }
 
 /* Show signage with a smooth transition */
-g[data-cell-id^="er-"].is-visible,
-g[data-cell-id^="fe-"].is-visible,
-g[data-cell-id^="ee-"].is-visible,
+[data-cell-id^="er-"].is-visible,
+[data-cell-id^="fe-"].is-visible,
+[data-cell-id^="ee-"].is-visible,
 [data-cell-id="no-01"].is-visible,
 [data-cell-id="mp-01"].is-visible,
 [data-cell-id="mp-02"].is-visible {
@@ -187,9 +188,9 @@ g[data-cell-id^="ee-"].is-visible,
 /* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
 
-  g[data-cell-id^="er-"],
-  g[data-cell-id^="fe-"],
-  g[data-cell-id^="ee-"],
+  [data-cell-id^="er-"],
+  [data-cell-id^="fe-"],
+  [data-cell-id^="ee-"],
   [data-cell-id="no-01"],
   [data-cell-id="mp-01"],
   [data-cell-id="mp-02"] {
@@ -283,9 +284,10 @@ Signage tooltips
   transform: translate(0, -50%);
 }*/
 
-/* Map preview window */
+/* Map preview modal window */
 .map-preview-window {
-  border-radius: 8px 8px 0 0;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .map-preview-window .wb-body {
@@ -316,6 +318,20 @@ Signage tooltips
     visibility: hidden !important;
   }
 
+  [data-cell-id="signage-icon-fe"].is-disabled, 
+  [data-cell-id="signage-text-fe"].is-disabled,
+  [data-cell-id="signage-icon-ee"].is-disabled,
+  [data-cell-id="signage-text-ee"].is-disabled,
+  [data-cell-id="signage-icon-mp"].is-disabled,
+  [data-cell-id="signage-text-mp"].is-disabled,
+  [data-cell-id="signage-icon-no"].is-disabled,
+  [data-cell-id="signage-text-no"].is-disabled,
+  [data-cell-id="signage-icon-er"].is-disabled,
+  [data-cell-id="signage-text-er"].is-disabled {
+    filter: grayscale(1);
+    opacity: 0.5;
+  }
+
   #print-map-root,
   #print-map-root * {
     visibility: visible !important;
@@ -324,11 +340,11 @@ Signage tooltips
   #print-map-root {
     display: flex !important;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 190mm;
+    height: 100%;
     box-sizing: border-box;
     overflow: hidden;
     background: #fff;
@@ -344,19 +360,22 @@ Signage tooltips
   }
 
   .map-print-header h1 {
-    margin: 0 0 2mm;
-    font-size: 18pt;
-    line-height: 1.2;
+    margin: 0 0 0.5mm;
+    font-size: 22pt;
   }
+
+    .map-print-header h2 {
+      font-size: 18pt;
+    }
 
   .map-print-header p {
     margin: 0;
-    font-size: 10pt;
+    font-size: 16pt;
     color: #555;
   }
 
   .map-print-content {
-    flex: 1 1 auto;
+    flex: 1 1 0;
     min-width: 0;
     min-height: 0;
     width: 100%;
@@ -367,10 +386,17 @@ Signage tooltips
     display: block;
     width: 100% !important;
     height: 100% !important;
-    max-width: 100%;
-    max-height: 100%;
+    max-width: none;
+    max-height: none;
   }
 }
+
+/*
+==============================
+Sectors pointerover
+==============================
+*/
+
 
 
 
