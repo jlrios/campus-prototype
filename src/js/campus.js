@@ -80,6 +80,7 @@ showMap(maps.C.id);
 Sector toasts
 ==============================
 */
+
 //const sectorMap = document.getElementById("sector-map");
 const sectorToast = document.querySelector(".sector-toast");
 const sectorSelected = document.querySelector("#sector-toast");
@@ -92,8 +93,6 @@ const icon = sectorSelected.querySelector(".sector-icon i");
 campusSVG.addEventListener("pointerover", (e) => {
   //const sector = e.target.closest(".sector");
   const sector = e.target.closest('[data-cell-id^="sector-"]');
-
-  console.log(sector.getAttribute("data-cell-id"));
 
   if (!sector) return;
 
@@ -110,4 +109,10 @@ campusSVG.addEventListener("pointerover", (e) => {
   icon.className = sectorData.icon;
 
   sectorToast.classList.add("active");
+});
+
+campusSVG.addEventListener("pointerout", (e) => {
+  const sector = e.target.closest(".sector");
+  if (!sector) return;
+  sectorToast.classList.remove("active");
 });
