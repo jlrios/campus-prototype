@@ -7,6 +7,17 @@ const mpSignCheck = document.getElementById("mp-signage");
 // Print button
 const printMapBtn = document.getElementById("print-map");
 
+  /*
+  ==============================
+  Check toggles flag variable 
+  ==============================
+  */
+let signageActive = null;
+
+const signageActiveInfo = document.querySelector('[data-cell-id="signage-active-info"]');
+
+console.log(signageActiveInfo);
+
 // Restore checkbox states from localStorage
 function restoreToggleState(checkbox) {
   const savedState = localStorage.getItem(checkbox.id);
@@ -64,6 +75,28 @@ export function initializeMapSignage() {
     mpSignage.forEach((signage) => {
       signage.classList.toggle("is-visible", mpSignCheck.checked);
     });
+
+    /*checkboxes.forEach((toggle) => {
+      if (toggle.checked === true) {
+        signageActive = true;
+        console.log(signageActive);
+        return false;
+      } else {
+        signageActive = false;
+        console.log(signageActive);
+      }
+    });*/
+    
+    signageActive = [...checkboxes].some((toggle) => toggle.checked);
+
+    
+
+    if (signageActive === true) {
+      console.log(signageActive);
+
+    } else {
+      console.log(signageActive);
+    }
   });
 
   // Fire extinguishers
@@ -106,7 +139,6 @@ export function initializeMapSignage() {
           <h2 style="color: #343D3A">Atención</h2>
         </div>
         <p style="margin-top: 20px; color: #343D3A;">
-      
           La señalética que haya sido habilitada en la vista del mapa principal, es 
           la misma que será visible en el mapa impreso.
         </p>
@@ -162,6 +194,12 @@ export function initializeMapSignage() {
         .querySelectorAll('[data-cell-id^="text-"]')
         .forEach((element) => element.remove());
 
+      clonedSvg.querySelector('[data-cell-id="explore-campus-text-box"]').style.display = "none";
+      clonedSvg.querySelector('[data-cell-id="explore-campus-icon"]').style.display = "none";
+
+
+
+      
       // Show signage active
       clonedSvg.querySelector('[data-cell-id="signage-title"]').style.display =
         "block";

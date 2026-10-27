@@ -158,7 +158,6 @@ Signage
 [data-cell-id="no-01"],
 [data-cell-id="mp-01"],
 [data-cell-id="mp-02"] {
-  cursor: pointer;
   opacity: 0;
   visibility: hidden;
   transform: scale(0.9);
@@ -287,10 +286,14 @@ Signage tooltips
 /* Map preview modal window */
 .map-preview-window {
   border-radius: 8px;
-  overflow: hidden;
+}
+
+.map-preview-window .wb-header {
+  border-radius: 8px 8px 0 0;
 }
 
 .map-preview-window .wb-body {
+  border-radius: 0 0 8px 8px;
   background-color: #ECEFF1;
   padding: 0 10px 0 10px; 
 }

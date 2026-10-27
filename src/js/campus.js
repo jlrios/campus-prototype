@@ -91,16 +91,18 @@ const description = sectorSelected.querySelector(".sector-text p");
 const icon = sectorSelected.querySelector(".sector-icon i");
 
 campusSVG.addEventListener("pointerover", (e) => {
-  //const sector = e.target.closest(".sector");
   const sector = e.target.closest('[data-cell-id^="sector-"]');
 
   if (!sector) return;
 
-  //const sectorKey = sector.id.replace("sector-", "");
-  const sectorKey = sector.getAttribute("data-cell-id").replace("sector-", "");
-  const sectorData = mainMapToasts[sectorKey];
+  const previousSector = e.relatedTarget?.closest?.(
+    '[data-cell-id^="sector-"]',
+  );
 
-  console.log(sectorData)
+  if (previousSector === sector) return;
+
+  const sectorKey = sector.dataset.cellId.replace("sector-", "");
+  const sectorData = mainMapToasts[sectorKey];
 
   if (!sectorData) return;
 
@@ -112,7 +114,41 @@ campusSVG.addEventListener("pointerover", (e) => {
 });
 
 campusSVG.addEventListener("pointerout", (e) => {
-  const sector = e.target.closest(".sector");
+  const sector = e.target.closest('[data-cell-id^="sector-"]');
+
   if (!sector) return;
+
+  const nextSector = e.relatedTarget?.closest?.('[data-cell-id^="sector-"]');
+
+  if (nextSector === sector) return;
+
   sectorToast.classList.remove("active");
 });
+
+
+/*campusSVG.addEventListener("pointerover", (e) => {
+  //const sector = e.target.closest(".sector");
+  const sector = e.target.closest('[data-cell-id^="sector-"]');
+
+  if (!sector) return;
+
+  //const sectorKey = sector.id.replace("sector-", "");
+  const sectorKey = sector.getAttribute("data-cell-id").replace("sector-", "");
+  const sectorData = mainMapToasts[sectorKey];
+
+  if (!sectorData) return;
+
+  title.textContent = sectorData.title;
+  description.textContent = sectorData.description;
+  icon.className = sectorData.icon;
+
+  sectorToast.classList.add("active");
+});
+
+campusSVG.addEventListener("pointeleave", (e) => {
+  const sector = e.target.closest('[data-cell-id^="sector-"]');
+
+  if (!sector) return;
+
+  sectorToast.classList.remove("active");
+});*/
