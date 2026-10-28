@@ -1,15 +1,15 @@
 // Campus map /
-import mainMap from "../../src/assets/maps/campus/main-map.svg";
+import mainMap from "./../../src/assets/maps/campus/main-map.svg";
 
 // Sector H maps /
-import bldgHGrndMap from "../../src/assets/maps/sector-h/main-bldg-ground.svg";
-import bldgHUpperMap from "../../src/assets/maps/sector-h/main-bldg-upper.svg";
+import bldgHGrndMap from "./../../src/assets/maps/sector-h/main-bldg-ground.svg";
+import bldgHUpperMap from "./../../src/assets/maps/sector-h/main-bldg-upper.svg";
 
 // Map functions /
 import { initializeMapSignage } from "./map.js"; 
 
 // Campus sector data toasts
-import mainMapToasts from "../data/toast-sectors.json";
+import mainMapToasts from "./../data/toast-sectors.json";
 
 // Map area /
 const mapArea = document.getElementById("map-area");
