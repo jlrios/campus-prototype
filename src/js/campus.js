@@ -1,5 +1,5 @@
 // Campus map /
-import mainMap from "./../../src/assets/maps/campus/main-map.svg";
+import mainMap from "./../../src/assets/maps/campus/main-map.svg?raw";
 
 // Sector H maps /
 import bldgHGrndMap from "./../../src/assets/maps/sector-h/main-bldg-ground.svg";
