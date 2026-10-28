@@ -16,7 +16,6 @@ let signageActive = null;
 
 const signageActiveInfo = document.querySelector('[data-cell-id="signage-active-info"]');
 
-console.log(signageActiveInfo);
 
 // Restore checkbox states from localStorage
 function restoreToggleState(checkbox) {

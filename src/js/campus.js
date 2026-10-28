@@ -6,7 +6,7 @@ import bldgHGrndMap from "./../../src/assets/maps/sector-h/main-bldg-ground.svg"
 import bldgHUpperMap from "./../../src/assets/maps/sector-h/main-bldg-upper.svg";
 
 // Map functions /
-import { initializeMapSignage } from "./map.js"; 
+import { initializeMapSignage } from "./map.js";
 
 // Campus sector data toasts
 import mainMapToasts from "./../data/toast-sectors.json";
@@ -59,17 +59,14 @@ export function getSVGMap(mapId) {
   return loadedMaps[mapId] ?? null;
 }
 
-await Promise.all([
-  loadSVGMap(maps.C.id, maps.C.urlMap)  
-]);
+await Promise.all([loadSVGMap(maps.C.id, maps.C.urlMap)]);
 // Finished loading maps /
-
 
 function showMap(map) {
   mapArea.innerHTML = "";
   mapArea.innerHTML = getSVGMap(map);
 
-  initializeMapSignage(); 
+  initializeMapSignage();
 }
 
 // Load main campus map /
@@ -125,7 +122,6 @@ campusSVG.addEventListener("pointerout", (e) => {
   sectorToast.classList.remove("active");
 });
 
-
 /*campusSVG.addEventListener("pointerover", (e) => {
   //const sector = e.target.closest(".sector");
   const sector = e.target.closest('[data-cell-id^="sector-"]');
@@ -152,3 +148,125 @@ campusSVG.addEventListener("pointeleave", (e) => {
 
   sectorToast.classList.remove("active");
 });*/
+
+const panelContainer = document.querySelector(".panel-container");
+
+const notImplemented = document.getElementById("not-implemented");
+const panelH = document.getElementById("panel-h");
+
+const sectorPanels = {
+  "sector-h": {
+    template: panelH,
+    title: "Sector H",
+    icon: "fa-solid fa-building fa-2x",
+  },
+
+  "sector-d": {
+    template: notImplemented,
+    title: "Sector D",
+    icon: "fa-solid fa-landmark-dome fa-2x",
+  },
+
+  "sector-m": {
+    template: notImplemented,
+    title: "Sector M",
+    icon: "fa-solid fa-people-roof fa-2x",
+  },
+
+  "sector-c1": {
+    template: notImplemented,
+    title: "Sector C1",
+    icon: "fa-solid fa-tower-observation fa-2x",
+  },
+
+  "sector-c2": {
+    template: notImplemented,
+    title: "Sector C2",
+    icon: "fa-solid fa-tower-observation fa-2x",
+  },
+};
+
+// Current sector selected
+let selectedSector = null;
+
+campusSVG.addEventListener("click", (e) => {
+  console.log("Enter...");
+
+  const sector = e.target.closest('[data-cell-id^="sector-"]').getAttribute("data-cell-id");
+
+  if (!sector) return;
+
+  const sectorData = sectorPanels[sector];
+
+  console.log("SectorData");
+  console.log(sector);
+  console.log(sectorData);
+
+  if (!sectorData) return;
+
+  // -----------------------------------------
+  // 1. Click on the same sector
+  // -----------------------------------------
+  if (selectedSector === sector) {
+    // Remove selection
+    selectedSector = null;
+
+    // Remove visual class
+    sector.classList.remove("sector-selected");
+    sector.classList.add(sector.getAttribute("data-cell-id"));
+
+    // Clear panel
+    panel.classList.remove("open");
+    panelContainer.innerHTML = "";
+
+    return;
+  }
+
+  // -----------------------------------------
+  // 2. If there was another selected sector
+  // -----------------------------------------
+  if (selectedSector) {
+    const previousSector = campusSVG.querySelector(
+      `#${CSS.escape(selectedSector)}`,
+    );
+
+    if (previousSector) {
+      previousSector.classList.remove("sector-selected");
+      previousSector.classList.add(previousSector.id);
+    }
+  }
+
+  // -----------------------------------------
+  // 3. Select new sector
+  // -----------------------------------------
+  //selectedSector = sector.getAttribute("data-cell-id");
+
+  sector.classList.remove(sector);
+  sector.classList.add("sector-selected");
+
+  const clone = sectorData.template.content.cloneNode(true);
+
+  panelContainer.innerHTML = "";
+
+  showInfoPanel(
+    panelContainer,
+    clone,
+    sectorData.title,
+    sectorData.icon,
+    sector.getAttribute("data-cell-id")
+  );
+});
+
+function showInfoPanel(panelContainer, clone, sectorTitle, sectorIcon, sector) {
+  panelContainer.appendChild(clone);
+
+  const titlePanel = document.querySelector(".panel-title-text h2");
+  const iconPanel = document.querySelector(".panel-title i");
+
+  titlePanel.textContent = sectorTitle;
+  iconPanel.className = sectorIcon;
+
+  expandSectors(sector, panelContainer);
+
+  panel.classList.add("open");
+}

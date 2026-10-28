@@ -7,6 +7,18 @@
     --sidebar-a-hover: #DCDCDC;
     --side-menu: #FFF;
     --title-text: #1C1C1C;
+
+    /* Info panel */
+    --panel-header-height: 0rem;
+    --panel-width: 40rem;
+    --panel-background-color: #fff;
+    --panel-border-color: #696969;
+    --transition-medium: 0.3s ease;
+    --z-panel: 150;
+    --radius-sm: 0.5rem;
+    --transition-fast: 0.2s ease;
+    --panel-background-hover: #eee;
+    --panel-radius-circle: 50%;
 }
 
 * {

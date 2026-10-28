@@ -241,6 +241,7 @@ function showInfoPanel(panelContainer, clone, sectorTitle, sectorIcon, sector) {
   panel.classList.add("open");
 }
 
+/* Revisar */
 function expandSectors(sector) {
   const expandSector = document.getElementById(`expand-${sector}`);
 
