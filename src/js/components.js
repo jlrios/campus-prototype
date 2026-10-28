@@ -40,6 +40,11 @@ Calendar.
 const monthYear = document.getElementById("month-year");
 const calendarDays = document.getElementById("calendar-days");
 
+const prevMonthBtn = document.getElementById("previous-month");
+const nextMonthBtn = document.getElementById("next-month");
+
+console.log(prevMonthBtn);
+
 let date = new Date();
 
 function showCalendar() {
@@ -73,14 +78,14 @@ function showCalendar() {
   }
 }
 
-function previousMonth() {
+prevMonthBtn.addEventListener("click", () => {
   date.setMonth(date.getMonth() - 1);
   showCalendar();
-}
+});
 
-function nextMonth() {
+nextMonthBtn.addEventListener("click", () => {
   date.setMonth(date.getMonth() + 1);
   showCalendar();
-}
+})
 
 showCalendar();
