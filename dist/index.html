@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <script defer src="./src/js/components.js"></script>
+    <script defer src="./src/js/navigation.js"></script>
+    <script defer src="./src/dist/winbox.bundle.min.js"></script>
+    <title>Plantel 20 Oriente - Campus interactivo</title>
+    <script type="module" crossorigin src="/assets/index-CERxyUKZ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-xDfvqdmJ.css">
+  </head>
+  <body>
+    <!--
+    ===========================
+    Header
+    ============================
+    -->
+    <header>
+      <div class="left">
+        <!-- Menu button -->
+        <button
+          id="menu"
+          class="menu"
+          aria-label="Abrir menú lateral"
+          aria-expanded="false"
+          aria-controls="sidebar"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <!-- Brand -->
+        <a href="/" class="brand">
+          <img
+            src="data:image/svg+xml,%3c!DOCTYPE%20svg%20PUBLIC%20'-//W3C//DTD%20SVG%201.1//EN'%20'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Transformed%20by:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20fill='%23bdbdbd'%20version='1.1'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20width='800px'%20height='800px'%20viewBox='0%200%20260%20201'%20enable-background='new%200%200%20260%20201'%20xml:space='preserve'%20stroke='%23bdbdbd'%3e%3cg%20id='SVGRepo_bgCarrier'%20stroke-width='0'/%3e%3cg%20id='SVGRepo_tracerCarrier'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cg%20id='SVGRepo_iconCarrier'%3e%3cpath%20d='M149,199h-47c2.03-1.37,5.4-4.44,5.4-9.07c0-4.45-1.23-10.78-4.54-19.64c4.24-4.58,7.36-9.96,9.1-15.65%20c1.98,0.63,4,1.29,6.08,1.98c5.6,1.82,11.68,3.81,18.39,5.61c-3.62,5.24-8.52,10.03-15.13,14.49c-2.4,1.62-3.22,2.7-3.22,5.11%20c0,3.62,4.61,6.63,9.25,8.04c3.76,1.13,7.82,1.62,11.77,1.62C144,191.49,147.55,195.03,149,199z%20M218.05,72.03l-4.49-4.3%20c-3.11-3.67-3.49-9.1-5.91-14.59c-3.52-7.97-8.34-12.64-8.34-12.64c0,5.81-1.95,9.69-1.95,9.69s-6.913-3.684-15.93-2.594%20c-8.273,0.051-15.984-4.923-19.177-12.833l-0.004-0.012c0,0,0,0.001,0,0.002c0-0.001,0-0.001-0.001-0.002c0,0.002,0,0.003,0,0.005%20c-0.022,0.096-2.412,10.786,6.841,17.523c-0.141,0.095-0.282,0.191-0.423,0.29c-5.781,1.893-12.294,0.105-16.256-4.751%20c0,0.002,0.001,0.003,0.002,0.005l-0.003-0.004c0,0-0.919,7.026,3.562,11.238c1.375,1.292,2.884,1.848,4.316,2.004%20c-2.67,3.911-4.536,8.514-4.637,13.37c-0.29,13.52,8.12,20.92,17.22,30.84c1.53,1.34,2.5,3.33,2.5,5.539%20c0,4.303-3.962,7.804-8.23,7.374c-4.115-0.414-8.379-4.481-11.266-7.175c-7.329-6.841-12.454-15.849-15.261-25.43%20c-1.76-6.005-2.62-12.264-2.62-18.519c0-12.514,3.43-24.058,9.213-33.344C129.54,14.043,103.522,2,75,2c-3.054,0-7.021,0.72-10,1%20c13.029,8.254,23.009,21.897,23.009,38.458c0,14.355-6.497,27.193-16.705,35.738c17.203,2.939,30.931,16.07,34.737,32.962%20c-8.818,1.353-17.058,3.841-24.699,7.176c-20.862,9.094-36.37,25.717-48.457,34.706c-1.908,1.419-4.804,2.499-7.367,2.499%20c-8.38,0-12.193-9.026-8.635-15.819c4.915-9.333,19.218-20.384,19.218-29.515c0-7.515-5.694-12.342-9.32-14.656%20c3.287-2.931,7.286-4.654,11.409-5.135L10.019,80.59l9.843,27.831c0.316-3.949,1.769-7.826,4.343-11.121%20c3.537,3.285,8.617,10.011,1.405,17.224c-4.74,4.731-8.112,7.083-14.496,12.806c-0.027,0.024-0.051,0.05-0.078,0.074%20C5.651,131.931,2,138.414,2,146c0,13.635,11.28,24.987,24.915,24.987c7.923,0,14.914-4.354,20.727-9.365%20c4.583-3.951,9.449-7.745,14.78-10.653c6.91-3.769,14.532-5.576,22.34-5.875c-1.204,11.92-11.267,21.223-23.505,21.223%20c-3.397,0-6.614-0.718-9.542-2.002c-0.538,2.057-1.113,4.907-1.008,8.023c0.32,9.513,3.383,12.346,3.383,17.592%20c0,4.629-3.055,7.699-5.09,9.07h47c-1.45-3.973-5.317-7.509-10.219-7.509c-3.942,0-8.002-0.487-11.766-1.624%20c-4.644-1.403-9.196-3.871-9.196-7.489c0-2.412,1.614-3.895,4.157-3.852c2.407,0.18,5.37,0.318,7.788,0.18%20c15.684-1.395,29.47-14.543,31.833-29.924c13.101,3.87,27.568,9.741,46.207,12.713c3.75,8.219,8.774,21.149,7.124,28.434%20c-0.983,4.342-2.892,7.699-4.928,9.07h47c-1.45-3.973-5.48-7.509-10.382-7.509c-3.942,0-8.002-0.487-11.766-1.624%20c-4.644-1.403-7.156-4.417-7.845-9.067c-0.287-1.939-1.396-12.691-0.516-17.525c-0.044,0.255,7.17-0.451,7.685-0.516%20c3.472-0.442,6.772-0.84,10.014-2.227c18.028-7.715,25.755-29.56,17.947-47.195c-3.379-7.631-8.97-13.953-15.117-19.486%20c-4.76-4.285-10.335-7.959-14.539-12.82c-3.53-4.07-2.66-8.4-0.45-10.71c2.68-2.81,8.15-2.97,10.69,0.14%20c2.45,3,8.39,9.93,11.42,13.45c1.11,1.29,2.9,1.75,4.5,1.16l4.35-1.63l-3.48-1.49c0,0-3.44-7.56-4.68-10.65l11.22,5.61l-0.57,4.76%20l5.61-5.52C219.24,75.01,219.22,73.15,218.05,72.03z%20M211,199h47c-1.44-3.97-4.83-7.51-9.73-7.51c-3.94,0-8.04-0.38-11.77-1.62%20c-8.95-2.99-19.88-22.38-28.66-36.22c-4.06,4.88-9.27,8.77-15.21,11.25c10.52,8.39,23.09,19.46,23.95,25.03%20C217.26,194.33,213.03,197.63,211,199z%20M232.169,107.101c7.686,1.971,20.475,1.485,25.831-10.101%20c-12.767,8.545-22.676,2.046-22.676,2.046s6.064-3.836,5.33-9.26c-16.747,6.282-27.99-3.654-27.99-3.654%20C215.175,97.767,225.262,105.33,232.169,107.101z'/%3e%3c/g%3e%3c/svg%3e"
+            alt="Dragon Campus"
+            class="logo"
+          />
+          <span class="name">Campus 20 Oriente</span>
+        </a>
+      </div>
+      <div class="center">
+        <div class="input-search">
+          <input
+            type="text"
+            placeholder="Buscar aula, docente, alumno..."
+            spellcheck="false"
+            autocomplete="off"
+          />
+          <button>
+            <i class="fa-solid fa-magnifying-glass fa-2x"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="right">
+        <!-- Notifications -->
+
+        <div class="utility-bar">
+          <div class="weather">
+            <i class="fa-solid fa-sun"></i>
+
+            <div>
+              <strong>25 °C</strong>
+              <small>Despejado | <i class="fa-solid fa-wind"></i>10 km/h</small>
+            </div>
+          </div>
+        </div>
+        <a href="#" aria-label="Notificaciones">
+          <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M6.31317%2012.463C6.20006%209.29213%208.60976%206.6252%2011.701%206.5C14.7923%206.6252%2017.202%209.29213%2017.0889%2012.463C17.0889%2013.78%2018.4841%2015.063%2018.525%2016.383C18.525%2016.4017%2018.525%2016.4203%2018.525%2016.439C18.5552%2017.2847%2017.9124%2017.9959%2017.0879%2018.029H13.9757C13.9786%2018.677%2013.7404%2019.3018%2013.3098%2019.776C12.8957%2020.2372%2012.3123%2020.4996%2011.701%2020.4996C11.0897%2020.4996%2010.5064%2020.2372%2010.0923%2019.776C9.66161%2019.3018%209.42346%2018.677%209.42635%2018.029H6.31317C5.48869%2017.9959%204.84583%2017.2847%204.87602%2016.439C4.87602%2016.4203%204.87602%2016.4017%204.87602%2016.383C4.91795%2015.067%206.31317%2013.781%206.31317%2012.463Z'%20stroke='%23000000'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M9.42633%2017.279C9.01212%2017.279%208.67633%2017.6148%208.67633%2018.029C8.67633%2018.4432%209.01212%2018.779%209.42633%2018.779V17.279ZM13.9757%2018.779C14.3899%2018.779%2014.7257%2018.4432%2014.7257%2018.029C14.7257%2017.6148%2014.3899%2017.279%2013.9757%2017.279V18.779ZM12.676%205.25C13.0902%205.25%2013.426%204.91421%2013.426%204.5C13.426%204.08579%2013.0902%203.75%2012.676%203.75V5.25ZM10.726%203.75C10.3118%203.75%209.97601%204.08579%209.97601%204.5C9.97601%204.91421%2010.3118%205.25%2010.726%205.25V3.75ZM9.42633%2018.779H13.9757V17.279H9.42633V18.779ZM12.676%203.75H10.726V5.25H12.676V3.75Z'%20fill='%23000000'/%3e%3c/svg%3e" alt="" />
+        </a>
+        <!-- User avatar -->
+        <img
+          src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M5%2021C5%2017.134%208.13401%2014%2012%2014C15.866%2014%2019%2017.134%2019%2021M16%207C16%209.20914%2014.2091%2011%2012%2011C9.79086%2011%208%209.20914%208%207C8%204.79086%209.79086%203%2012%203C14.2091%203%2016%204.79086%2016%207Z'%20stroke='%23000000'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+          alt="Perfil del usuario"
+          class="user"
+        />
+        <!-- Open panel button -->
+        <button
+          class="info-panel-button"
+          aria-controls="info-panel"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-table-columns fa-2x"></i>
+        </button>
+      </div>
+    </header>
+    <!-- 
+    ============================
+    Sidebar
+    ============================
+    -->
+    <aside id="sidebar" class="sidebar">
+      <nav aria-label="Navegación principal">
+        <ul>
+          <li>
+            <a id="campus-home" href="#" class="selected" aria-current="page">
+              <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M12%203.1875L21.4501%2010.275L21.0001%2011.625H20.25V20.25H3.75005V11.625H3.00005L2.55005%2010.275L12%203.1875ZM5.25005%2010.125V18.75H18.75V10.125L12%205.0625L5.25005%2010.125Z'%20fill='%23080341'/%3e%3c/svg%3e" alt="" />
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="data:image/svg+xml,%3c!DOCTYPE%20svg%20PUBLIC%20'-//W3C//DTD%20SVG%201.1//EN'%20'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Transformed%20by:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20fill='%23000000'%20width='800px'%20height='800px'%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='SVGRepo_bgCarrier'%20stroke-width='0'/%3e%3cg%20id='SVGRepo_tracerCarrier'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cg%20id='SVGRepo_iconCarrier'%3e%3cpath%20d='M%205.25%202.75%20L%204.6875%203.28125%20L%203.28125%204.6875%20L%202.75%205.25%20L%203.15625%205.90625%20L%205.25%209.40625%20L%205.53125%209.90625%20L%208.46875%209.90625%20L%2012.46875%2013.875%20C%208.894531%2017.464844%204.347656%2022.027344%204.1875%2022.1875%20C%202.621094%2023.753906%202.617188%2026.320313%204.21875%2027.8125%20C%205.78125%2029.355469%208.328125%2029.394531%209.8125%2027.8125%20C%209.824219%2027.800781%209.832031%2027.792969%209.84375%2027.78125%20L%2016%2021.59375%20L%2022.1875%2027.8125%20L%2022.28125%2027.875%20C%2023.851563%2029.355469%2026.347656%2029.375%2027.8125%2027.8125%20L%2027.8125%2027.78125%20L%2027.84375%2027.78125%20C%2029.375%2026.214844%2029.390625%2023.667969%2027.8125%2022.1875%20L%2027.78125%2022.15625%20L%2022.5625%2016.96875%20C%2026.074219%2016.640625%2028.824219%2013.675781%2028.875%2010.09375%20L%2028.90625%2010.09375%20C%2028.910156%2010.074219%2028.90625%2010.050781%2028.90625%2010.03125%20C%2028.90625%2010.019531%2028.90625%2010.011719%2028.90625%2010%20C%2029.003906%208.84375%2028.753906%207.738281%2028.15625%206.78125%20L%2027.46875%205.71875%20L%2022.8125%2010.375%20L%2021.40625%208.90625%20L%2026.15625%204.15625%20L%2024.78125%203.59375%20C%2023.976563%203.25%2023.046875%203%2022%203%20C%2018.15625%203%2015%206.15625%2015%2010%20C%2015%2010.417969%2015.089844%2010.78125%2015.15625%2011.15625%20C%2014.71875%2011.59375%2014.390625%2011.953125%2013.875%2012.46875%20L%209.90625%208.5%20L%209.90625%205.53125%20L%209.40625%205.25%20L%205.90625%203.15625%20Z%20M%2022%205%20C%2022.140625%205%2022.238281%205.082031%2022.375%205.09375%20L%2018.59375%208.875%20L%2019.28125%209.59375%20L%2022.09375%2012.5%20L%2022.78125%2013.21875%20L%2026.75%209.25%20C%2026.769531%209.480469%2026.933594%209.648438%2026.90625%209.90625%20L%2026.90625%2010%20C%2026.90625%2012.753906%2024.660156%2015%2021.90625%2015%20C%2021.539063%2015%2021.09375%2014.914063%2020.59375%2014.8125%20L%2020.0625%2014.71875%20L%2019.6875%2015.09375%20L%208.40625%2026.40625%20L%208.375%2026.40625%20L%208.375%2026.4375%20C%207.664063%2027.214844%206.421875%2027.234375%205.59375%2026.40625%20L%205.59375%2026.375%20L%205.5625%2026.375%20C%204.785156%2025.664063%204.765625%2024.421875%205.59375%2023.59375%20C%205.972656%2023.214844%2013.3125%2015.8125%2016.90625%2012.21875%20L%2017.3125%2011.8125%20L%2017.15625%2011.25%20C%2017.074219%2010.925781%2017%2010.367188%2017%2010%20C%2017%207.246094%2019.246094%205%2022%205%20Z%20M%205.5625%205.25%20L%207.90625%206.6875%20L%207.90625%207.6875%20L%207.6875%207.90625%20L%206.6875%207.90625%20L%205.25%205.5625%20Z%20M%2020.1875%2017.40625%20L%2026.40625%2023.59375%20L%2026.40625%2023.625%20L%2026.4375%2023.625%20C%2027.214844%2024.335938%2027.234375%2025.578125%2026.40625%2026.40625%20L%2026.375%2026.40625%20L%2026.375%2026.4375%20C%2025.664063%2027.214844%2024.421875%2027.234375%2023.59375%2026.40625%20L%2017.40625%2020.1875%20Z'/%3e%3c/g%3e%3c/svg%3e" alt="" />
+              <span>Configuración</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M11%201C11%200.447715%2011.4477%200%2012%200C12.5523%200%2013%200.447715%2013%201V3C13%203.55228%2012.5523%204%2012%204C11.4477%204%2011%203.55228%2011%203V1Z'%20fill='%230F0F0F'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M18%2012C18%2015.3137%2015.3137%2018%2012%2018C8.68629%2018%206%2015.3137%206%2012C6%208.68629%208.68629%206%2012%206C15.3137%206%2018%208.68629%2018%2012ZM8.06167%2012C8.06167%2014.1751%209.82492%2015.9383%2012%2015.9383C14.1751%2015.9383%2015.9383%2014.1751%2015.9383%2012C15.9383%209.82492%2014.1751%208.06167%2012%208.06167C9.82492%208.06167%208.06167%209.82492%208.06167%2012Z'%20fill='%230F0F0F'/%3e%3cpath%20d='M20.4853%203.51472C20.0947%203.12419%2019.4616%203.12419%2019.0711%203.51472L17.6568%204.92893C17.2663%205.31946%2017.2663%205.95262%2017.6568%206.34315C18.0474%206.73367%2018.6805%206.73367%2019.0711%206.34315L20.4853%204.92893C20.8758%204.53841%2020.8758%203.90524%2020.4853%203.51472Z'%20fill='%230F0F0F'/%3e%3cpath%20d='M1%2013C0.447715%2013%200%2012.5523%200%2012C0%2011.4477%200.447715%2011%201%2011H3C3.55228%2011%204%2011.4477%204%2012C4%2012.5523%203.55228%2013%203%2013H1Z'%20fill='%230F0F0F'/%3e%3cpath%20d='M3.51472%203.51472C3.1242%203.90524%203.1242%204.53841%203.51472%204.92893L4.92894%206.34315C5.31946%206.73367%205.95263%206.73367%206.34315%206.34315C6.73368%205.95262%206.73368%205.31946%206.34315%204.92893L4.92894%203.51472C4.53841%203.12419%203.90525%203.12419%203.51472%203.51472Z'%20fill='%230F0F0F'/%3e%3cpath%20d='M11%2021C11%2020.4477%2011.4477%2020%2012%2020C12.5523%2020%2013%2020.4477%2013%2021V23C13%2023.5523%2012.5523%2024%2012%2024C11.4477%2024%2011%2023.5523%2011%2023V21Z'%20fill='%230F0F0F'/%3e%3cpath%20d='M6.34315%2017.6569C5.95263%2017.2663%205.31946%2017.2663%204.92894%2017.6569L3.51473%2019.0711C3.1242%2019.4616%203.1242%2020.0948%203.51473%2020.4853C3.90525%2020.8758%204.53842%2020.8758%204.92894%2020.4853L6.34315%2019.0711C6.73368%2018.6805%206.73368%2018.0474%206.34315%2017.6569Z'%20fill='%230F0F0F'/%3e%3cpath%20d='M21%2013C20.4477%2013%2020%2012.5523%2020%2012C20%2011.4477%2020.4477%2011%2021%2011H23C23.5523%2011%2024%2011.4477%2024%2012C24%2012.5523%2023.5523%2013%2023%2013H21Z'%20fill='%230F0F0F'/%3e%3cpath%20d='M17.6568%2017.6569C17.2663%2018.0474%2017.2663%2018.6805%2017.6568%2019.0711L19.0711%2020.4853C19.4616%2020.8758%2020.0947%2020.8758%2020.4853%2020.4853C20.8758%2020.0948%2020.8758%2019.4616%2020.4853%2019.0711L19.0711%2017.6569C18.6805%2017.2663%2018.0474%2017.2663%2017.6568%2017.6569Z'%20fill='%230F0F0F'/%3e%3c/svg%3e" alt="" />
+              <span>Tema</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M4%2019V6.2C4%205.0799%204%204.51984%204.21799%204.09202C4.40973%203.71569%204.71569%203.40973%205.09202%203.21799C5.51984%203%206.0799%203%207.2%203H16.8C17.9201%203%2018.4802%203%2018.908%203.21799C19.2843%203.40973%2019.5903%203.71569%2019.782%204.09202C20%204.51984%2020%205.0799%2020%206.2V17H6C4.89543%2017%204%2017.8954%204%2019ZM4%2019C4%2020.1046%204.89543%2021%206%2021H20M9%207H15M9%2011H15M19%2017V21'%20stroke='%23000000'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="" />
+              <span>Ayuda</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_429_11160)'%3e%3ccircle%20cx='12'%20cy='11.9999'%20r='9'%20stroke='%23292929'%20stroke-width='2.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3crect%20x='12'%20y='8'%20width='0.01'%20height='0.01'%20stroke='%23292929'%20stroke-width='3.75'%20stroke-linejoin='round'/%3e%3cpath%20d='M12%2012V16'%20stroke='%23292929'%20stroke-width='2.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_429_11160'%3e%3crect%20width='24'%20height='24'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="" />
+              <span>Acerca de</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- ===========================
+    Main content
+    ============================ -->
+    <main id="main">
+      <!--
+      ===========================
+      Maps
+      ============================
+      -->
+      <div class="map-container">
+        <!-- 
+          ==============================
+          Widgets
+          ==============================
+          -->
+
+        <div style="width: 350px; padding: 0 10px 10px; background: white;">
+          <div
+            style="
+              width: 100%;
+              padding: 10px;
+              border: none;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+              border-radius: 10px;
+            "
+          >
+            <div class="notices-widget">
+              <!-- Widget header -->
+              <div class="notices-header">
+                <div class="notices-title">
+                  <i class="fa-solid fa-bullhorn fa-2x"></i>
+                  <span>Avisos</span>
+                </div>
+
+                <span class="notices-link">
+                  Ver todos
+                  <i class="fa-solid fa-chevron-right"></i>
+                </span>
+              </div>
+
+              <!-- Notices list -->
+              <div class="notices-list">
+                <!-- Notice -->
+                <div class="notice-item">
+                  <span class="notice-indicator notice-orange"></span>
+
+                  <div class="notice-content">
+                    <div class="notice-title">Junta de padres de familia</div>
+
+                    <div class="notice-meta">
+                      <i class="fa-regular fa-calendar"></i>
+                      <span>25 sep. · 17:00 h</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Notice -->
+                <div class="notice-item">
+                  <span class="notice-indicator notice-green"></span>
+
+                  <div class="notice-content">
+                    <div class="notice-title">Honores a la Bandera</div>
+
+                    <div class="notice-meta">
+                      <i class="fa-regular fa-calendar"></i>
+                      <span>29 sep. · 08:00 h</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Notice -->
+                <div class="notice-item">
+                  <span class="notice-indicator notice-blue"></span>
+
+                  <div class="notice-content">
+                    <div class="notice-title">Reunión de docentes</div>
+
+                    <div class="notice-meta">
+                      <i class="fa-regular fa-calendar"></i>
+                      <span>2 oct. · 14:00 h</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="calendar">
+            <div class="calendar-header">
+              <button onclick="previousMonth()">
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+              <h2 id="month-year">Mes</h2>
+              <button onclick="nextMonth()">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+            <div class="day-names">
+              <div>D</div>
+              <div>L</div>
+              <div>M</div>
+              <div>M</div>
+              <div>J</div>
+              <div>V</div>
+              <div>S</div>
+            </div>
+            <div id="calendar-days" class="days">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="navigation-left" class="slide-map-button">
+          <i id="nav-map-left" class="fa-solid fa-angle-left fa-2x"></i>
+        </div>
+
+        <div class="map-area">
+        <!--
+          <div
+            style="
+              border: 1px solid #000;
+              border-radius: 6px;
+              padding: 5px;
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 20px;
+              box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.3);
+            "
+          >
+            <div style="display: flex; align-items: center; gap: 0.5rem">
+              <i
+                class="fa-solid fa-school-flag fa-2x"
+                style="color: #e25619"
+              ></i>
+              <span style="color: #333">
+                <strong
+                  >Campus > Sector H > Edificio principal > Planta baja</strong
+                >
+              </span>
+            </div>
+            <div>
+              <button id="ground-floor" class="change-floor-button">
+                <i class="fa-solid fa-turn-down"></i>
+                Planta baja
+              </button>
+              <button id="upper-floor" class="change-floor-button">
+                <i class="fa-solid fa-turn-up"></i>
+                Planta alta
+              </button>
+            </div>
+          </div>
+          -->
+          <!--
+          ==============================
+          Map render.
+          ==============================
+          -->
+          <div id="sector-map" class="sector-map"></div>
+          <!-- End map render -->
+
+          <!--
+          <div class="map-legend">
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #a4c4ef"></i>
+              <span class="legend-color"> Biblioteca </span>
+            </div>
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #9de0c7"></i>
+              <span> Oficinas admvas. </span>
+            </div>
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #e0e4eb"></i>
+              <span> Intendencia y mtto. </span>
+            </div>
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #fed274"></i>
+              <span> Laboratorios y aulas </span>
+            </div>
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #9dd1f6"></i>
+              <span> Sanitarios H. </span>
+            </div>
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #fda4a7"></i>
+              <span> Sanitarios M. </span>
+            </div>
+            <div class="legend-item">
+              <i class="fa-solid fa-square fa-2x" style="color: #cbbff3"></i>
+              <span> Sistemas </span>
+            </div>
+          </div>-->
+        </div>
+
+        <div id="navigation-right" class="slide-map-button">
+          <i id="nav-map-right" class="fa-solid fa-angle-right fa-2x"></i>
+        </div>
+      </div>
+
+      <dialog id="imageViewer" class="image-viewer">
+        <button
+          class="image-viewer__close"
+          type="button"
+          aria-label="Cerrar imagen"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="viewerImage" class="image-viewer__image" src="" alt="" />
+        <footer class="image-viewer__footer">
+          <p id="viewerCaption"></p>
+        </footer>
+      </dialog>
+      <div id="sector-toast" class="sector-toast">
+        <div class="sector-icon">
+          <i class="fa-regular fa-building fa-2x"></i>
+        </div>
+        <div class="sector-text">
+          <h3>Sector H</h3>
+          <p>Edificio principal usos múltiples</p>
+        </div>
+      </div>
+    </main>
+    <!-- ===========================
+      Information panel
+    ============================ -->
+    <aside id="info-panel" class="info-panel" aria-labelledby="panel-title">
+      <button class="panel-close-button" aria-label="Cerrar panel">
+        &times;
+      </button>
+      <div class="panel-container"></div>
+      <template id="panel-h">
+        <div class="panel-header">
+          <div class="panel-title">
+            <i class="fa-regular fa-building fa-2x"></i>
+            <div class="panel-title-text">
+              <h2>Sector H (sector principal)</h2>
+              <span>Información general</span>
+            </div>
+          </div>
+        </div>
+        <section class="wrapper-tabs">
+          <h3>Servicios e instalaciones</h3>
+          <nav class="panel-tabs">
+            <input
+              type="radio"
+              class="panel-tabs-radio"
+              name="tabs-sector-h"
+              checked
+              id="information"
+            />
+            <label for="information" class="tabs-label"
+              ><i class="fa-regular fa-circle-question"></i>Información</label
+            >
+            <div class="tabs-content">
+              El Sector H es el área principal del plantel. Integra el Edificio
+              H, el Taller de Mantenimiento y un espacio de cafetería al aire
+              libre. A continuación, encontrará las instalaciones y servicios
+              disponibles en este sector.
+              <section class="services-grid">
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-utensils"></i>
+                  </div>
+                  <span>Espacio de cafetería</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-desktop"></i>
+                  </div>
+                  <span>Laboratorio de cómputo</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-flask"></i>
+                  </div>
+                  <span>Laboratorio de ciencias</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-restroom"></i>
+                  </div>
+                  <span>Sanitarios</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-money-check-dollar"></i>
+                  </div>
+                  <span>Finanzas</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-users"></i>
+                  </div>
+                  <span>Subdirección</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-box-archive"></i>
+                  </div>
+                  <span>Bodega</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-box-archive"></i>
+                  </div>
+                  <span>Intendencia</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-broom"></i>
+                  </div>
+                  <span>Aula de matenimiento</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-building-columns"></i>
+                  </div>
+                  <span>Dirección</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-address-card"></i>
+                  </div>
+                  <span>Servicios escolares</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-regular fa-clipboard"></i>
+                  </div>
+                  <span>Control académico</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                  </div>
+                  <span>Biblioteca</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                  </div>
+                  <span>Prefectura</span>
+                </div>
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa-solid fa-chalkboard"></i>
+                  </div>
+                  <span>Aulas de la H1 a la H8</span>
+                </div>
+                <div>
+                  <button class="button-panel" id="expand-sector-h">
+                    <i class="fa-solid fa-expand fa-2x"></i>
+                    Ver a detalle
+                  </button>
+                </div>
+              </section>
+            </div>
+            <input
+              type="radio"
+              class="panel-tabs-radio"
+              name="tabs-sector-h"
+              id="gallery"
+            />
+            <label for="gallery" class="tabs-label">
+              <i class="fa-regular fa-image"></i>Galería
+            </label>
+            <!-- Panl tab gallery-->
+            <div class="tabs-content">
+              <section>
+                <div class="panel-gallery">
+                  <img
+                    src="/assets/plantel-20-01-m-Bvs6zax6.png"
+                    alt=""
+                    onclick="
+                      openImage(
+                        './src/assets/images/gallery/pictures/plantel-20-01.png',
+                        'Fachada principal del edificio H. Cuenta con laboratorios, aulas, sanitarios, biblioteca y oficinas administrativas.',
+                        'Edificio H',
+                      )
+                    "
+                  />
+                  <img
+                    src="/assets/plantel-20-02-m-N6iuzEFh.png"
+                    alt=""
+                  />
+                  <img
+                    src="/assets/plantel-20-04-m-De3OEN0_.png"
+                    alt=""
+                  />
+                  <img
+                    src="/assets/plantel-20-05-m-DRR_e_Rk.png"
+                    alt=""
+                  />
+                  <img
+                    src="/assets/plantel-20-03-m-CYZlyNDq.png"
+                    alt=""
+                  />
+                  <img
+                    src="/assets/plantel-20-08-m-grv4NUS6.png"
+                    alt=""
+                  />
+                  <img
+                    src="/assets/plantel-20-07-m-BgRg2lTU.png"
+                    alt=""
+                  />
+                  <img
+                    src="/assets/plantel-20-09-m-BmYjSxSk.png"
+                    alt=""
+                  />
+                  <img
+                    src="/assets/plantel-20-10-m-zHKgNhLO.png"
+                    alt=""
+                  />
+                </div>
+              </section>
+            </div>
+          </nav>
+        </section>
+      </template>
+      <template id="not-implemented">
+        <div class="panel-header">
+          <div class="panel-title">
+            <i class="fa-regular fa-building fa-2x"></i>
+            <div class="panel-title-text">
+              <h2></h2>
+              <span>Información general</span>
+            </div>
+          </div>
+        </div>
+        <div style="display: grid; margin-top: 50px">
+          <div
+            style="align-self: center; justify-self: center; text-align: center"
+          >
+            <h2>No hay información para mostrar</h2>
+            <h3>Funcionalidad no implementada</h3>
+            <img
+              src="/assets/no-information-DM2Beimc.svg"
+              alt=""
+              style="width: 240px; height: auto; margin-top: 50px"
+            />
+            <div style="text-align: left; padding: 30px">
+              <p>
+                El Campus Interactivo es una aplicación parcial desarrollada con
+                fines demostrativos. Su funcionalidad se limita a presentar, de
+                manera representativa, las características y el tipo de
+                funcionalidades que integrará la aplicación de producción.
+              </p>
+              <br />
+              <p>
+                Seleccione el <strong>Sector H</strong> si desea probar las
+                funcionalidad disponible.
+              </p>
+              <div
+                style="
+                  margin-top: 20px;
+                  width: 100%;
+                  justify-content: center;
+                  display: flex;
+                "
+              >
+                <button class="button-panel">
+                  <i class="fa-regular fa-map fa-2x"></i>Ir al sector H
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+      <template id="empty-state">
+        <div style="display: grid; margin-top: 50px">
+          <div
+            style="align-self: center; justify-self: center; text-align: center"
+          >
+            <img
+              src="/assets/select-sector-B1Ed9Gr9.svg"
+              alt=""
+              style="width: 280px; height: auto"
+            />
+            <h3 style="margin-top: 50px">Seleccione un sector</h3>
+            <div style="text-align: left; padding: 15px">
+              <p>
+                Pase el puntero sobre el mapa para explorar los sectores. Haga
+                clic en un sector para visualizar su información.
+              </p>
+            </div>
+          </div>
+        </div>
+      </template>
+    </aside>
+    <!-- 
+    ===========================
+    Templates.
+    ===========================
+    -->
+    <template id="empty-state-map">
+      <div
+        style="
+          vertical-align: middle;
+          width: 1280px;
+          height: 720px;
+          display: grid;
+          place-items: center;
+        "
+      >
+        <h2>Campus > Sector H > Cooperativa</h2>
+        <h3>Mapa no implementado</h3>
+        <img
+          src="/assets/building_burz-CJGMncdu.svg"
+          alt=""
+          style="width: 384px"
+        />
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 45%;
+            background: #e6f4d7;
+            padding: 10px;
+            border: 1px solid #3e6d35;
+            border-radius: 6px;
+          "
+        >
+          <i class="fa-solid fa-circle-info fa-2x" style="color: #3e6d35"></i>
+          <p style="color: #333">
+            El Campus Interactivo es una aplicación parcial desarrollada con
+            fines demostrativos. Su funcionalidad se limita a presentar, de
+            manera representativa, las características y el tipo de
+            funcionalidades que integrará la aplicación de producción.
+          </p>
+        </div>
+      </div>
+    </template>
+  </body>
+</html>
