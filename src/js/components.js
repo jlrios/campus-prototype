@@ -73,8 +73,7 @@ function showCalendar() {
       year === today.getFullYear() &&
       month === today.getMonth();
 
-     
-    calendarDays.innerHTML += `<div class="${isToday ? "today" : ""}">${d}</div>`;
+      calendarDays.innerHTML += `<div class="${isToday ? "today" : ""}">${d}</div>`;
   }
 }
 
@@ -118,7 +117,3 @@ infoPanelButton.addEventListener("click", () => {
 closePanelButton.addEventListener("click", () => {
   panel.classList.remove("open");
 });
-
-/*campusHome.addEventListener("click", () => {
-  showMap(maps.C.id);
-});*/
