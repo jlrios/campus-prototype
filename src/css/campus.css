@@ -52,6 +52,7 @@
 [data-cell-id^="sector-"]:hover rect {
   fill: #81C784;
   fill-opacity: 0.4;
+  cursor: zoom-in;
 }
 
 /* Persistent highlight for the selected sector */
@@ -372,6 +373,13 @@ input[type="radio"] {
 
 #information:checked ~ nav label.information
 #gallery:checked ~ nav label.gallery*/
+
+.signage-active-toast {
+  background-color: #344541 !important;
+  color: #E6F4D7 !important;
+  border-left: 4px solid #81C784;
+  width: 500px;
+}
 
 /*===========================
   Responsive

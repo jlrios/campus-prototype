@@ -1,3 +1,6 @@
+import Notify from "simple-notify";
+import "simple-notify/dist/simple-notify.css";
+
 // Checkboxes
 const feSignCheck = document.getElementById("fe-signage");
 const noSignCheck = document.getElementById("no-signage");
@@ -7,29 +10,76 @@ const mpSignCheck = document.getElementById("mp-signage");
 // Print button
 const printMapBtn = document.getElementById("print-map");
 
-  /*
-  ==============================
-  Check toggles flag variable 
-  ==============================
-  */
-let signageActive = null;
+// Store all signage checkboxes in one collection.
+const checkboxes = [feSignCheck, noSignCheck, eeSignCheck, mpSignCheck];
 
-const signageActiveInfo = document.querySelector('[data-cell-id="signage-active-info"]');
+// Track the signage toast state and instance.
+let signageToastShown = false;
+let signageToastInstance = null;
+let isInitializing = false;
 
-
-// Restore checkbox states from localStorage
+// Restore checkbox states from localStorage.
 function restoreToggleState(checkbox) {
   const savedState = localStorage.getItem(checkbox.id);
-
   checkbox.checked = savedState === "true";
 }
 
-// Save checkbox states to localStorage
+// Save checkbox states to localStorage.
 function saveToggleState(checkbox) {
   localStorage.setItem(checkbox.id, checkbox.checked);
 }
 
-// Signage on SVG main map
+// Check whether any signage option is enabled.
+function isAnySignageActive() {
+  return checkboxes.some((toggle) => toggle.checked);
+}
+
+// Display the signage toast once per activation cycle.
+function updateSignageToast() {
+  const signageActive = isAnySignageActive();
+
+  // Close the toast and reset its state when all signage is disabled.
+  if (!signageActive) {
+    signageToastInstance?.close();
+    signageToastInstance = null;
+    signageToastShown = false;
+    return;
+  }
+
+  // Do not display notifications while restoring saved states.
+  if (isInitializing || signageToastShown) return;
+
+  // Create the notification and keep its instance for later.
+  signageToastInstance = new Notify({
+    status: "info",
+    title: "Modo señalética activo",
+    text: "La selección de sectores ha sido deshabilitada, desactive toda la señalética visible para volver al modo normal.",
+    effect: "slide",
+    speed: 300,
+    customClass: "",
+    customIcon: "",
+    showIcon: true,
+    showCloseButton: true,
+    autoclose: false,
+    autotimeout: 3000,
+    notificationsGap: null,
+    notificationsPadding: null,
+    type: "outline",
+    position: "right bottom",
+    customWrapper: "",
+  });
+
+  signageToastShown = true;
+}
+
+// Apply the visibility state to a collection of SVG elements.
+function updateSignageVisibility(elements, isVisible) {
+  elements.forEach((element) => {
+    element.classList.toggle("is-visible", isVisible);
+  });
+}
+
+// Initialize signage on the SVG main map.
 export function initializeMapSignage() {
   const erSignage = document.querySelectorAll('[data-cell-id^="er-"]');
   const mpSignage = document.querySelectorAll('[data-cell-id^="mp-"]');
@@ -37,98 +87,78 @@ export function initializeMapSignage() {
   const feSignage = document.querySelectorAll('[data-cell-id^="fe-"]');
   const noSignage = document.querySelector('[data-cell-id="no-01"]');
 
-  // Signage to print
+  // Signage labels for printing.
   const signageEr = document.querySelector('[data-cell-id="signage-title"]');
   const signageNote = document.querySelector('[data-cell-id="signage-note"]');
+
   const signageTexts = document.querySelectorAll(
     '[data-cell-id^="signage-text-"]',
   );
+
   const signageIcons = document.querySelectorAll(
     '[data-cell-id^="signage-icon-"]',
   );
 
-  signageEr.style.display = "none";
-  signageNote.style.display = "none";
+  if (signageEr) signageEr.style.display = "none";
+  if (signageNote) signageNote.style.display = "none";
 
-  signageTexts.forEach((signage) => {
-    signage.style.display = "none";
+  signageTexts.forEach((element) => {
+    element.style.display = "none";
   });
 
-  signageIcons.forEach((signage) => {
-    signage.style.display = "none";
+  signageIcons.forEach((element) => {
+    element.style.display = "none";
   });
 
-  // Restore saved states before registering the event listeners
-  const checkboxes = [feSignCheck, noSignCheck, eeSignCheck, mpSignCheck];
+  // Restore saved states before registering the event handlers.
+  isInitializing = true;
 
   checkboxes.forEach(restoreToggleState);
 
-  // Escape routes and meeting points
-  mpSignCheck.addEventListener("change", () => {
+  // Escape routes and meeting points.
+  mpSignCheck.onchange = () => {
     saveToggleState(mpSignCheck);
+    updateSignageVisibility(erSignage, mpSignCheck.checked);
+    updateSignageVisibility(mpSignage, mpSignCheck.checked);
+    updateSignageToast();
+  };
 
-    erSignage.forEach((signage) => {
-      signage.classList.toggle("is-visible", mpSignCheck.checked);
-    });
-
-    mpSignage.forEach((signage) => {
-      signage.classList.toggle("is-visible", mpSignCheck.checked);
-    });
-
-    /*checkboxes.forEach((toggle) => {
-      if (toggle.checked === true) {
-        signageActive = true;
-        console.log(signageActive);
-        return false;
-      } else {
-        signageActive = false;
-        console.log(signageActive);
-      }
-    });*/
-    
-    signageActive = [...checkboxes].some((toggle) => toggle.checked);
-
-    
-
-    if (signageActive === true) {
-      console.log(signageActive);
-
-    } else {
-      console.log(signageActive);
-    }
-  });
-
-  // Fire extinguishers
-  feSignCheck.addEventListener("change", () => {
+  // Fire extinguishers.
+  feSignCheck.onchange = () => {
     saveToggleState(feSignCheck);
+    updateSignageVisibility(feSignage, feSignCheck.checked);
+    updateSignageToast();
+  };
 
-    feSignage.forEach((signage) => {
-      signage.classList.toggle("is-visible", feSignCheck.checked);
-    });
-  });
-
-  // Emergency exits
-  eeSignCheck.addEventListener("change", () => {
+  // Emergency exits.
+  eeSignCheck.onchange = () => {
     saveToggleState(eeSignCheck);
+    updateSignageVisibility(eeSignage, eeSignCheck.checked);
+    updateSignageToast();
+  };
 
-    eeSignage.forEach((signage) => {
-      signage.classList.toggle("is-visible", eeSignCheck.checked);
-    });
-  });
-
-  // First-aid kit
-  noSignCheck.addEventListener("change", () => {
+  // First-aid kit.
+  noSignCheck.onchange = () => {
     saveToggleState(noSignCheck);
 
-    noSignage.classList.toggle("is-visible", noSignCheck.checked);
-  });
+    if (noSignage) {
+      noSignage.classList.toggle("is-visible", noSignCheck.checked);
+    }
 
-  // Apply the restored states to the map
+    updateSignageToast();
+  };
+
+  // Apply the restored states to the map.
   checkboxes.forEach((checkbox) => {
     checkbox.dispatchEvent(new Event("change"));
   });
 
-  printMapBtn.addEventListener("click", () => {
+  // Avoid displaying a toast just because saved settings are active.
+  signageToastShown = isAnySignageActive();
+  isInitializing = false;
+
+  // Register the print button handler without accumulating listeners.
+  printMapBtn.onclick = () => {
     const previewMapPanel = document.createElement("div");
 
     previewMapPanel.innerHTML = `
@@ -138,13 +168,14 @@ export function initializeMapSignage() {
           <h2 style="color: #343D3A">Atención</h2>
         </div>
         <p style="margin-top: 20px; color: #343D3A;">
-          La señalética que haya sido habilitada en la vista del mapa principal, es 
+          La señalética que haya sido habilitada en la vista del mapa principal, es
           la misma que será visible en el mapa impreso.
         </p>
         <div style="
-          display:flex; 
+          display:flex;
           align-items: center;
-          justify-content: center; margin-top: 20px;">
+          justify-content: center;
+          margin-top: 20px;">
           <button id="print-map2" type="button" class="button-panel">
             Continuar<i class="fa-solid fa-angle-right fa-2x"></i>
           </button>
@@ -165,16 +196,14 @@ export function initializeMapSignage() {
       height: "28%",
     });
 
-    // Map area /
-    const printMapBtn2 = document.getElementById("print-map2");
+    // Handle the print confirmation button.
+    const printMapBtn2 = previewMapPanel.querySelector("#print-map2");
 
     printMapBtn2.addEventListener("click", () => {
       previewPrintMap.close();
 
-      const sourceSvg = document
-        .getElementById("map-container")
-        .querySelector("svg");
-
+      const mapContainer = document.getElementById("map-container");
+      const sourceSvg = mapContainer?.querySelector("svg");
       const printContent = document.getElementById("print-map-content");
 
       if (!sourceSvg) {
@@ -182,7 +211,12 @@ export function initializeMapSignage() {
         return;
       }
 
-      // Clear the previous map, if any
+      if (!printContent) {
+        console.error("The print map container was not found.");
+        return;
+      }
+
+      // Clear the previous map, if any.
       printContent.replaceChildren();
 
       // Clone the original SVG.
@@ -193,22 +227,34 @@ export function initializeMapSignage() {
         .querySelectorAll('[data-cell-id^="text-"]')
         .forEach((element) => element.remove());
 
-      clonedSvg.querySelector('[data-cell-id="explore-campus-text-box"]').style.display = "none";
-      clonedSvg.querySelector('[data-cell-id="explore-campus-icon"]').style.display = "none";
+      const exploreText = clonedSvg.querySelector(
+        '[data-cell-id="explore-campus-text-box"]',
+      );
 
+      const exploreIcon = clonedSvg.querySelector(
+        '[data-cell-id="explore-campus-icon"]',
+      );
 
+      if (exploreText) exploreText.style.display = "none";
+      if (exploreIcon) exploreIcon.style.display = "none";
 
-      
-      // Show signage active
-      clonedSvg.querySelector('[data-cell-id="signage-title"]').style.display =
-        "block";
-      clonedSvg.querySelector('[data-cell-id="signage-note"]').style.display =
-        "block";
+      // Show signage labels on the printed map.
+      const printSignageTitle = clonedSvg.querySelector(
+        '[data-cell-id="signage-title"]',
+      );
 
+      const printSignageNote = clonedSvg.querySelector(
+        '[data-cell-id="signage-note"]',
+      );
+
+      if (printSignageTitle) printSignageTitle.style.display = "block";
+      if (printSignageNote) printSignageNote.style.display = "block";
+
+      // Match signage elements to their corresponding checkboxes.
       const signageConfig = {
         fe: feSignCheck,
         ee: eeSignCheck,
-        er: eeSignCheck,
+        er: mpSignCheck,
         mp: mpSignCheck,
         no: noSignCheck,
       };
@@ -235,5 +281,5 @@ export function initializeMapSignage() {
       // Open the print dialog.
       window.print();
     });
-  });
+  };
 }
