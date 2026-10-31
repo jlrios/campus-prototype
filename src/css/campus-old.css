@@ -1,0 +1,174 @@
+.sector:hover rect {
+    cursor: zoom-in;
+    stroke-width: 5;
+    opacity: 30%;
+}
+
+.sector-d:hover rect {
+    fill: #FFB74D;
+    stroke: #FFA726;
+}
+
+.sector-h:hover rect {
+    fill: #2196F3;
+    stroke: #1565C0;
+}
+
+.sector-c1:hover rect {
+    fill: #4CAF50;
+    stroke: #388E3C;
+}
+
+.sector-c2:hover rect {
+    fill: var(--background-sector-c2);
+    stroke: var(--border-sector-c2)
+}
+
+.sector-selected rect {
+    fill: #00695C;
+    stroke: #004D40;
+    opacity: 30%;
+}
+
+.sector-m:hover rect {
+    fill: #00BCD4;
+    stroke: #00838F;
+}
+
+.image-select-sector {
+    width: 340px;
+    height: 340px;
+}
+
+
+/*
+  Sector toast
+ */
+.sector-toast {
+    color: #FFF;
+    position: fixed;
+    bottom: -150px;
+    width: auto;
+    display: flex;
+    background-color: #000;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 280ms ease;
+    opacity: 85%;
+}
+
+.sector-toast h3 {
+    font-weight: 800;
+    line-height: 1.5;
+    font-size: 20px;
+    color: #FFF;
+}
+
+.sector-text {
+    width: 100%;
+}
+
+.sector-icon {
+    padding: 10px;
+}
+
+.sector-toast.active {
+    bottom: 10px;
+}
+
+/*
+  Map
+*/
+.map-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.map-area {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+}
+
+.sector-map svg {
+    display: block;
+    width: 1280px;
+    height: 720px;
+    opacity: 0;
+    transform: translateY(4px);
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.sector-map svg.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.change-floor-button {
+    background: #d6e9bc;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+}
+
+
+
+/* Map slider */
+.slide-map-button {
+    display: none;
+    flex-direction: column;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-map-button i {
+    cursor: pointer;
+}
+
+.slide-map-button.is-visible {
+    display: flex;
+}
+
+/*
+==============================
+Map legends.
+==============================
+*/
+.map-legend {
+    border: 1px solid #000;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.3rem;
+    padding: 5px;
+    margin-top: 13px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.camera-window {
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+/* .winbox.max {
+  border-radius: 0;
+}*/
+
+.camera-window.max {
+    border-radius: 0;
+}

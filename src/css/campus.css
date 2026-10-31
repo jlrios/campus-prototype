@@ -10,13 +10,13 @@
   stroke: #FFA726;
 }*/
 
-[data-cell-id^="sector-"]:hover rect {
+/*[data-cell-id^="sector-"]:hover rect {
+  fill: #81C784;
   cursor: zoom-in;
-  stroke-width: 5;
-  opacity: 30%;
-}
+  opacity: 33%;
+}*/
 
-[data-cell-id="sector-d"]:hover rect {
+/*[data-cell-id="sector-d"]:hover rect {
   fill: #FFB74D;
   stroke: #FFA726;
 }
@@ -33,6 +33,7 @@
 
 [data-cell-id="sector-c2"]:hover rect {
   fill: var(--background-sector-c2);
+  fill: #FFCC80;
   stroke: var(--border-sector-c2)
 }
 
@@ -45,13 +46,26 @@
 [data-cell-id="sector-m"]:hover rect {
   fill: #00BCD4;
   stroke: #00838F;
+}*/
+
+/* Temporary highlight when hovering */
+[data-cell-id^="sector-"]:hover rect {
+  fill: #81C784;
+  fill-opacity: 0.4;
+}
+
+/* Persistent highlight for the selected sector */
+[data-cell-id^="sector-"].selected rect {
+  fill: #4CAF50;
+  fill-opacity: 0.5;
+  stroke: #2E7D32;
+  stroke-width: 4;
 }
 
 .image-select-sector {
   width: 340px;
   height: 340px;
 }
-
 
 /*
   Sector toast
