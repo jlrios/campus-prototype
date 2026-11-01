@@ -3,7 +3,7 @@ const viewerImage = document.getElementById("viewerImage");
 const viewerCaption = document.getElementById("viewerCaption");
 const closeButton = document.querySelector(".image-viewer__close");
 
-export function openImage(src, description, alt = "") {
+function openImage(src, description, alt = "") {
   viewerImage.src = src;
   viewerImage.alt = alt;
   viewerCaption.textContent = description;
@@ -15,7 +15,7 @@ function closeImage() {
   imageViewer.close();
 }
 
-closeButton.addEventListener("click", closeImage());
+closeButton.addEventListener("click", closeImage);
 
 // Cerrar haciendo click fuera de la imagen
 imageViewer.addEventListener("click", (e) => {
@@ -117,3 +117,5 @@ infoPanelButton.addEventListener("click", () => {
 closePanelButton.addEventListener("click", () => {
   panel.classList.remove("open");
 });
+
+window.openImage = openImage;
