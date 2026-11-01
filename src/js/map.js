@@ -1,5 +1,7 @@
 import Notify from "simple-notify";
 import "simple-notify/dist/simple-notify.css";
+import tippy from "tippy.js";
+import "tippy.js/dist/tippy.css";
 
 // Checkboxes
 const feSignCheck = document.getElementById("fe-signage");
@@ -22,6 +24,8 @@ let isInitializing = false;
 function restoreToggleState(checkbox) {
   const savedState = localStorage.getItem(checkbox.id);
   checkbox.checked = savedState === "true";
+
+  updateSignageToast();
 }
 
 // Save checkbox states to localStorage.
@@ -43,6 +47,9 @@ function updateSignageToast() {
     signageToastInstance?.close();
     signageToastInstance = null;
     signageToastShown = false;
+
+    enableSectorsSelection();
+
     return;
   }
 
@@ -51,9 +58,9 @@ function updateSignageToast() {
 
   // Create the notification and keep its instance for later.
   signageToastInstance = new Notify({
-    status: "info",
+    status: "success",
     title: "Modo señalética activo",
-    text: "La selección de sectores ha sido deshabilitada, desactive toda la señalética visible para volver al modo normal.",
+    text: "<strong>La selección de sectores ha sido deshabilitada, desactive toda la señalética visible para volver al modo normal.</strong>",
     effect: "slide",
     speed: 300,
     customClass: "",
@@ -70,6 +77,24 @@ function updateSignageToast() {
   });
 
   signageToastShown = true;
+
+  disabledSectorsSelection();
+}
+
+function disabledSectorsSelection() {
+  const disableSectors = document.querySelectorAll('[data-cell-id^="sector-"]');
+
+  disableSectors.forEach((element) => {
+    element.style.display = "none";
+  });
+}
+
+function enableSectorsSelection() {
+  const enableSectors = document.querySelectorAll('[data-cell-id^="sector-"]');
+
+  enableSectors.forEach((element) => {
+    element.style.display = "block";
+  });
 }
 
 // Apply the visibility state to a collection of SVG elements.
@@ -149,13 +174,66 @@ export function initializeMapSignage() {
   };
 
   // Apply the restored states to the map.
-  checkboxes.forEach((checkbox) => {
+  /*checkboxes.forEach((checkbox) => {
     checkbox.dispatchEvent(new Event("change"));
   });
 
+  
   // Avoid displaying a toast just because saved settings are active.
   signageToastShown = isAnySignageActive();
-  isInitializing = false;
+  isInitializing = false;*/
+
+  checkboxes.forEach(checkbox =>
+  checkbox.dispatchEvent(new Event("change")),
+);
+
+isInitializing = false;
+
+// Show the toast if signage was restored as active.
+signageToastShown = false;
+updateSignageToast();
+
+
+// Initialize an image tooltip.
+tippy('[data-cell-id="fe-01"]', {
+  content: `
+    <div class="signage-tooltip">
+      <img
+        src="/campus-prototype/images/fe-01.png"
+        alt="Extintor"
+      >
+      <div>
+        <strong>No. Extintor</strong>: 1
+      </div>
+      <div>
+        <strong>Ubicación</strong>: edificio H
+      </div>
+      <div>
+        <strong>Estado</strong>: operativo
+      </div>
+      <div>
+        <strong>Descripción</strong>: equipo de protección contra incendios
+      </div>
+      <div>
+        <strong>Último mantenimiento</strong>: 10/10/26
+      </div>
+    </div>
+  `,
+  allowHTML: true,
+  placement: "right",
+  animation: "fade",
+  theme: "campus",
+});
+
+
+
+
+
+
+
+
+
+
 
   // Register the print button handler without accumulating listeners.
   printMapBtn.onclick = () => {

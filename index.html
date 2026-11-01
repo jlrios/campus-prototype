@@ -13,13 +13,7 @@
     <link rel="stylesheet" href="./src/css/widgets.css" />
     <link rel="stylesheet" href="./src/css/components.css" />
     <link rel="stylesheet" href="./src/css/campus.css" />
-    <!--<script defer src="/src/js/app.js"></script>
-    <script type="module" defer src="./src/js/campus.js"></script>
-    <script defer src="./src/js/components.js"></script>
-    <script defer src="./src/dist/winbox.bundle.min.js"></script>-->
     <script type="module" src="/src/js/main.js"></script>
-
-    <!--<script type="module" defer src="/src/js/map.js"></script>-->
     <title>Plantel 20 Oriente - Campus Interactivo</title>
   </head>
   <body>
@@ -347,6 +341,23 @@
       </div>
     </div>
     <!--
+      Dialog
+    -->
+    <dialog id="imageViewer" class="image-viewer">
+        <button
+          class="image-viewer__close"
+          type="button"
+          aria-label="Cerrar imagen"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="viewerImage" class="image-viewer__image" src="" alt="" />
+        <footer class="image-viewer__footer">
+          <p id="viewerCaption"></p>
+        </footer>
+      </dialog>
+      
+    <!--
       ==============================
       Templates
       ==============================
@@ -496,8 +507,7 @@
                   src="./src/assets/images/gallery/thumbnails/plantel-20-01-m.png"
                   alt=""
                   onclick="
-                    openImage(
-                      './src/assets/images/gallery/pictures/plantel-20-01.png',
+                    openImage('./src/assets/images/gallery/pictures/plantel-20-01.png',
                       'Fachada principal del edificio H. Cuenta con laboratorios, aulas, sanitarios, biblioteca y oficinas administrativas.',
                       'Edificio H',
                     )
