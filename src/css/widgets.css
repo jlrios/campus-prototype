@@ -178,6 +178,7 @@ Notices list
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     text-align: center;
+    font-size: 14px;
 }
 
 .day-names div {

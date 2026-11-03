@@ -127,8 +127,7 @@ navExpand.addEventListener('click', () => {
    navExpandList.classList.toggle('show-list');
 
    // Rotate icon
-   navExpandIcon.classList.toggle('rotate-icon');
+   //navExpandIcon.classList.toggle('rotate-icon');
 });
-
 
 window.openImage = openImage;

@@ -255,9 +255,17 @@
 
 /*
 ==============================
-Widgets
+Cameras
 ==============================
 */
+[data-cell-id="cameara-h3"]:hover {
+  cursor: pointer;
+}
+
+/* Temp */
+[data-cell-id="shmb-2fch3"]:hover {
+  cursor: zoom-in;
+}
 
 /*
 ==============================
