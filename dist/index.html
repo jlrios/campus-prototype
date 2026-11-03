@@ -8,8 +8,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
     <title>Plantel 20 Oriente - Campus Interactivo</title>
-    <script type="module" crossorigin src="/campus-prototype/assets/index-BhvXI2hu.js"></script>
-    <link rel="stylesheet" crossorigin href="/campus-prototype/assets/index-o0xb7c-V.css">
+    <script type="module" crossorigin src="/campus-prototype/assets/index-Dhi8ruoZ.js"></script>
+    <link rel="stylesheet" crossorigin href="/campus-prototype/assets/index-DfObmZU3.css">
   </head>
   <body>
     <aside>
@@ -190,13 +190,6 @@
             <!-- Calendar -->
             <div class="calendar">
               <div class="calendar-header">
-                <!--<button onclick="previousMonth()">
-                  <i class="fa-solid fa-arrow-left"></i>
-                </button>
-                <h2 id="month-year">Mes</h2>
-                <button onclick="nextMonth()">
-                  <i class="fa-solid fa-arrow-right"></i>
-                </button>-->
                 <button id="previous-month">
                   <i class="fa-solid fa-arrow-left"></i>
                 </button>
@@ -228,7 +221,6 @@
                 font-size: larger;
               "
             >
-              <i class=""></i>
               PLANTEL 20 ORIENTE<i class="fa-solid fa-angle-right"></i>MAPA
               PRINCIPAL
             </div>
@@ -290,6 +282,58 @@
                 </button>-->
                 </div>
               </div>
+            </div>
+            <!-- Bottom nav -->
+            <div class="bottom-nav-container">
+              <nav class="bottom-nav">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <i class="fa-solid fa-home"></i>
+                    </a>
+                  </li> 
+                  <li>
+                    <a href="#">
+                      <i class="fa-solid fa-mug-saucer"></i>
+                    </a>
+                  </li>
+                  <!-- Expand list -->
+                  <li>
+                    <a id="nav-expand" class="nav__expand">
+                      <i class="fa-solid fa-school"></i>
+                    </a>
+                    <!--<button class="nav__expand" id="nav-expand">
+                      <i class="fa-solid fa-home" id="nav-expand-icon"></i>
+                    </button>-->
+                    <ul class="nav__expand-list" id="nav-expand-list">
+                      <li>
+                        <a id="main-bldg-down" class="nav__expand-link">
+                          <i class="fa-solid fa-circle-chevron-up"></i>
+                          <span>Planta baja</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a id="main-bldg-up" class="nav__expand-link">
+                          <i class="fa-solid fa-circle-chevron-down"></i>
+                          <span>Planta alta</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>                    
+                    <a href="#" class="nav__expand-link">
+                      <i class="fa-solid fa-warehouse"></i>
+                    </a>
+                  </li>
+                  <li>                    
+                    <a href="#" class="nav__expand-link">
+                      <i class="fa-solid fa-print"></i>
+                    </a>
+                  </li>
+                </ul>
+                
+
+              </nav>
             </div>
           </div>
           <!-- End map -->
@@ -478,7 +522,7 @@
                 <span>Aulas de la H1 a la H8</span>
               </div>
               <div>
-                <button class="button-panel" id="expand-sector-h">
+                <button class="button-panel" id="sector-h-map">
                   <i class="fa-solid fa-expand fa-2x"></i>
                   Ver a detalle
                 </button>
