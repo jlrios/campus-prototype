@@ -13,6 +13,7 @@ import { initializeMapSignage } from "./map.js";
 
 // Campus sector toast data
 import mainMapToasts from "./../data/toast-sectors.json";
+import { initializeSectorHMap } from "./sector-h.js";
 
 /* ========================================
   DOM Elements
@@ -42,21 +43,27 @@ export const maps = {
     urlMap: mainMap,
   },
 
-  H: {
-    id: "sector-h",
+  H1: {
+    id: "sector-h-ground",
 
     mainBuilding: {
       groundFloor: {
         id: "bldgHGrnd",
         urlMap: bldgHGrndMap,
-      },
+      }
+    }
+  },
 
+  H2: {
+    id: "sector-h-upper",
+
+    mainBuilding: {
       upperFloor: {
         id: "bldgHUpper",
         urlMap: bldgHUpperMap,
-      },
-    },
-  },
+      }
+    }
+  }
 };
 
 /* ========================================
@@ -87,16 +94,15 @@ export async function loadSVGMap(mapId, mapSVG) {
  * Returns the stored SVG markup for a map ID.
  * Returns null when the map has not been loaded.
  */
-export function getSVGMap(mapId) {
+function getSVGMap(mapId) {
   return loadedMaps[mapId] ?? null;
 }
 
 /**
  * Renders the requested SVG map and initializes its signage.
  */
-function showMap(mapId) {
+export function showMap(mapId) {
   mapArea.innerHTML = getSVGMap(mapId);
-  initializeMapSignage();
 }
 
 /* ========================================
@@ -105,8 +111,17 @@ function showMap(mapId) {
 
 // Load the main campus map before rendering it.
 await Promise.all([loadSVGMap(maps.C.id, maps.C.urlMap)]);
+await Promise.all([loadSVGMap(maps.H1.id, maps.H1.mainBuilding.groundFloor.urlMap)]);
+await Promise.all([loadSVGMap(maps.H2.id, maps.H2.mainBuilding.upperFloor.urlMap)]);
 
+console.log(loadedMaps);
+
+/**
+ * 
+ */
 showMap(maps.C.id);
+initializeMapSignage();
+
 
 /* ========================================
   Campus Map Elements
@@ -249,6 +264,12 @@ campusSVG.addEventListener("click", (e) => {
 
   // Display the selected sector's information panel.
   showInfoPanel(panelContainer, clone, dataSector.title, dataSector.icon);
+
+  /* ========================================
+    Sector H
+  ======================================== */
+  initializeSectorHMap();
+
 });
 
 /* ========================================

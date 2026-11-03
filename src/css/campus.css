@@ -117,6 +117,7 @@
 }
 
 .map-area {
+  padding-inline: 25px;
   position: relative;
   width: 1280px;
   height: 720px;

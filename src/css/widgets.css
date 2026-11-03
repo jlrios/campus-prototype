@@ -7,7 +7,7 @@
     border: 1px solid var(--border-component);
     border-radius: 6px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    padding: 15px;
+    padding: 10px;
     width: 100%;
 }
 
@@ -149,7 +149,7 @@ Notices list
     background: white;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    padding: 15px;
+    padding: 10px;
     margin-top: 25px;
 }
 
