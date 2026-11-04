@@ -1,13 +1,4 @@
 .map-container {
-  /*position: relative;
-  width: 100%;
-  height: calc(100vh - 60px);
-
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-
-  overflow: hidden;*/
   display: flex;
   justify-content: center;
   width: 100%;
@@ -126,33 +117,6 @@
   left: 25px;
   border: 2px solid #E25619;
 }
-
-/*
-==============================
-Señaletica
-==============================
-*/
-
-/*g[data-cell-id^="er-"] {
-  display: none;
-}
-
-g[data-cell-id^="fe-"] {
-  display: none;
-}
-
-g[data-cell-id^="ee-"] {
-  display: none;
-}
-
-[data-cell-id="no-01"] {
-  display: none;
-}
-
-[data-cell-id="mp-01"],
-[data-cell-id="mp-02"] {
-  display: none;
-}*/
 
 /* 
 ==============================
@@ -423,7 +387,7 @@ Signage tooltips
   margin-inline: auto;
   padding: 1rem 1.75rem;
   /* border: 1px solid #000; */
-  width: 340px;
+  width: 400px;
 }
 
 .bottom-nav ul {
@@ -549,10 +513,18 @@ Signage tooltips
 
 /* Active link */
 .active-link {
-  color: var(--white-color);
+  color: #fff;
 }
 
 /* ========== Finish bottom navigation ==========*/
+
+/* Classrooms */
+[data-cell-id^="classroom-h"]:hover rect {
+  cursor: zoom-in;
+  fill: #B3D7FF;
+  fill-opacity: 0.4;
+  stroke-width: 10;
+}
 
 /* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
