@@ -268,6 +268,9 @@ campusSVG.addEventListener("click", (e) => {
   /* ========================================
     Sector H
   ======================================== */
+  
+  if (dataSector.title !== "Sector H") return;
+
   initializeSectorHMap();
 
 });
@@ -279,7 +282,7 @@ campusSVG.addEventListener("click", (e) => {
 /**
  * Renders the selected sector's template and updates its header.
  */
-function showInfoPanel(panelContainer, clone, sectorTitle, sectorIcon) {
+export function showInfoPanel(panelContainer, clone, sectorTitle, sectorIcon) {
   panelContainer.innerHTML = "";
   panelContainer.appendChild(clone);
 

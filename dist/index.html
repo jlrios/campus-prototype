@@ -6,10 +6,10 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    />
+    />
     <title>Plantel 20 Oriente - Campus Interactivo</title>
-    <script type="module" crossorigin src="/campus-prototype/assets/index-CTDJoe42.js"></script>
-    <link rel="stylesheet" crossorigin href="/campus-prototype/assets/index-9USIBxsA.css">
+    <script type="module" crossorigin src="/campus-prototype/assets/index-B0PzkFHJ.js"></script>
+    <link rel="stylesheet" crossorigin href="/campus-prototype/assets/index-B0xvWvHv.css">
   </head>
   <body>
     <aside>
@@ -632,9 +632,9 @@
                   display: flex;
                 "
               >
-                <button class="button-panel">
+                <!--<button class="button-panel">
                   <i class="fa-regular fa-map fa-2x"></i>Ir al sector H
-                </button>
+                </button>-->
               </div>
             </div>
           </div>
@@ -665,5 +665,221 @@
         </div>
       </div>
     </template>
-  </body>
+
+<!-- Panel informativo de Biblioteca -->
+<template id="h-library">
+<section class="library-panel" aria-labelledby="library-title">
+  <header class="library-header">
+    <div class="library-heading">
+      <span class="library-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><path d="M7 10.5c7-2.2 13-1.2 17 3v27c-4-4.2-10-5.2-17-3V10.5Z"/><path d="M41 10.5c-7-2.2-13-1.2-17 3v27c4-4.2 10-5.2 17-3V10.5Z"/><path d="M24 14v26"/></svg>
+      </span>
+      <div>
+        <p class="library-eyebrow">ESPACIO DE APRENDIZAJE</p>
+        <h2 id="library-title">Biblioteca</h2>
+        <p class="library-subtitle">Sector H <span>•</span> Planta baja</p>
+      </div>
+    </div>
+    <span class="library-status"><i></i> Servicio disponible</span>
+  </header>
+
+  <div class="library-stats" aria-label="Datos generales">
+    <article class="library-stat">
+      <span class="stat-icon" aria-hidden="true">▤</span>
+      <div><p>Material de consulta</p><strong>850</strong><small>recursos disponibles</small></div>
+    </article>
+    <article class="library-stat">
+      <span class="stat-icon" aria-hidden="true">♟</span>
+      <div><p>Capacidad máxima</p><strong>30</strong><small>alumnos</small></div>
+    </article>
+    <article class="library-stat">
+      <span class="stat-icon" aria-hidden="true">◷</span>
+      <div><p>Horario de atención</p><strong class="stat-hours">8:00 – 19:00</strong><small>lunes a viernes</small></div>
+    </article>
+    <article class="library-stat">
+      <span class="stat-icon" aria-hidden="true">⌖</span>
+      <div><p>Ubicación</p><strong class="stat-location">Edificio H</strong><small>planta baja</small></div>
+    </article>
+  </div>
+
+  <p class="library-description">
+    Espacio para consultar, descubrir y desarrollar nuevas ideas. Cuenta con materiales
+    de apoyo para las asignaturas. Ambiente tranquilo y con recursos
+    tecnológicos para las actividades académicas.
+  </p>
+
+  <div class="library-grid">
+    <article class="library-card librarian-card">
+      <div class="card-title"><span class="card-icon">♙</span><h3>Encargada</h3></div>
+      <div class="librarian-content">
+        <div class="librarian-avatar" aria-hidden="true">LG</div>
+        <div class="librarian-details">
+          <strong>Lic. Laurita Garza</strong>
+          <span>Responsable de biblioteca</span>
+          <small>Orientación y apoyo a usuarios</small>
+          <div class="contact-note">
+            <i class="fa-solid fa-envelope fa-2x"></i>
+            lgarza@plantel20.edu.mx
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="library-card">
+      <div class="card-title"><span class="card-icon">✦</span><h3>Servicios</h3></div>
+      <ul class="service-list">
+        <li>Consulta en sala</li>
+        <li>Préstamo externo</li>
+        <li>Impresión y fotocopiado</li>
+        <li>Carnet de impresión</li>
+        <li>Estaciones de trabajo</li>
+      </ul>
+    </article>
+
+    <article class="library-card collection-card">
+      <div class="card-title"><span class="card-icon">◉</span><h3>Composición del material</h3></div>
+      <div class="collection-content">
+        <div class="donut-chart" role="img" aria-label="Distribución ilustrativa: libros 60%, revistas 15%, periódicos 10%, material digital y audiovisual 15%">
+          <div class="donut-hole"><strong>100%</strong><span>colección</span></div>
+        </div>
+        <ul class="chart-legend">
+          <li><i class="legend-books"></i><span>Libros</span><b>60%</b></li>
+          <li><i class="legend-magazines"></i><span>Revistas</span><b>15%</b></li>
+          <li><i class="legend-news"></i><span>Periódicos</span><b>10%</b></li>
+          <li><i class="legend-digital"></i><span>Digital y audiovisual</span><b>15%</b></li>
+        </ul>
+      </div>
+      <p class="chart-footnote">Distribución de ejemplo; ajustar al inventario real.</p>
+    </article>
+
+    <article class="library-card equipment-card">
+      <div class="card-title"><span class="card-icon">▣</span><h3>Equipo e instalaciones</h3></div>
+      <ul class="equipment-list">
+        <li><span>❄</span> Aire acondicionado</li>
+        <li><span>▣</span> Proyector multimedia</li>
+        <li><span>▤</span> Computadoras</li>
+        <li><span>▧</span> Impresora y copiadora</li>
+        <li><span>⌁</span> Conexión Wi-Fi</li>
+      </ul>
+    </article>
+  </div>
+
+  <footer class="library-footer">
+    <i class="fa-regular fa-hand-point-right fa-2x"></i>
+    <p>Utilice la herramienta de búsqueda, ubicada en la parte superior del mapa, para localizar el material de consulta de su interés.
+    </p>
+  </footer>
+</section>
+</template>
+
+
+<!-- Panel informativo de Centro de Cómputop -->
+<template id="h-computer-center">
+<section class="library-panel" aria-labelledby="library-title">
+  <header class="library-header">
+    <div class="library-heading">
+      <span class="library-mark" aria-hidden="true">
+      <i class="fa-solid fa-computer fa-2x"></i>
+        <!--<svg viewBox="0 0 48 48"><path d="M7 10.5c7-2.2 13-1.2 17 3v27c-4-4.2-10-5.2-17-3V10.5Z"/><path d="M41 10.5c-7-2.2-13-1.2-17 3v27c4-4.2 10-5.2 17-3V10.5Z"/><path d="M24 14v26"/></svg>-->
+      </span>
+      <div>
+        <p class="library-eyebrow">ESPACIO DE APRENDIZAJE</p>
+        <h2 id="library-title">Lab. Informática</h2>
+        <p class="library-subtitle">Edificio H <span>•</span> Sector H <span>•</span> Planta baja</p>
+      </div>
+    </div>
+    <span class="library-status"><i></i> Servicio disponible</span>
+  </header>
+
+  <div class="library-stats" aria-label="Datos generales">
+    <article class="library-stat">
+      <span class="stat-icon" aria-hidden="true">▤</span>
+      <div><p>Equipos</p><strong>50</strong><small>computadoras disponibles</small></div>
+    </article>
+    <article class="library-stat">
+      <span class="stat-icon" aria-hidden="true">♟</span>
+      <div><p>Capacidad máxima</p><strong>50</strong><small>alumnos</small></div>
+    </article>
+    <article class="library-stat">
+      <span class="stat-icon" aria-hidden="true">◷</span>
+      <div><p>Horario de atención</p><strong class="stat-hours">8:00 – 19:00</strong><small>lunes a viernes</small></div>
+    </article>
+    <article class="library-stat">
+      <span class="stat-icon" aria-hidden="true">⌖</span>
+      <div><p>Ubicación</p><strong class="stat-location">Edificio H</strong><small>planta baja</small></div>
+    </article>
+  </div>
+
+  <p class="library-description">
+    El Laboratorio de infomática del Edificio H cuenta con equipos de última generación, conectividad
+    a internet y software especializado para el desarrollo de actividades académicas y prácticas.
+  </p>
+
+  <div class="library-grid">
+    <article class="library-card librarian-card">
+      <div class="card-title"><span class="card-icon">♙</span><h3>Encargado</h3></div>
+      <div class="librarian-content">
+        <div class="librarian-avatar" aria-hidden="true">CD</div>
+        <div class="librarian-details">
+          <strong>Ing. Carlos Durham</strong>
+          <span>Responsable de sistemas</span>
+          <small>Orientación y apoyo a usuarios</small>
+          <div class="contact-note">
+            <i class="fa-solid fa-envelope fa-2x"></i>
+            cdurham@plantel20.edu.mx
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="library-card">
+      <div class="card-title"><span class="card-icon">✦</span><h3>Servicios</h3></div>
+      <ul class="service-list">
+        <li>Entrega de cuentas correo electrónico</li>
+        <li>Recuperación de contraseñas</li>
+        <li>Impresión</li>
+        <li>Préstamo equipo</li>
+        <li>Estaciones de trabajo</li>
+      </ul>
+    </article>
+
+    <article class="library-card collection-card">
+      <div class="card-title"><span class="card-icon">◉</span><h3>Categorías equipo informático</h3></div>
+      <div class="collection-content">
+        <div class="donut-chart" role="img" aria-label="Distribución ilustrativa: libros 60%, revistas 15%, periódicos 10%, material digital y audiovisual 15%">
+          <div class="donut-hole"><strong>100%</strong><span>colección</span></div>
+        </div>
+        <ul class="chart-legend">
+          <li><i class="legend-books"></i><span>PC</span><b>60%</b></li>
+          <li><i class="legend-magazines"></i><span>Portátiles</span><b>15%</b></li>
+          <li><i class="legend-news"></i><span>Auriculares</span><b>15%</b></li>
+          <li><i class="legend-digital"></i><span>Servidores</span><b>10%</b></li>
+        </ul>
+      </div>
+      <p class="chart-footnote">Última actualización del inventario: 05/12/26</p>
+    </article>
+
+    <article class="library-card equipment-card">
+      <div class="card-title"><span class="card-icon">▣</span><h3>Equipo e instalaciones</h3></div>
+      <ul class="equipment-list">
+        <li><span>❄</span> Aire acondicionado</li>
+        <li><span>▣</span> Proyector multimedia</li>
+        <li><span>▤</span> Computadoras</li>
+        <li><span>▧</span> Internet</li>
+        <li><span>⌁</span> Conexión Wi-Fi</li>
+      </ul>
+    </article>
+  </div>
+
+  <footer class="library-footer">
+    <!-- <span class="footer-bulb" aria-hidden="true">✧</span> -->
+    <i class="fa-regular fa-hand-point-right fa-2x"></i>
+    <p>Utilice la herramienta de búsqueda, ubicada en la parte superior del mapa, para localizar algún equipo informático de su interés.
+    </p>
+  </footer>
+</section>
+</template>
+
+
+</body>
 </html>

@@ -1,69 +1,7 @@
-// Sector H maps
-
-/*import { showMap, maps } from "./campus";
-
-let mainBldgCurrentMap = null;
-
-let h3Camera = null;
-
-export function initializeSectorHMap() {
-  
-  const sectorHMapBtn = document.getElementById("sector-h-map");
-  const infoPanel = document.querySelector(".info-panel");
-  const signagePanel = document.querySelector(".simbology-bar");
-  const bottomNav = document.querySelector(".bottom-nav-container");
-
-  const homeMap = document.getElementById("home-map");
-  const mainBldgDown = document.getElementById("main-bldg-down");
-  const mainBldgUp = document.getElementById("main-bldg-up");
-  
-  sectorHMapBtn.addEventListener("click", () => {
-    infoPanel.classList.remove("open");
-    signagePanel.classList.add("is-not-visible");
-    bottomNav.classList.add("is-visible");
-
-    showMap(maps.H1.id);
-
-    mainBldgCurrentMap = 1;
-  });
-
-  // Buttons bottom navigation
-  homeMap.addEventListener("click", () => {
-    bottomNav.classList.remove("is-visible");
-    signagePanel.classList.remove("is-not-visible");
-    
-    showMap(maps.C.id);
-    // initializeMapSignage();
-
-  });
-
-  mainBldgDown.addEventListener("click", () => {
-    if (mainBldgCurrentMap === 1) return;
-
-    showMap(maps.H1.id);
-
-    mainBldgCurrentMap = 1;
-  });
-
-  mainBldgUp.addEventListener("click", () => {
-    if (mainBldgCurrentMap === 2) return;
-
-    showMap(maps.H2.id);
-
-    mainBldgCurrentMap = 2
-
-    h3Camera = document.querySelector('[data-cell-id="camera-h3"]');
-console.log("Camera 3:");
-  console.log(h3Camera);
-
-
-  });
-}*/
-
-
 /* Sector H maps */
 
 import { showMap, maps } from "./campus";
+import { sectorHGround } from "./sector-h-ground";
 
 let mainBldgCurrentMap = null;
 
@@ -88,15 +26,18 @@ export function initializeSectorHMap() {
     showMap(maps.H1.id);
 
     mainBldgCurrentMap = 1;
+
+    sectorHGround();
   });
 
   // Bottom navigation
-  homeMap.addEventListener("click", () => {
+  /* homeMap.addEventListener("click", () => {
     bottomNav.classList.remove("is-visible");
     signagePanel.classList.remove("is-not-visible");
 
     showMap(maps.C.id);
-  });
+  }); */
+
 
   mainBldgDown.addEventListener("click", () => {
     if (mainBldgCurrentMap === 1) return;
@@ -104,6 +45,8 @@ export function initializeSectorHMap() {
     showMap(maps.H1.id);
 
     mainBldgCurrentMap = 1;
+
+    sectorHGround();
   });
 
   mainBldgUp.addEventListener("click", () => {
@@ -112,6 +55,7 @@ export function initializeSectorHMap() {
     showMap(maps.H2.id);
 
     mainBldgCurrentMap = 2;
+    
   });
 
   // Handle clicks on the camera even when the SVG is replaced.
@@ -120,9 +64,8 @@ export function initializeSectorHMap() {
       '[data-cell-id="camera-h3"]'
     );
 
-    if (!h3Camera) return;
 
-    console.log("Camera 3:", h3Camera);
+    if (!h3Camera) return;
 
     // Camera interaction here.
     openCameraViewer();
@@ -131,14 +74,14 @@ export function initializeSectorHMap() {
 
   /* Revisar después*/
   function openCameraViewer() {
-const cameraPanel = document.createElement("div");
+    const cameraPanel = document.createElement("div");
 
-  cameraPanel.className = "camera-viewer";
+    cameraPanel.className = "camera-viewer";
 
-  cameraPanel.innerHTML = `
-    <div class="camera-loader" id="cameraLoader">
+    cameraPanel.innerHTML = `
+      <div class="camera-loader" id="cameraLoader">
 
-      <div class="camera-loader__content">
+        <div class="camera-loader__content">
 
         <div class="camera-loader__icon" aria-hidden="true">
           <svg viewBox="0 0 64 64">

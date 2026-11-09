@@ -518,13 +518,31 @@ Signage tooltips
 
 /* ========== Finish bottom navigation ==========*/
 
-/* Classrooms */
+/* Classroom H3 */
 [data-cell-id^="classroom-h"]:hover rect {
   cursor: zoom-in;
-  fill: #B3D7FF;
-  fill-opacity: 0.4;
-  stroke-width: 10;
+  fill-opacity: 0.52;
 }
+
+[data-cell-id^="classroom-h"] tspan {
+  pointer-events: none;
+}
+
+[data-cell-id="h-computer-center"]:hover rect {
+  cursor: zoom-in;
+  fill-opacity: 0.52;
+}
+
+[data-cell-id="h-academic-services"]:hover rect {
+  cursor: zoom-in;
+  fill-opacity: 0.52;
+}
+
+[data-cell-id="h-library"]:hover rect {
+  cursor: zoom-in;
+  fill-opacity: 0.52;
+}
+
 
 /* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
