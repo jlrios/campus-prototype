@@ -2,6 +2,7 @@
 
 import { showMap, maps } from "./campus";
 import { sectorHGround } from "./sector-h-ground";
+import { sectorHUpper } from "./sector-h-upper";
 
 let mainBldgCurrentMap = null;
 
@@ -55,7 +56,8 @@ export function initializeSectorHMap() {
     showMap(maps.H2.id);
 
     mainBldgCurrentMap = 2;
-    
+
+    sectorHUpper();
   });
 
   // Handle clicks on the camera even when the SVG is replaced.

@@ -1,0 +1,765 @@
+<section class="classroom-panel" aria-labelledby="classroom-title">
+  <header class="classroom-header">
+    <div class="classroom-heading">
+      <span class="classroom-mark" aria-hidden="true">▣</span>
+      <div>
+        <p class="classroom-eyebrow">ESPACIO ACADÉMICO</p>
+        <h2 id="classroom-title">Aula H-101</h2>
+        <p class="classroom-subtitle">
+          <strong>Sector H</strong> <span>•</span> Planta baja
+        </p>
+      </div>
+    </div>
+    <span class="classroom-status"><i></i> Aula en servicio</span>
+  </header>
+  <p class="classroom-description">
+    Aula destinada a actividades académicas teóricas y prácticas. Cuenta con
+    recursos didácticos y tecnológicos para apoyar las actividades de enseñanza
+    y aprendizaje.
+  </p>
+  <section class="classroom-stats" aria-label="Indicadores del aula">
+    <article class="classroom-stat">
+      <span class="stat-icon">♟</span>
+      <div>
+        <p>Alumnos que hacen uso</p>
+        <strong>38</strong><small>alumnos registrados</small>
+      </div>
+    </article>
+    <article class="classroom-stat">
+      <span class="stat-icon">♟</span>
+      <div>
+        <p>Capacidad máxima</p>
+        <strong>45</strong><small>alumnos</small>
+      </div>
+    </article>
+    <article class="classroom-stat classroom-gender-stat">
+      <div class="gender-item">
+        <span class="gender-symbol">♂</span>
+        <div>
+          <p>Hombres</p>
+          <strong>22</strong><small>57.9%</small>
+        </div>
+      </div>
+      <div
+        class="gender-donut"
+        role="img"
+        aria-label="57.9 por ciento hombres y 42.1 por ciento mujeres"
+      >
+        <span></span>
+      </div>
+      <div class="gender-item">
+        <span class="gender-symbol">♀</span>
+        <div>
+          <p>Mujeres</p>
+          <strong>16</strong><small>42.1%</small>
+        </div>
+      </div>
+    </article>
+  </section>
+  <div class="classroom-workspace">
+    <nav class="classroom-tabs" role="tablist" aria-label="Secciones del aula">
+      <button
+        class="classroom-tab is-active"
+        id="tab-summary"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-summary"
+        data-tab="summary"
+      >
+        ⌂ <span>Resumen</span>
+      </button>
+      <button
+        class="classroom-tab"
+        id="tab-schedule"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-schedule"
+        data-tab="schedule"
+        tabindex="-1"
+      >
+        ▤ <span>Asignaturas y horarios</span>
+      </button>
+      <button
+        class="classroom-tab"
+        id="tab-students"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-students"
+        data-tab="students"
+        tabindex="-1"
+      >
+        ♧ <span>Alumnos</span>
+      </button>
+      <button
+        class="classroom-tab"
+        id="tab-equipment"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-equipment"
+        data-tab="equipment"
+        tabindex="-1"
+      >
+        ▣ <span>Equipo</span>
+      </button>
+      <button
+        class="classroom-tab"
+        id="tab-more"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-more"
+        data-tab="more"
+        tabindex="-1"
+      >
+        ⓘ <span>Más información</span>
+      </button>
+    </nav>
+    <div class="classroom-tab-panels">
+      <section
+        class="classroom-tab-panel is-active"
+        id="panel-summary"
+        role="tabpanel"
+        aria-labelledby="tab-summary"
+        data-panel="summary"
+      >
+        <div class="classroom-grid">
+          <article class="classroom-card">
+            <div class="card-heading">
+              <span class="card-icon">ⓘ</span>
+              <h3>Información general</h3>
+            </div>
+            <dl class="detail-list">
+              <div>
+                <dt>Edificio:</dt>
+                <dd>Edificio H</dd>
+              </div>
+              <div>
+                <dt>Ubicación:</dt>
+                <dd>Planta baja</dd>
+              </div>
+              <div>
+                <dt>Código del aula:</dt>
+                <dd>H-101</dd>
+              </div>
+              <div>
+                <dt>Tipo de aula:</dt>
+                <dd>Teórica / Práctica</dd>
+              </div>
+              <div>
+                <dt>Superficie:</dt>
+                <dd>56.3 m²</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="classroom-card">
+            <div class="card-heading">
+              <span class="card-icon">♟</span>
+              <h3>Uso y capacidad</h3>
+            </div>
+            <div class="capacity-line">
+              <span>Alumnos que hacen uso</span><strong>38</strong>
+            </div>
+            <div class="capacity-line">
+              <span>Capacidad máxima</span><strong>45 alumnos</strong>
+            </div>
+            <div class="card-separator"></div>
+            <p class="subsection-label">Distribución por género</p>
+            <div class="gender-bar-row">
+              <div><span>Hombres</span><strong>22 (57.9%)</strong></div>
+              <div class="meter"><i class="meter-men"></i></div>
+            </div>
+            <div class="gender-bar-row">
+              <div><span>Mujeres</span><strong>16 (42.1%)</strong></div>
+              <div class="meter"><i class="meter-women"></i></div>
+            </div>
+          </article>
+          <article class="classroom-card">
+            <div class="card-heading">
+              <span class="card-icon">▤</span>
+              <h3>Asignaturas que se imparten</h3>
+            </div>
+            <div class="mini-table-wrap">
+              <table class="mini-table">
+                <thead>
+                  <tr>
+                    <th>Asignatura</th>
+                    <th>Docente</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Programación Orientada a Objetos</td>
+                    <td>Mtro. Juan Pérez</td>
+                  </tr>
+                  <tr>
+                    <td>Estructuras de Datos</td>
+                    <td>Mtra. Ana López</td>
+                  </tr>
+                  <tr>
+                    <td>Bases de Datos</td>
+                    <td>Mtro. Carlos Ruiz</td>
+                  </tr>
+                  <tr>
+                    <td>Ingeniería de Software</td>
+                    <td>Mtra. Laura Sánchez</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <button class="text-action" type="button" data-open-tab="schedule">
+              Ver asignaturas y horarios <span>›</span>
+            </button>
+          </article>
+          <article class="classroom-card">
+            <div class="card-heading">
+              <span class="card-icon">▣</span>
+              <h3>Equipo con el que cuenta</h3>
+            </div>
+            <ul class="equipment-summary">
+              <li>
+                <span>▣</span><span>Proyector</span
+                ><b class="available">Disponible</b>
+              </li>
+              <li>
+                <span>☼</span><span>Clima</span
+                ><b class="available">Disponible</b>
+              </li>
+              <li>
+                <span>◩</span><span>Cámara de vigilancia</span
+                ><b class="available">Disponible</b>
+              </li>
+              <li>
+                <span>⌁</span><span>Internet</span
+                ><b class="available">100 Mbps</b>
+              </li>
+              <li>
+                <span>▤</span><span>Pizarrón</span
+                ><b class="available">Disponible</b>
+              </li>
+              <li>
+                <span>▱</span><span>Equipo de cómputo (docente)</span
+                ><b class="available">Disponible</b>
+              </li>
+              <li>
+                <span>♫</span><span>Sonido / Bocinas</span
+                ><b class="available">Disponible</b>
+              </li>
+              <li>
+                <span>▣</span><span>Pantalla retráctil</span
+                ><b class="unavailable">No disponible</b>
+              </li>
+            </ul>
+            <button class="text-action" type="button" data-open-tab="equipment">
+              Consultar inventario completo <span>›</span>
+            </button>
+          </article>
+          <article class="classroom-card">
+            <div class="card-heading">
+              <span class="card-icon">⌖</span>
+              <h3>Accesos y ubicación en el mapa</h3>
+            </div>
+            <dl class="detail-list compact">
+              <div>
+                <dt>Entrada más cercana:</dt>
+                <dd>Pasillo principal del Edificio H</dd>
+              </div>
+              <div>
+                <dt>Referencia:</dt>
+                <dd>Junto al Aula H-102</dd>
+              </div>
+            </dl>
+            <div class="map-placeholder">
+              <span>⌖</span>
+              <div>
+                <strong>Edificio H · Planta baja</strong
+                ><small>Sector H / Aula H-101</small>
+              </div>
+            </div>
+          </article>
+          <article class="classroom-card">
+            <div class="card-heading">
+              <span class="card-icon">ϟ</span>
+              <h3>Acciones rápidas</h3>
+            </div>
+            <button class="quick-action" data-open-tab="schedule">
+              ▦ <span>Ver horarios del aula</span><b>›</b></button
+            ><button class="quick-action" data-open-tab="students">
+              ♧ <span>Ver listas de alumnos</span><b>›</b></button
+            ><button class="quick-action" data-open-tab="equipment">
+              ▣ <span>Consultar equipo</span><b>›</b>
+            </button>
+          </article>
+        </div>
+      </section>
+      <section
+        class="classroom-tab-panel"
+        id="panel-schedule"
+        role="tabpanel"
+        aria-labelledby="tab-schedule"
+        data-panel="schedule"
+        hidden
+      >
+        <div class="panel-intro">
+          <div>
+            <h3>Asignaturas y horarios</h3>
+            <p>
+              Distribución semanal de clases programadas para el Aula H-101.
+            </p>
+          </div>
+          <span class="info-chip">Turno matutino</span>
+        </div>
+        <article class="classroom-card">
+          <div class="card-heading">
+            <span class="card-icon">▦</span>
+            <h3>Horario semanal</h3>
+          </div>
+          <div class="table-scroll">
+            <table class="data-table schedule-table">
+              <thead>
+                <tr>
+                  <th>Horario</th>
+                  <th>Lunes</th>
+                  <th>Martes</th>
+                  <th>Miércoles</th>
+                  <th>Jueves</th>
+                  <th>Viernes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>08:00–09:00</th>
+                  <td><b>Programación OO</b><small>Juan Pérez</small></td>
+                  <td><b>Bases de Datos</b><small>Carlos Ruiz</small></td>
+                  <td><b>Programación OO</b><small>Juan Pérez</small></td>
+                  <td><b>Bases de Datos</b><small>Carlos Ruiz</small></td>
+                  <td><b>Asesorías</b><small>Horario abierto</small></td>
+                </tr>
+                <tr>
+                  <th>09:00–10:00</th>
+                  <td><b>Programación OO</b><small>Juan Pérez</small></td>
+                  <td><b>Bases de Datos</b><small>Carlos Ruiz</small></td>
+                  <td><b>Programación OO</b><small>Juan Pérez</small></td>
+                  <td><b>Bases de Datos</b><small>Carlos Ruiz</small></td>
+                  <td><b>Asesorías</b><small>Horario abierto</small></td>
+                </tr>
+                <tr>
+                  <th>10:00–11:00</th>
+                  <td><b>Estructuras de Datos</b><small>Ana López</small></td>
+                  <td>
+                    <b>Ingeniería de Software</b><small>Laura Sánchez</small>
+                  </td>
+                  <td><b>Estructuras de Datos</b><small>Ana López</small></td>
+                  <td>
+                    <b>Ingeniería de Software</b><small>Laura Sánchez</small>
+                  </td>
+                  <td><b>Trabajo académico</b><small>Uso programado</small></td>
+                </tr>
+                <tr>
+                  <th>11:00–12:00</th>
+                  <td><b>Estructuras de Datos</b><small>Ana López</small></td>
+                  <td>
+                    <b>Ingeniería de Software</b><small>Laura Sánchez</small>
+                  </td>
+                  <td><b>Estructuras de Datos</b><small>Ana López</small></td>
+                  <td>
+                    <b>Ingeniería de Software</b><small>Laura Sánchez</small>
+                  </td>
+                  <td><b>Trabajo académico</b><small>Uso programado</small></td>
+                </tr>
+                <tr>
+                  <th>12:00–13:00</th>
+                  <td colspan="5" class="empty-slot">
+                    Receso / espacio disponible
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-note">
+            Horario ilustrativo; sustituir por la programación oficial.
+          </p>
+        </article>
+        <article class="classroom-card">
+          <div class="card-heading">
+            <span class="card-icon">▤</span>
+            <h3>Asignaturas asignadas al aula</h3>
+          </div>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Asignatura</th>
+                  <th>Docente</th>
+                  <th>Grupo</th>
+                  <th>Sesiones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Programación Orientada a Objetos</td>
+                  <td>Mtro. Juan Pérez</td>
+                  <td>4.º A</td>
+                  <td>Lun. y mié.</td>
+                </tr>
+                <tr>
+                  <td>Estructuras de Datos</td>
+                  <td>Mtra. Ana López</td>
+                  <td>4.º B</td>
+                  <td>Lun. y mié.</td>
+                </tr>
+                <tr>
+                  <td>Bases de Datos</td>
+                  <td>Mtro. Carlos Ruiz</td>
+                  <td>6.º A</td>
+                  <td>Mar. y jue.</td>
+                </tr>
+                <tr>
+                  <td>Ingeniería de Software</td>
+                  <td>Mtra. Laura Sánchez</td>
+                  <td>6.º B</td>
+                  <td>Mar. y jue.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+      <section
+        class="classroom-tab-panel"
+        id="panel-students"
+        role="tabpanel"
+        aria-labelledby="tab-students"
+        data-panel="students"
+        hidden
+      >
+        <div class="panel-intro">
+          <div>
+            <h3>Alumnos registrados</h3>
+            <p>Relación de ejemplo de estudiantes que utilizan el aula.</p>
+          </div>
+          <span class="info-chip">38 alumnos</span>
+        </div>
+        <div class="student-summary">
+          <div><span>Total registrados</span><strong>38</strong></div>
+          <div>
+            <span>Hombres</span><strong>22 <small>57.9%</small></strong>
+          </div>
+          <div>
+            <span>Mujeres</span><strong>16 <small>42.1%</small></strong>
+          </div>
+          <div><span>Lugares disponibles</span><strong>7</strong></div>
+        </div>
+        <article class="classroom-card">
+          <div class="student-toolbar">
+            <div class="card-heading">
+              <span class="card-icon">♧</span>
+              <h3>Lista de alumnos</h3>
+            </div>
+            <label class="student-search"
+              >⌕
+              <input
+                type="search"
+                id="student-search"
+                placeholder="Buscar alumno..."
+                aria-label="Buscar alumno"
+            /></label>
+          </div>
+          <div class="table-scroll">
+            <table class="data-table student-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Matrícula</th>
+                  <th>Nombre del alumno</th>
+                  <th>Grupo</th>
+                  <th>Sexo</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody id="student-table-body">
+                <tr>
+                  <td>01</td>
+                  <td>2401001</td>
+                  <td>Andrea Martínez López</td>
+                  <td>4.º A</td>
+                  <td>Mujer</td>
+                  <td><span class="student-status">Activo</span></td>
+                </tr>
+                <tr>
+                  <td>02</td>
+                  <td>2401002</td>
+                  <td>Diego Hernández Ruiz</td>
+                  <td>4.º A</td>
+                  <td>Hombre</td>
+                  <td><span class="student-status">Activo</span></td>
+                </tr>
+                <tr>
+                  <td>03</td>
+                  <td>2401003</td>
+                  <td>Valeria Rodríguez Soto</td>
+                  <td>4.º A</td>
+                  <td>Mujer</td>
+                  <td><span class="student-status">Activo</span></td>
+                </tr>
+                <tr>
+                  <td>04</td>
+                  <td>2401004</td>
+                  <td>Miguel Ángel Torres</td>
+                  <td>4.º A</td>
+                  <td>Hombre</td>
+                  <td><span class="student-status">Activo</span></td>
+                </tr>
+                <tr>
+                  <td>05</td>
+                  <td>2401005</td>
+                  <td>Fernanda Castillo Vega</td>
+                  <td>4.º B</td>
+                  <td>Mujer</td>
+                  <td><span class="student-status">Activo</span></td>
+                </tr>
+                <tr>
+                  <td>06</td>
+                  <td>2401006</td>
+                  <td>Emiliano Flores Díaz</td>
+                  <td>4.º B</td>
+                  <td>Hombre</td>
+                  <td><span class="student-status">Activo</span></td>
+                </tr>
+                <tr>
+                  <td>07</td>
+                  <td>2401007</td>
+                  <td>Camila Morales Pérez</td>
+                  <td>4.º B</td>
+                  <td>Mujer</td>
+                  <td><span class="student-status">Activo</span></td>
+                </tr>
+                <tr>
+                  <td>08</td>
+                  <td>2401008</td>
+                  <td>José Manuel García</td>
+                  <td>4.º B</td>
+                  <td>Hombre</td>
+                  <td><span class="student-status">Activo</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-note" id="student-count">
+            Mostrando 8 registros de ejemplo. La búsqueda filtra los registros
+            visibles.
+          </p>
+        </article>
+        <p class="privacy-note">
+          Los nombres y matrículas son ficticios y se incluyen únicamente como
+          datos de demostración.
+        </p>
+      </section>
+      <section
+        class="classroom-tab-panel"
+        id="panel-equipment"
+        role="tabpanel"
+        aria-labelledby="tab-equipment"
+        data-panel="equipment"
+        hidden
+      >
+        <div class="panel-intro">
+          <div>
+            <h3>Equipo e instalaciones</h3>
+            <p>Inventario de recursos disponibles en el Aula H-101.</p>
+          </div>
+          <span class="info-chip">7 disponibles · 1 no disponible</span>
+        </div>
+        <div class="equipment-overview">
+          <div>
+            <b>✓</b><strong>7<small>Disponibles</small></strong>
+          </div>
+          <div>
+            <b class="bad">×</b><strong>1<small>No disponible</small></strong>
+          </div>
+          <div>
+            <b>▣</b><strong>8<small>Elementos registrados</small></strong>
+          </div>
+        </div>
+        <article class="classroom-card">
+          <div class="card-heading">
+            <span class="card-icon">▣</span>
+            <h3>Inventario del aula</h3>
+          </div>
+          <div class="equipment-table">
+            <div class="equipment-row equipment-head">
+              <span>Recurso</span><span>Características</span
+              ><span>Estado</span>
+            </div>
+            <div class="equipment-row">
+              <span>▣ Proyector multimedia</span><span>HDMI / VGA</span
+              ><strong class="available">Disponible</strong>
+            </div>
+            <div class="equipment-row">
+              <span>☼ Aire acondicionado</span><span>Unidad minisplit</span
+              ><strong class="available">Disponible</strong>
+            </div>
+            <div class="equipment-row">
+              <span>◩ Cámara de vigilancia</span><span>Videovigilancia</span
+              ><strong class="available">Disponible</strong>
+            </div>
+            <div class="equipment-row">
+              <span>⌁ Conexión a internet</span><span>100 Mbps</span
+              ><strong class="available">Disponible</strong>
+            </div>
+            <div class="equipment-row">
+              <span>▤ Pizarrón</span><span>Superficie blanca</span
+              ><strong class="available">Disponible</strong>
+            </div>
+            <div class="equipment-row">
+              <span>▱ Equipo de cómputo docente</span
+              ><span>Estación de trabajo</span
+              ><strong class="available">Disponible</strong>
+            </div>
+            <div class="equipment-row">
+              <span>♫ Sonido / Bocinas</span><span>Sistema estéreo</span
+              ><strong class="available">Disponible</strong>
+            </div>
+            <div class="equipment-row">
+              <span>▣ Pantalla retráctil</span><span>Proyección frontal</span
+              ><strong class="unavailable">No disponible</strong>
+            </div>
+          </div>
+        </article>
+        <p class="table-note">
+          Inventario ilustrativo. Se recomienda agregar fecha de revisión y
+          responsable de resguardo.
+        </p>
+      </section>
+      <section
+        class="classroom-tab-panel"
+        id="panel-more"
+        role="tabpanel"
+        aria-labelledby="tab-more"
+        data-panel="more"
+        hidden
+      >
+        <div class="panel-intro">
+          <div>
+            <h3>Más información</h3>
+            <p>
+              Características físicas, ubicación y recomendaciones de uso del
+              espacio.
+            </p>
+          </div>
+          <span class="info-chip">Aula H-101</span>
+        </div>
+        <div class="classroom-grid">
+          <article class="classroom-card">
+            <div class="card-heading">
+              <span class="card-icon">⌖</span>
+              <h3>Ubicación y accesos</h3>
+            </div>
+            <dl class="detail-list">
+              <div>
+                <dt>Plantel:</dt>
+                <dd>CECyT Plantel 20</dd>
+              </div>
+              <div>
+                <dt>Sector:</dt>
+                <dd>H</dd>
+              </div>
+              <div>
+                <dt>Edificio:</dt>
+                <dd>H</dd>
+              </div>
+              <div>
+                <dt>Nivel:</dt>
+                <dd>Planta baja</dd>
+              </div>
+              <div>
+                <dt>Acceso:</dt>
+                <dd>Pasillo principal</dd>
+              </div>
+              <div>
+                <dt>Referencia:</dt>
+                <dd>Junto al Aula H-102</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="classroom-card">
+            <div class="card-heading">
+              <span class="card-icon">▧</span>
+              <h3>Características del espacio</h3>
+            </div>
+            <dl class="detail-list">
+              <div>
+                <dt>Superficie:</dt>
+                <dd>56.3 m²</dd>
+              </div>
+              <div>
+                <dt>Capacidad:</dt>
+                <dd>45 alumnos</dd>
+              </div>
+              <div>
+                <dt>Distribución:</dt>
+                <dd>Mesas y sillas escolares</dd>
+              </div>
+              <div>
+                <dt>Iluminación:</dt>
+                <dd>Natural y artificial</dd>
+              </div>
+              <div>
+                <dt>Ventilación:</dt>
+                <dd>Aire acondicionado</dd>
+              </div>
+              <div>
+                <dt>Conectividad:</dt>
+                <dd>Internet disponible</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="classroom-card">
+            <div class="card-heading">
+              <span class="card-icon">✓</span>
+              <h3>Recomendaciones de uso</h3>
+            </div>
+            <ul class="recommendation-list">
+              <li>Mantener el mobiliario en su distribución asignada.</li>
+              <li>Apagar proyector y equipo al finalizar la sesión.</li>
+              <li>Reportar fallas o daños al área correspondiente.</li>
+              <li>Depositar los residuos en los contenedores designados.</li>
+            </ul>
+          </article>
+          <article class="classroom-card">
+            <div class="card-heading">
+              <span class="card-icon">ⓘ</span>
+              <h3>Datos administrativos</h3>
+            </div>
+            <dl class="detail-list">
+              <div>
+                <dt>Identificador:</dt>
+                <dd>H-101</dd>
+              </div>
+              <div>
+                <dt>Tipo de espacio:</dt>
+                <dd>Aula académica</dd>
+              </div>
+              <div>
+                <dt>Uso principal:</dt>
+                <dd>Docencia</dd>
+              </div>
+              <div>
+                <dt>Estado:</dt>
+                <dd><span class="student-status">En servicio</span></dd>
+              </div>
+              <div>
+                <dt>Última revisión:</dt>
+                <dd>Por actualizar</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </section>
+    </div>
+  </div>
+  <footer class="classroom-footer">
+    <p>✧ Un espacio adecuado también impulsa el aprendizaje.</p>
+    <button class="classroom-close" type="button" data-close-panel>
+      Cerrar
+    </button>
+  </footer>
+</section>
