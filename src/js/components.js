@@ -1,3 +1,5 @@
+import emptyStateTpl from "./../templates/empty-state.html?raw";
+
 const imageViewer = document.getElementById("imageViewer");
 const viewerImage = document.getElementById("viewerImage");
 const viewerCaption = document.getElementById("viewerCaption");
@@ -102,12 +104,10 @@ const infoPanelButton = document.querySelector(".info-panel-button");
 // Load the empty state if the panel is empty.
 infoPanelButton.addEventListener("click", () => {
   const panelBlank = document.querySelector(".panel-container");
-  const emptyStateTmpl = document.getElementById("empty-state");
+  const emptyState = emptyStateTpl;
 
   if (panelBlank.textContent.trim() === "") {
-    const clone = emptyStateTmpl.content.cloneNode(true);
-
-    panelBlank.appendChild(clone);
+    panelBlank.innerHTML = emptyState;
   }
 
   panel.classList.add("open");

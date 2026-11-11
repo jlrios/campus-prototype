@@ -15,6 +15,13 @@ import { initializeMapSignage } from "./map.js";
 import mainMapToasts from "./../data/toast-sectors.json";
 import { initializeSectorHMap } from "./sector-h.js";
 
+// Templates
+
+// Sector H template
+import sectorHTpl from "./../templates/sector-h.html?raw";
+// Not implemented template
+import notImplementedTpl from "./../templates/not-implemented.html?raw";
+
 /* ========================================
   DOM Elements
 ======================================== */
@@ -190,31 +197,31 @@ campusSVG.addEventListener("pointerout", (e) => {
 // Define the content and appearance of each sector's information panel.
 const sectorPanels = {
   "sector-h": {
-    template: panelH,
+    template: sectorHTpl,
     title: "Sector H",
-    icon: "fa-solid fa-building fa-2x",
+    icon: "fa-solid fa-building-circle-check fa-2x"
   },
 
   "sector-d": {
-    template: notImplemented,
+    template: notImplementedTpl,
     title: "Sector D",
-    icon: "fa-solid fa-landmark-dome fa-2x",
+    icon: "fa-solid fa-landmark-dome fa-2x"
   },
 
   "sector-m": {
-    template: notImplemented,
+    template: notImplementedTpl,
     title: "Sector M",
     icon: "fa-solid fa-people-roof fa-2x",
   },
 
   "sector-c1": {
-    template: notImplemented,
+    template: notImplementedTpl,
     title: "Sector C1",
     icon: "fa-solid fa-tower-observation fa-2x",
   },
 
   "sector-c2": {
-    template: notImplemented,
+    template: notImplementedTpl,
     title: "Sector C2",
     icon: "fa-solid fa-tower-observation fa-2x",
   },
@@ -260,10 +267,12 @@ campusSVG.addEventListener("click", (e) => {
 
   if (!dataSector) return;
 
-  const clone = dataSector.template.content.cloneNode(true);
+  // const clone = dataSector.template.content.cloneNode(true);
+
+  const template = dataSector.template;
 
   // Display the selected sector's information panel.
-  showInfoPanel(panelContainer, clone, dataSector.title, dataSector.icon);
+  showInfoPanel(panelContainer, template, dataSector.title, dataSector.icon);
 
   /* ========================================
     Sector H
@@ -282,13 +291,31 @@ campusSVG.addEventListener("click", (e) => {
 /**
  * Renders the selected sector's template and updates its header.
  */
-export function showInfoPanel(panelContainer, clone, sectorTitle, sectorIcon) {
+/* export function showInfoPanel(panelContainer, clone, sectorTitle, sectorIcon) {
   panelContainer.innerHTML = "";
   panelContainer.appendChild(clone);
 
   // Update the panel title and icon.
   const titlePanel = document.querySelector(".panel-title-text h2");
   const iconPanel = document.querySelector(".panel-title i");
+
+  titlePanel.textContent = sectorTitle;
+  iconPanel.className = sectorIcon;
+
+  // Open the information panel.
+  panel.classList.add("open");
+} */
+
+/**
+ * Renders the selected sector's template and updates its header.
+ */
+export function showInfoPanel(panelContainer, template, sectorTitle, sectorIcon) {
+  panelContainer.innerHTML = "";
+  panelContainer.innerHTML = template;
+
+  // Update the panel title and icon.
+  const titlePanel = document.getElementById("information-title");
+  const iconPanel = document.querySelector(".information-mark i");
 
   titlePanel.textContent = sectorTitle;
   iconPanel.className = sectorIcon;

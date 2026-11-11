@@ -58,9 +58,9 @@
 /* Persistent highlight for the selected sector */
 [data-cell-id^="sector-"].selected rect {
   fill: #4CAF50;
-  fill-opacity: 0.5;
+  fill-opacity: 0.4;
   stroke: #2E7D32;
-  stroke-width: 4;
+  stroke-width: 1;
 }
 
 .image-select-sector {
