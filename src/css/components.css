@@ -13,10 +13,27 @@
   width: 100%;
 }
 
+/*.panel-tabs {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  gap: 5px;
+}*/
+
+/*.tabs-label {
+  padding: 5px 8px;
+  cursor: pointer;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}*/
+
 .tabs-label {
   padding: 5px 8px;
   cursor: pointer;
-  width: 25%;
+  /*width: 25%;*/
 }
 
 .tabs-label i {
