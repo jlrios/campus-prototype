@@ -73,71 +73,218 @@
         Estadísticas
       </label>
       <div class="tabs-content">
-        <article class="information-card collection-card">
-          <div class="card-title">
-            <span class="card-icon">
-              <i class="fa-solid fa-venus-mars"></i>
-            </span>
-            <h3>Distribución de alumnos por género</h3>
+
+<section class="statistics-container">
+
+  <header class="statistics-header">
+    <div>
+      <span class="statistics-eyebrow">ANÁLISIS ACADÉMICO</span>
+      <h2>Estadísticas del grupo</h2>
+      <p>Indicadores generales de desempeño y asistencia</p>
+    </div>
+
+    <div class="statistics-group">
+      <span>GRUPO</span>
+      <strong>101C</strong>
+    </div>
+  </header>
+
+  <div class="statistics-grid">
+
+    <!-- CARD 1: Gender distribution -->
+    <article class="statistics-card">
+
+      <div class="card-heading">
+        <div>
+          <span class="card-eyebrow">COMPOSICIÓN DEL GRUPO</span>
+          <h3>Distribución por género</h3>
+        </div>
+
+        <span class="card-icon">
+          <i class="fa-solid fa-users"></i>
+        </span>
+      </div>
+
+      <div class="chart-content">
+
+        <div class="donut-chart gender-chart">
+          <div class="donut-center">
+            <strong>25</strong>
+            <span>Alumnos</span>
+          </div>
+        </div>
+
+        <div class="chart-legend">
+
+          <div class="legend-item">
+            <span class="legend-color male"></span>
+            <div class="legend-description">
+              <span>Hombres</span>
+              <strong>10 alumnos · 40%</strong>
+            </div>
           </div>
 
-          <div class="collection-content">
-            <div
-              class="donut-chart"
-              role="img"
-              aria-label="Distribución ilustrativa: Mujeres 60%, hombres 38%, otro 2%"
-            >
-              <div class="donut-hole">
-                <strong>100%</strong><span>Alumnos</span>
+          <div class="legend-item">
+            <span class="legend-color female"></span>
+            <div class="legend-description">
+              <span>Mujeres</span>
+              <strong>13 alumnas · 52%</strong>
+            </div>
+          </div>
+
+          <div class="legend-item">
+            <span class="legend-color other"></span>
+            <div class="legend-description">
+              <span>Otro</span>
+              <strong>2 alumnos · 8%</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <footer class="card-footer">
+        Distribución de alumnos inscritos en el grupo.
+      </footer>
+
+    </article>
+
+    <!-- CARD 2: Attendance -->
+    <article class="statistics-card">
+
+      <div class="card-heading">
+        <div>
+          <span class="card-eyebrow">CONTROL DE ASISTENCIA</span>
+          <h3>Promedio de asistencia</h3>
+        </div>
+
+        <span class="card-icon">
+          <i class="fa-solid fa-calendar-check"></i>
+        </span>
+      </div>
+
+      <div class="chart-content">
+
+        <div class="donut-chart attendance-chart">
+          <div class="donut-center">
+            <strong>94.8%</strong>
+            <span>Asistencia</span>
+          </div>
+        </div>
+
+        <div class="chart-legend">
+
+          <div class="legend-item">
+            <span class="legend-color present"></span>
+            <div class="legend-description">
+              <span>Hombres · Asistencia</span>
+              <strong>96%</strong>
+            </div>
+          </div>
+
+          <div class="legend-item">
+            <span class="legend-color female"></span>
+            <div class="legend-description">
+              <span>Mujeres · Asistencia</span>
+              <strong>94%</strong>
+            </div>
+          </div>
+
+          <div class="legend-item">
+            <span class="legend-color absent"></span>
+            <div class="legend-description">
+              <span>Otro · Asistencia</span>
+              <strong>93%</strong>
+            </div>
+          </div>
+
+          <div class="legend-divider"></div>
+
+          <div class="legend-item">
+            <span class="legend-color absence"></span>
+            <div class="legend-description">
+              <span>Faltas generales</span>
+              <strong>5.2%</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <footer class="card-footer">
+        Porcentaje calculado sobre los registros de asistencia.
+      </footer>
+
+    </article>
+
+    <!-- CARD 3: Academic achievement -->
+    <article class="statistics-card achievement-card">
+
+      <div class="card-heading">
+        <div>
+          <span class="card-eyebrow">RENDIMIENTO ESCOLAR</span>
+          <h3>Aprovechamiento académico</h3>
+        </div>
+
+        <span class="card-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </span>
+      </div>
+
+      <div class="achievement-content">
+
+        <div class="donut-chart achievement-chart">
+          <div class="donut-center">
+            <strong>86%</strong>
+            <span>Aprovechamiento</span>
+          </div>
+        </div>
+
+        <div class="achievement-details">
+
+          <div class="achievement-summary">
+            <span>Promedio de aprovechamiento del grupo</span>
+            <strong>86 / 100</strong>
+          </div>
+
+          <div class="achievement-legend">
+
+            <div class="legend-item">
+              <span class="legend-color approved"></span>
+              <div class="legend-description">
+                <span>Alumnos aprobados</span>
+                <strong>22 alumnos · 88%</strong>
               </div>
             </div>
-            <ul class="chart-legend">
-              <li><i class="legend-books"></i><span>Mujeres</span><b>60%</b></li>
-              <li>
-                <i class="legend-magazines"></i><span>Hombres</span><b>38%</b>
-              </li>
-              <li>
-                <i class="legend-news"></i><span>Otro</span><b>2%</b>
-              </li>
-            </ul>
-          </div>
 
-          <!--<p class="chart-footnote">
-            Distribución de ejemplo; ajustar al inventario real.
-          </p>-->
-        </article>
-
-        <article class="information-card collection-card">
-          <div class="card-title">
-            <span class="card-icon">
-              <i class="fa-solid fa-chart-line"></i>
-            </span>
-            <h3>Porcentaje de aprovechamiento académico</h3>
-          </div>
-          <div class="collection-content">
-            <div
-              class="donut-chart"
-              role="img"
-              aria-label="Distribución ilustrativa: Mujeres 60%, hombres 38%, periódicos 2%"
-            >
-              <div class="donut-hole">
-                <strong>100%</strong><span>Alumnos</span>
+            <div class="legend-item">
+              <span class="legend-color failed"></span>
+              <div class="legend-description">
+                <span>Alumnos reprobados</span>
+                <strong>3 alumnos · 12%</strong>
               </div>
             </div>
-            <ul class="chart-legend">
-              <li><i class="legend-books"></i><span>Mujeres</span><b>60%</b></li>
-              <li>
-                <i class="legend-magazines"></i><span>Hombres</span><b>38%</b>
-              </li>
-              <li>
-                <i class="legend-news"></i><span>Otro</span><b>2%</b>
-              </li>
-            </ul>
+
           </div>
-          <p class="chart-footnote">
-            Promedio calculado en base a los resultados de los periódos de evaluación presentados.
-          </p>
-        </article>
+
+        </div>
+      </div>
+
+      <footer class="card-footer">
+        Basado en los periodos de evaluación presentados hasta la fecha.
+      </footer>
+
+    </article>
+
+  </div>
+
+  <footer class="statistics-footer">
+    <span>CECyT · PLANTEL 20 ORIENTE</span>
+    <span>Estadísticas académicas · Grupo 101C</span>
+  </footer>
+
+</section>
+
 
       </div>
 
@@ -906,6 +1053,23 @@
 </section>
 
 
+      </div>
+
+
+
+       <input
+        type="radio"
+        class="panel-tabs-radio"
+        name="tabs-sector-h"
+        id="resources"
+      />
+      <label for="resources" class="tabs-label">
+        <i class="fa-regular fa-star"></i>
+        Recursos
+      </label>
+      <!-- Panl tab gallery-->
+      <div class="tabs-content">
+        
       </div>
     </nav>
   </section>
