@@ -1,3 +1,4 @@
+import classroomH3Tpl from "./../templates/classroom.html?raw";
 
 export function sectorHUpper() {
   const classroomH3 = document.querySelector("[data-cell-id='classroom-h3']");
@@ -7,11 +8,11 @@ export function sectorHUpper() {
 
   classroomH3.addEventListener("click", () => {
     
-    const templateClassroomH3 = document.getElementById("classroom-h3");
-    const cloneClassroom = templateClassroomH3.content.cloneNode(true);
+    const templateClassroomH3 = classroomH3Tpl;
+    // const cloneClassroom = templateClassroomH3.content.cloneNode(true);
 
     panelContainer.innerHTML = "";
-    panelContainer.appendChild(cloneClassroom);
+    panelContainer.innerHTML = templateClassroomH3;
 
     infoPanel.classList.add("open");
   });

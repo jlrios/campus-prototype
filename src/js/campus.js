@@ -19,6 +19,8 @@ import { initializeSectorHMap } from "./sector-h.js";
 
 // Sector H template
 import sectorHTpl from "./../templates/sector-h.html?raw";
+// Sector C1 template
+import sectorC1Tpl from "./../templates/sector-c1.html?raw";
 // Not implemented template
 import notImplementedTpl from "./../templates/not-implemented.html?raw";
 
@@ -215,7 +217,7 @@ const sectorPanels = {
   },
 
   "sector-c1": {
-    template: notImplementedTpl,
+    template: sectorC1Tpl,
     title: "Sector C1",
     icon: "fa-solid fa-tower-observation fa-2x",
   },

@@ -1,0 +1,197 @@
+
+/* Statistics cards container */
+.statistics-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+/* Statistics card */
+.statistics-card {
+    background: #FFFFFF;
+    border: 1px solid #E5EAE3;
+    border-radius: 12px;
+    padding: 24px;
+    min-width: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.035);
+}
+
+/* Card header */
+.card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.card-header h3 {
+    color: #26352C;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 6px;
+}
+
+.card-header p {
+    color: #89928B;
+    font-size: 13px;
+    margin: 0;
+}
+
+.card-header i {
+    color: #E25619;
+    font-size: 21px;
+}
+
+/* Chart layout */
+.chart-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 24px;
+    padding: 8px 0;
+}
+
+/* Donut charts */
+.donut-chart {
+    width: 185px;
+    height: 185px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+/* Center of donut */
+.chart-center {
+    width: 112px;
+    height: 112px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.chart-center strong {
+    color: #26352C;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.chart-center span {
+    color: #89928B;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+/* Gender distribution */
+.gender-chart {
+    background: conic-gradient(
+        #17613E 0% 46.7%,
+        #81C784 46.7% 96.7%,
+        #E25619 96.7% 100%
+    );
+}
+
+/* Academic performance */
+.performance-chart {
+    background: conic-gradient(
+        #17613E 0% 32%,
+        #81C784 32% 92%,
+        #E25619 92% 100%
+    );
+}
+
+/* Chart legend */
+.chart-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+    min-width: 0;
+}
+
+.legend-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.legend-color {
+    width: 11px;
+    height: 11px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.legend-color.men {
+    background: #17613E;
+}
+
+.legend-color.women {
+    background: #81C784;
+}
+
+.legend-color.other {
+    background: #E25619;
+}
+
+.legend-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.legend-item strong {
+    color: #354239;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.legend-item small {
+    color: #89928B;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+/* Card footer */
+.card-footer {
+    border-top: 1px solid #EDF0EC;
+    margin-top: 24px;
+    padding-top: 15px;
+    color: #89928B;
+    font-size: 11px;
+    text-align: center;
+}
+
+/* Responsive layout */
+@media (max-width: 850px) {
+
+    .statistics-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .statistics-card {
+        padding: 18px;
+    }
+
+    .chart-content {
+        flex-direction: column;
+        gap: 26px;
+    }
+
+    .chart-legend {
+        width: 100%;
+    }
+
+}

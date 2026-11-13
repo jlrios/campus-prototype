@@ -23,6 +23,16 @@
   box-sizing: inherit;
 }
 
+.information-subtitle-bar {
+  background-color: #E6F4D7; 
+  padding: 5px 5px 5px 15px; 
+  margin-top: 15px; 
+  /*margin-bottom: 10px; */
+  border-radius: 6px;
+  color: #104b31;
+}
+
+
 .information-header {
   display: flex;
   justify-content: space-between;
@@ -163,6 +173,9 @@
 }
 
 .information-description {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 0;
   padding: 10px 13px;
   border-left: 3px solid #8dbb8b;
   border-radius: 0 9px 9px 0;
@@ -178,6 +191,7 @@
 }
 
 .information-card {
+  margin-top: 15px;
   min-width: 0;
   padding: 16px;
   border: 1px solid var(--lib-line);
@@ -299,7 +313,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap: 18px;
+  gap: 10px;
 }
 
 .donut-chart {
@@ -310,10 +324,9 @@
   flex: 0 0 142px;
   border-radius: 50%;
   background: conic-gradient(
-    #3889dc 0 60%,
-    #f2a12b 60% 75%,
-    #69ad65 75% 85%,
-    #8060c7 85% 100%
+    #81C784 0 60%,
+    #17613E 60% 75%,
+    #E25619 75% 85%,
   );
   transform: rotate(-90deg);
 }
@@ -368,15 +381,15 @@
 }
 
 .legend-books {
-  background: #3889dc;
+  background: #81C784;
 }
 
 .legend-magazines {
-  background: #f2a12b;
+  background: #17613E
 }
 
 .legend-news {
-  background: #69ad65;
+  background:#E25619 ;
 }
 
 .legend-digital {
@@ -386,7 +399,7 @@
 .chart-footnote {
   margin: 10px 0 0;
   color: #8a929e;
-  font-size: 9px;
+  font-size: 14px;
   text-align: right;
 }
 

@@ -2,7 +2,7 @@
   Information panel tabs
 */
 .panel-wrapper-tabs {
-  margin-top: 25px;
+  /*margin-top: 25px;*/
   width: 100%;
 }
 
@@ -14,13 +14,13 @@
 }
 
 .tabs-label {
-  padding: 10px 16px;
+  padding: 5px 8px;
   cursor: pointer;
-  width: 30%;
+  width: 25%;
 }
 
 .tabs-label i {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .panel-tabs-radio {
@@ -28,7 +28,8 @@
 }
 
 .tabs-content {
-  padding: 12px;
+  /*padding: 12px;*/
+  margin-top: 15px;
   line-height: 1.5;
   font-size: 0.9em;
   order: 1;
@@ -242,6 +243,11 @@
 
 .button-panel:active {
   transform: scale(0.96);
+}
+
+.button-panel.disabled {
+  background-color: #A6A6A6;
+  pointer-events: none;
 }
 
 /*
