@@ -5,3 +5,6 @@ import "./sector-h.js";
 // import "./classroom.js";
 
 import "../dist/winbox.bundle.min.js";
+
+// CSS
+import "./../css/main.css";

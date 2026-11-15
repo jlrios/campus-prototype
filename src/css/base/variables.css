@@ -1,0 +1,14 @@
+/* Global variables */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+:root {
+    --background-app: #e6F4d7;
+    --institutional-orange-color: #f16524;
+    --institutional-green-color: #009c5d;
+    --institutional-gray-color: #96989a;
+    --default-text-color: #1c1c1c;
+    --white-color: #fff;
+
+    --border-component-color: #dcdcdc;
+
+}

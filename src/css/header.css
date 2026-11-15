@@ -25,7 +25,7 @@ Shared flex styles
 .brand .name {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--title-text);
+    color: var(--color-default-text);
 }
 
 .input-search {
