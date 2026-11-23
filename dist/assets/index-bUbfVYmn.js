@@ -2,7 +2,7 @@
       <div style="padding:20px;">
         <div style="display: flex; gap: 8px; align-items:center;">
           <i class="fa-solid fa-circle-info fa-2x"></i>
-          <h2 style="color: #343D3A">Atención</h2>
+          <h2 style="color: #343D3A">Acerca de</h2>
         </div>
         <p style="margin-top: 20px; color: #343D3A;">
           El Campus Interactivo es una aplicación parcial desarrollada con fines demostrativos. No se pretende que esta aplicación sea un sistema de control escolar completo, sino más bien se trata de una aplicación complementaria de solo consulta.
