@@ -1,0 +1,19 @@
+/* Por ahora no existe la clase en el HTML 
+  El --services-title-color tiene que agregarse
+  después en la clase .sector-services h3.
+*/
+.sector-info {
+  --services-title-color: #17613e;
+}
+
+.sector-services {
+  border: 1px solid var(--border-component-color);
+  border-radius: var(--border-radius-default);
+  padding: 15px;
+
+}
+
+.sector-services h3 {
+  font-size: x-large;
+  color: #17613e;
+}

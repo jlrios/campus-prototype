@@ -1,19 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
-
 :root {
     /* Information panel componets */
-    --panel-header-height: 0rem;
-    --panel-width: 42rem;
-    --panel-background-color: #fff;
-    --panel-border-color: #696969;
-    --transition-medium: 0.3s ease;
-    --z-panel: 150;
-    --radius-sm: 0.5rem;
-    --transition-fast: 0.2s ease;
-    --panel-background-hover: #eee;
-    --panel-radius-circle: 50%;
+    /*--panel-header-height: 0rem;*/
+   /* --panel-width: 42rem;*/
+    /*--panel-background-color: #fff;*/
+    /*--panel-border-color: #696969;*/
+    /*--transition-medium: 0.3s ease;*/
+    /*--z-panel: 150;*/
+    /*--radius-sm: 0.5rem;*/
+    /*--transition-fast: 3s ease;*/
+    /*--panel-background-hover: #eee;*/
+    /*--panel-radius-circle: 50%;*/
 }
-
 
 body {
     background-color: var(--background-app);

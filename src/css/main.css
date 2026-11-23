@@ -1,11 +1,32 @@
 /* Layout */
 @import "./base/reset.css";
 
-/* Variables */
 @import "./base/variables.css";
 
-/* Sidebar */
-@import "./components/side-bar.css";
+@import "./map/campus.css";
 
-/* Widgets */
-@import "./components/widgets.css";
+@import "./map/info-panel.css";
+
+@import "./map/sidebar.css";
+
+@import "./map/toast.css";
+
+@import "./tools/search.css";
+
+@import "./tools/signage.css";
+
+@import "./print/print-map.css";
+
+@import "./widgets/widgets.css";
+
+/* Templates CSS */ 
+@import "./templates/sector-info.css";
+
+/* Temporary styles */
+@import "./templates/library.css";
+@import "./templates/classroom.css";
+@import "./templates/schedule.css";
+@import "./templates/statics.css";
+@import "./templates/students.css";
+@import "./templates/teachers.css";
+@import "./templates/resources.css";

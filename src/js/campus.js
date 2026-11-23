@@ -24,6 +24,10 @@ import sectorC1Tpl from "./../templates/sector-c1.html?raw";
 // Not implemented template
 import notImplementedTpl from "./../templates/not-implemented.html?raw";
 
+// Generic template and JSON content
+import infoPanelTemplate from "./../templates/info-panel-content.html?raw";
+import sectorsContent from "./../data/info-sectors.json"
+
 /* ========================================
   DOM Elements
 ======================================== */
@@ -123,14 +127,8 @@ await Promise.all([loadSVGMap(maps.C.id, maps.C.urlMap)]);
 await Promise.all([loadSVGMap(maps.H1.id, maps.H1.mainBuilding.groundFloor.urlMap)]);
 await Promise.all([loadSVGMap(maps.H2.id, maps.H2.mainBuilding.upperFloor.urlMap)]);
 
-console.log(loadedMaps);
-
-/**
- * 
- */
 showMap(maps.C.id);
 initializeMapSignage();
-
 
 /* ========================================
   Campus Map Elements
@@ -138,6 +136,8 @@ initializeMapSignage();
 
 // Cache the SVG element and toast content elements.
 const campusSVG = mapArea.querySelector("svg");
+
+console.log(campusSVG);
 
 const title = sectorSelected.querySelector(".sector-text h3");
 const description = sectorSelected.querySelector(".sector-text p");
@@ -264,17 +264,20 @@ campusSVG.addEventListener("click", (e) => {
   
   selectedSector = sector;
 
+  //console.log(sector.dataset.cellId);
+
   // Retrieve the selected sector's panel configuration.
   const dataSector = sectorPanels[sector.dataset.cellId];
+  const dataSectorId = sector.dataset.cellId;
+
+  console.log(dataSectorId);
 
   if (!dataSector) return;
 
-  // const clone = dataSector.template.content.cloneNode(true);
-
-  const template = dataSector.template;
-
+  //const template = dataSector.template;
+  
   // Display the selected sector's information panel.
-  showInfoPanel(panelContainer, template, dataSector.title, dataSector.icon);
+  showInfoPanel(panelContainer, infoPanelTemplate, dataSector.title, dataSector.icon, dataSectorId);
 
   /* ========================================
     Sector H
@@ -286,42 +289,74 @@ campusSVG.addEventListener("click", (e) => {
 
 });
 
-/* ========================================
-  Information Panel Rendering
-======================================== */
-
 /**
  * Renders the selected sector's template and updates its header.
  */
-/* export function showInfoPanel(panelContainer, clone, sectorTitle, sectorIcon) {
-  panelContainer.innerHTML = "";
-  panelContainer.appendChild(clone);
+export function showInfoPanel(panelContainer, template, sectorTitle, sectorIcon, dataSectorId) {
+  let spaces = sectorsContent[dataSectorId].spaces;
+  let sectorDescription = sectorsContent[dataSectorId].description;
 
-  // Update the panel title and icon.
-  const titlePanel = document.querySelector(".panel-title-text h2");
-  const iconPanel = document.querySelector(".panel-title i");
-
-  titlePanel.textContent = sectorTitle;
-  iconPanel.className = sectorIcon;
-
-  // Open the information panel.
-  panel.classList.add("open");
-} */
-
-/**
- * Renders the selected sector's template and updates its header.
- */
-export function showInfoPanel(panelContainer, template, sectorTitle, sectorIcon) {
   panelContainer.innerHTML = "";
   panelContainer.innerHTML = template;
 
   // Update the panel title and icon.
   const titlePanel = document.getElementById("information-title");
   const iconPanel = document.querySelector(".information-mark i");
+  const infoDescription = document.querySelector(".information-description");
 
   titlePanel.textContent = sectorTitle;
   iconPanel.className = sectorIcon;
+  infoDescription.textContent = sectorDescription;
+
+  let servicesContainer = document.querySelector(".services-grid");
+  
+
+  spaces.forEach((element) => {
+    let serviceItem = document.createElement("div");
+    let serviceIcon = document.createElement("div");
+    let newIcon = document.createElement("i");
+    let nameService = document.createElement("span");
+
+    newIcon.classList.add(element["icon-solid"], element["icon-item"]);
+    nameService.textContent = element.description;
+
+    serviceItem.classList.add("service-item");
+    serviceIcon.classList.add("service-icon");
+
+    serviceIcon.append(newIcon);
+    serviceItem.append(serviceIcon, nameService);
+
+    // Append the service to the container
+    servicesContainer.append(serviceItem);
+  });
 
   // Open the information panel.
   panel.classList.add("open");
 }
+
+/** 
+ * Entry point 
+ */
+
+/*async function initializeCampusMaps() {
+  await Promise.all([
+    loadSVGMap(maps.C.id, maps.C.urlMap),
+    loadSVGMap(maps.H1.id, maps.H1.mainBuilding.groundFloor.urlMap),
+    loadSVGMap(maps.H2.id, maps.H2.mainBuilding.upperFloor.urlMap),
+  ]);
+
+  showMap(maps.C.id);
+
+  const campusSVG = mapArea.querySelector("svg");
+
+  if (!campusSVG) {
+    console.error("Mapa del campus no se puede inicializar.");
+    return;
+  }
+
+  initializeMapSignage();
+  initializeCampusMapEvents(campusSVG);
+}*/
+// Initialize the campus maps.
+//initializeCampusMaps();
+

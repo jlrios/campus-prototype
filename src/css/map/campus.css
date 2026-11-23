@@ -1,0 +1,271 @@
+
+/* =========================================
+   Map
+   ========================================= */
+
+/* Sector highlight variables */
+[data-cell-id^="sector-"] {
+  --sector-hover-color: #81c784;
+  --sector-hover-opacity: 0.4;
+  --sector-selected-color: #4caf50;
+  --sector-selected-opacity: 0.4;
+  --sector-selected-stroke: #2e7d32;
+}
+
+/* Temporary highlight when hovering */
+[data-cell-id^="sector-"]:hover rect {
+  cursor: zoom-in;
+  fill: var(--sector-hover-color);
+  fill-opacity: var(--sector-hover-opacity);
+}
+
+/* Persistent highlight for the selected sector */
+[data-cell-id^="sector-"].selected rect {
+  fill: var(--sector-selected-color);
+  fill-opacity: var(--sector-selected-opacity);
+  stroke: var(--sector-selected-stroke);
+  stroke-width: 1;
+}
+
+/* Map container */
+.map-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.map-area {
+  height: 720px;
+  padding-inline: 25px;
+  position: relative;
+  width: 1280px;
+}
+
+.map-area svg {
+  height: 720px;
+  position: relative;
+  width: 1280px;
+}
+
+.sector-map {
+  align-items: flex-start;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.sector-map svg {
+  display: block;
+  height: 100%;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  width: 100%;
+}
+
+.sector-map svg.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-select-sector {
+  height: 340px;
+  width: 340px;
+}
+
+/* Floor selection button */
+/*
+.change-floor-button {
+  background: #d6e9bc;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+}
+*/
+
+/* Map slider */
+/*
+.slide-map-button {
+  align-items: center;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+}
+
+.slide-map-button i {
+  cursor: pointer;
+}
+
+.slide-map-button.is-visible {
+  display: flex;
+}
+*/
+
+/* Map legends */
+.map-legend {
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 6px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  gap: 1.3rem;
+  justify-content: center;
+  margin-top: 13px;
+  padding: 5px;
+}
+
+.legend-item {
+  align-items: center;
+  display: flex;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+/* Camera window */
+.camera-window {
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+
+.camera-window\.max {
+  border-radius: 0;
+}
+
+
+/* =========================================
+   Shared flex styles
+   ========================================= */
+
+.brand,
+.right a {
+  align-items: center;
+  display: flex;
+}
+
+.brand {
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.brand .logo {
+  color: #7a8074;
+  width: 3.8rem;
+}
+
+.brand .name {
+  color: var(--color-default-text);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   Information panel
+   ========================================= */
+
+/* Panel button */
+.info-panel-button {
+  background: var(--background-app);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5rem 0.75rem;
+  transition: background-color var(--transition-fast);
+}
+
+.info-panel-button i {
+  color: var(--icon-default-color);
+}
+/*.info-panel-button:hover {
+  background: var(--panel-background-hover);
+}*/
+
+/* Information panel */
+.info-panel {
+  --panel-width: 42rem;
+  --transition-medium: 0.3s ease;
+  background: var(--white-color);
+  border-left: 1px solid var(--border-component-color);
+  box-shadow: var(--widget-shadow-default);
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 1rem;
+  position: fixed;
+  right: calc(var(--panel-width) * -1);
+  top: var(--panel-header-height);
+  transition: right var(--transition-medium);
+  width: var(--panel-width);
+  z-index: var(--z-panel);
+}
+
+.info-panel.open {
+  right: 0;
+}
+
+.info-panel h2 {
+  margin-bottom: 1rem;
+}
+
+.info-panel p {
+  line-height: 1.7;
+}
+
+/* Close panel button */
+.panel-close-button {
+  --panel-close-hover-background: #f2f2f2;
+  --panel-close-hover-color: #000;
+  --panel-close-text-color: #667;
+
+  background: transparent;
+  border: none;
+  border-radius: var(--panel-radius-circle);
+  color: var(--panel-close-text-color);
+  cursor: pointer;
+  font-size: 1.5rem;
+  height: 36px;
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+  width: 36px;
+}
+
+.panel-close-button:hover {
+  background: var(--panel-close-hover-background);
+  color: var(--panel-close-hover-color);
+  transform: scale(0.95);
+}
+
+.panel-close-button:active {
+  transform: scale(0.9);
+}
+
+/* Panel container */
+.panel-container,
+.panel-title-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header {
+  display: block;
+}
+
+.panel-title {
+  display: flex;
+  gap: 10px;
+}
+
+.panel-title h2 {
+  margin: 0;
+}

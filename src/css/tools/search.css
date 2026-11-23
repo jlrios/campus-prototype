@@ -1,0 +1,29 @@
+.input-search {
+    display: flex;
+}
+
+.input-search input {
+    background-color: #f5f5f5;
+    border: 1px solid var(--border-component-color);
+    border-radius: 30px;
+    color: #696969;
+    flex: 1;
+    font-size: 16px;
+    margin-right: 16px;
+    outline: none;
+    padding: 10px 25px;
+    height: 45px;
+    width: 480px;
+}
+
+.input-search input:focus {
+    background-color: #fffbe6;
+}
+
+.input-search button {
+    background-color: var(--background-app);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+}

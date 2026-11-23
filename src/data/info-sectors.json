@@ -1,0 +1,260 @@
+{
+  "sector-c1": {
+    "id": "sector-c1",
+    "title": "Sector C1",
+    "description": "En el Sector C1 se encuentra la caseta de acceso principal del plantel, en donde el personal de prefectura se encarga de brindar el acceso a las instalaciones, registrar las entradas y salidas de los alumnos, padres de familia y público en general, además de ayudar a mantener la seguridad en el plantel.",
+    "icon": "fa-tower-observation",
+    "buildings": [
+      {
+        "id": "sector-c1-1",
+        "description": "Caseta C1"
+      }
+    ],
+    "spaces": [
+      {
+        "id": "sector-c1-s1",
+        "description": "Caseta de acceso principal",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-tower-observation"
+      }
+    ]
+  },
+
+  "sector-h": {
+    "id": "sector-h",
+    "title": "Sector H",
+    "description": "El Sector H es el área principal del plantel, integra el Edificio H, el Edificio N y un espacio de cafetería al aire libre. Este sector abarca laboratorios, sanitarios, aulas, oficinas administrativas, talleres, biblioteca",
+    "icon": "fa-solid fa-building-circle-check fa-2x",
+    "buildings": [
+      {
+        "id": "sector-h-1",
+        "description": "Área cafetería"
+      },
+      {
+        "id": "sector-h-2",
+        "description": "Edificio H"
+      },
+      {
+        "id": "sector-h-3",
+        "description": "Edificio N"
+      }
+    ],
+    "spaces": [
+      {
+        "id": "sector-h-s1",
+        "description": "Área cafetería",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-utensils"
+      },
+      {
+        "id": "sector-h-s2",
+        "description": "Laboratorio de cómputo",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-desktop"
+
+      },
+      {
+        "id": "sector-h-s3",
+        "description": "Laboratorio de ciencias",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-flask"
+      },
+      {
+        "id": "sector-h-s4",
+        "description": "Sanitarios",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-restroom"
+      },
+      {
+        "id": "sector-h-s5",
+        "description": "Finanzas",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-money-check-dollar"
+      },
+      {
+        "id": "sector-h-s6",
+        "description": "Subdirección",
+        "icon-item": "fa-solid",
+        "icon-solid": "fa-users"
+      },
+      {
+        "id": "sector-h-s7",
+        "description": "Bodega",
+        "icon-item": "fa-solid",
+        "icon-solid": "fa-box-archive"
+      },
+      {
+        "id": "sector-h-s8",
+        "description": "Intendencia",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-broom"
+      },
+      {
+        "id": "sector-h-s9",
+        "description": "Aula mantenimiento",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-screwdriver-wrench"
+      },
+      {
+        "id": "sector-h-s10",
+        "description": "Dirección",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-building-columns"
+      },
+      {
+        "id": "sector-h-s11",
+        "description": "Servicios escolares",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-address-card"
+
+      },
+      {
+        "id": "sector-h-s12",
+        "description": "Control académico",
+        "icon-solid": "fa-regular",
+        "icon-item": "fa-clipboard"
+      },
+      {
+        "id": "sector-h-s13",
+        "description": "Biblioteca",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-book-open"
+      },
+      {
+        "id": "sector-h-s14",
+        "description": "Prefectura",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-shield-halved"
+      },
+      {
+        "id": "sector-h-s15",
+        "description": "Aulas H1-H8",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-chalkboard"
+      },
+      {
+        "id": "sector-h-s16",
+        "description": "Sala de maestros",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-person-chalkboard"
+      }
+    ]
+  },
+
+  "sector-d": {
+    "id": "sector-d",
+    "title": "Sector D",
+    "description": "En el Sector D se encuentran las oficinas de Orientación y el área de Enfermería, espacios destinados a brindar atención, orientación y apoyo a los estudiantes. También cuenta con un domo utilizado para la realización de eventos cívicos, actividades deportivas y diversas actividades escolares, que funciona como un espacio de convivencia y participación para la comunidad educativa.",
+    "icon": "",
+    "buildings": [
+      {
+        "id": "sector-d-1",
+        "description": "Oficinas orientación"
+      },
+      {
+        "id": "sector-d-2",
+        "description": "Domo para eventos cívicos y deportivos"
+      }
+    ], 
+    "spaces": [
+      {
+        "id": "sector-d-s1",
+        "description": "Ofinas de orientación y enfermería",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-people-arrows"
+      },
+      {
+        "id": "sector-d-s2",
+        "description": "Domo para eventos cívicos y deportivos",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-basketball"
+      }
+    ]
+  },
+
+  "sector-m": {
+    "title": "Sector M",
+    "description": "El Sector M cuenta con aulas móviles destinadas al desarrollo de actividades académicas, un comedor para la comunidad estudiantil y personal del plantel, así como un edificio de mantenimiento donde se realizan actividades relacionadas con el cuidado y conservación de las instalaciones.",
+    "icon": "fa-people-roof",
+    "spaces": [
+      {
+        "description": "Aula M1",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-house-circle-check"
+      },
+      {
+        "description": "Aula M2",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-house-circle-check"
+      },
+      {
+        "description": "Aula M3",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-house-circle-check"
+      },
+      {
+        "description": "Mantenimiento",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-warehouse"
+      },
+      {
+        "description": "Aula M4",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-house-circle-check"
+      },
+      {
+        "description": "Aula M5",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-house-circle-check"
+      },
+      {
+        "description": "Aula M6",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-house-circle-check"
+      },
+      {
+        "description": "Aula M7",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-house-circle-check"
+      },
+      {
+        "description": "Aula M8",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-house-circle-check"
+      },
+      {
+        "description": "Aula M9",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-house-circle-check"
+      },
+      {
+        "description": "Aula M10",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-house-circle-check"
+      },
+      {
+        "description": "Comedor",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-utensils"
+      }
+    ]
+  },
+
+  "sector-c2": {
+    "title": "Sector C2",
+    "icon": "",
+    "description": "En el Sector C2 se encuentra la caseta de acceso al plantel desde el estacionamiento, utilizada principalmente para el ingreso del personal docente y administrativo, así como de proveedores y visitantes.",
+    "spaces": [
+      {
+        "description": "Caseta de acceso estacionamiento",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-tower-observation"
+      },
+      {
+        "description": "Estacionamiento",
+        "icon-solid": "fa-solid",
+        "icon-item": "fa-car"
+      }
+    ]
+  }
+}

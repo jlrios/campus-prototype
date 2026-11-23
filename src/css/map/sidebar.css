@@ -1,6 +1,6 @@
 /* Sidebar */
 .sidebar {
-  --sidebar-link-color: #333;
+  --sidebar-icon-color: #333;
   --sidebar-link-hover-bg: #dcdcdc;
   --sidebar-width: 95px;
   --sidebar-width-active: 245px;
@@ -8,10 +8,12 @@
   --sidebar-transition: 0.5s ease;
   --sidebar-item-height: 50px;
   --sidebar-item-spacing: 40px;
-
+  --menu-icon-size: 26px;
+  --menu-icon-transition: 0.5s ease;
+  
   background-color: var(--white-color);
   border-right: 1px solid var(--border-component-color);
-  box-shadow: 4px 0 8px -3px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--box-shadow-default);
 
   left: 0;
 
@@ -50,12 +52,14 @@
 
   pointer-events: none;
 
-  transition: opacity 0.5s ease;
+  transition: opacity 0.2s ease;
 
   width: 100%;
 }
 
 .sidebar.active .logo-content .logo {
+  transition: opacity 1.6s ease;
+
   opacity: 1;
 }
 
@@ -66,23 +70,70 @@
   margin-left: 10px;
 }
 
-.logo-content .fa-bars {
+/* Hamburger menu button */
+
+.logo-content .menu-toggle {
+  align-items: center;
+
+  background: transparent;
+  border: none;
+
   cursor: pointer;
 
-  font-size: 26px;
+  display: flex;
+
+  flex-direction: column;
 
   height: var(--sidebar-item-height);
 
-  line-height: var(--sidebar-item-height);
-
+  justify-content: center;
+  
+  padding: 0;
   position: absolute;
 
   right: 0;
 
-  text-align: center;
   top: 0;
 
   width: 50px;
+}
+
+/* Hamburger lines */
+
+.menu-toggle span {
+  background-color: var(--sidebar-icon-color);
+  border-radius: 2px;
+  height: 3px;
+  position: absolute;
+  transition: transform var(--menu-icon-transition),
+              opacity var(--menu-icon-transition);
+  width: var(--menu-icon-size);
+}
+
+/* Default hamburger position */
+.menu-toggle span:nth-child(1) {
+  transform: translateY(-8px);
+}
+
+.menu-toggle span:nth-child(2) {
+  transform: translateY(0);
+}
+
+.menu-toggle span:nth-child(3) {
+  transform: translateY(8px);
+}
+
+/* Active state: hamburger transforms into X */
+.sidebar.active .menu-toggle span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.sidebar.active .menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.sidebar.active .menu-toggle span:nth-child(3) {
+  transform: rotate(-45deg);
 }
 
 /* Navigation */
@@ -97,7 +148,7 @@
 
   list-style: none;
 
-  margin-bottom: var(--sidebar-item-spacing);;
+  margin-bottom: var(--sidebar-item-spacing);
 
   position: relative;
 
@@ -109,7 +160,7 @@
 
   border-radius: 6px;
 
-  color: var(--sidebar-link-color);
+  color: var(--sidebar-icon-color);
 
   display: flex;
 
@@ -122,10 +173,11 @@
 .sidebar ul li a:hover {
   background-color: var(--sidebar-link-hover-bg);
 
-  color: var(--sidebar-link-color);
+  color: var(--sidebar-icon-color);
 }
 
 .sidebar ul li a i {
+  color: var(--icon-default-color);
   font-size: 1.5rem;
 
   height: var(--sidebar-item-height);
@@ -158,13 +210,13 @@
   border-radius: 6px;
   box-shadow: 4px 0 8px -3px rgba(0, 0, 0, 0.25);
 
-  color: var(--sidebar-link-color);
+  color: var(--sidebar-icon-color);
 
-  height: var(--sidebar-item-spacing);;
+  height: var(--sidebar-item-spacing);
 
   left: 85px;
 
-  line-height: var(--sidebar-item-spacing);;
+  line-height: var(--sidebar-item-spacing);
 
   opacity: 0;
 

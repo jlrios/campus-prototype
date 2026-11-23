@@ -1,0 +1,254 @@
+
+
+/* =========================================
+   Signage
+   ========================================= */
+
+/* Signage active notification */
+.signage-active-toast {
+  --signage-toast-background: #344541;
+  --signage-toast-border-color: #81C784;
+  --signage-toast-text-color: #E6F4D7;
+
+  background-color: var(--signage-toast-background) !important;
+  border-left: 4px solid var(--signage-toast-border-color);
+  color: var(--signage-toast-text-color) !important;
+  width: 500px;
+}
+
+[data-cell-id^="fe-"]:hover {
+  cursor: pointer;
+}
+
+
+/* =========================================
+   Tooltips
+   ========================================= */
+
+/* Campus tooltip theme */
+.tippy-box[data-theme~="campus"] {
+  background: #344541;
+  border: 1px solid #81C784;
+  border-radius: 8px;
+  color: #E6F4D7;
+}
+
+.signage-tooltip {
+  width: 200px;
+}
+
+.signage-tooltip img {
+  border-radius: 5px;
+  display: block;
+  height: 120px;
+  margin-bottom: 8px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.signage-tooltip p {
+  font-size: 133px;
+  margin: 6px 0 0;
+}
+
+.simbology-bar {
+  background-color: #FFF;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  box-shadow: var(--widget-shadow-default);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+  width: 100px;
+}
+
+.simbology-bar span {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.simbology-bar ul {
+  list-style: none;
+}
+
+.simbology-bar ul li i {
+  color: var(--icon-default-color);
+  margin-bottom: 10px;
+}
+
+.simbology-bar.is-visible {
+  display: block;
+}
+
+.simbology-bar.is-not-visible {
+  display: none;
+}
+
+.toggle-check {
+  cursor: pointer;
+  margin-bottom: 35px;
+  position: relative;
+  width: 50px;
+}
+
+.toggle-check:before {
+  background-color: #7F8581;
+  border-radius: 25px;
+  content: '';
+  height: 25px;
+  position: absolute;
+  width: 50px;
+}
+
+.toggle-check:after {
+  background-color: #FFF;
+  border: 2px solid #7F8581;
+  border-radius: 25px;
+  box-sizing: border-box;
+  content: '';
+  height: 25px;
+  left: 0px;
+  position: absolute;
+  transition: 0.25s;
+  width: 25px;
+}
+
+.toggle-check:checked:before {
+  background-color: #E25619;
+}
+
+.toggle-check:checked:after {
+  left: 25px;
+  border: 2px solid #E25619;
+}
+
+/* 
+==============================
+Signage
+==============================
+*/
+/* Hide signage visually while keeping it animatable */
+[data-cell-id^="er-"],
+[data-cell-id^="fe-"],
+[data-cell-id^="ee-"],
+[data-cell-id="no-01"],
+[data-cell-id="mp-01"],
+[data-cell-id="mp-02"] {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.9);
+  transform-box: fill-box;
+  transform-origin: center;
+  pointer-events: none;
+
+  transition:
+    opacity 250ms ease,
+    transform 250ms ease,
+    visibility 250ms ease;
+}
+
+/* Show signage with a smooth transition */
+[data-cell-id^="er-"].is-visible,
+[data-cell-id^="fe-"].is-visible,
+[data-cell-id^="ee-"].is-visible,
+[data-cell-id="no-01"].is-visible,
+[data-cell-id="mp-01"].is-visible,
+[data-cell-id="mp-02"].is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+  [data-cell-id^="er-"],
+  [data-cell-id^="fe-"],
+  [data-cell-id^="ee-"],
+  [data-cell-id="no-01"],
+  [data-cell-id="mp-01"],
+  [data-cell-id="mp-02"] {
+    transition: none;
+  }
+}
+
+/*
+==============================
+Signage tooltips
+==============================
+*/
+/* Tooltip container */
+.simbology-bar li {
+  position: relative;
+}
+
+/* Tooltip text */
+.simbology-bar li::before {
+  content: attr(data-tooltip);
+
+  position: absolute;
+  top: 35%;
+  right: calc(100% + 12px);
+  transform: translate(4px, -50%);
+
+  width: max-content;
+  max-width: 220px;
+  padding: 7px 15px;
+
+  background-color: #343a35;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+
+  border: 1px solid #4c554d;
+  border-radius: 7px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 100;
+
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    visibility 180ms ease;
+}
+
+/* Tooltip arrow */
+.simbology-bar li::after {
+  content: "";
+
+  position: absolute;
+  top: 35%;
+  right: calc(100% + 2px);
+  transform: translate(4px, -50%);
+
+  border: 5px solid transparent;
+  border-left-color: #343a35;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 100;
+
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    visibility 180ms ease;
+}
+
+/* Show tooltip on hover */
+.simbology-bar li:hover::before,
+.simbology-bar li:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -50%);
+}
+

@@ -1,0 +1,56 @@
+
+/* ================================
+  Sector Toast
+  ================================ */
+
+.sector-toast {
+  /* Component variables */
+    --toast-padding: 15px;
+  --toast-radius: 10px;
+  --toast-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.2);
+  --toast-transition: 280ms ease;
+  --toast-active-bottom: 10px;
+
+  /* Layout */
+  position: fixed;
+  bottom: -150px;
+  left: 50%;
+  display: none;
+  width: auto;
+
+  /* Appearance */
+  padding: var(--toast-padding);
+  background-color: var(--black-color);
+  border-radius: var(--toast-radius);
+  box-shadow: var(--toast-shadow);
+  color: var(--white-color);
+  opacity: 85%;
+
+  /* Animation */
+  transform: translateX(-50%);
+  transition: bottom var(--toast-transition);
+}
+
+/* Toast heading */
+.sector-toast h3 {
+  color: var(--white-color);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+/* Toast content */
+.sector-text {
+  width: 100%;
+}
+
+/* Toast icon */
+.sector-icon {
+  padding: 10px;
+}
+
+/* Active state */
+.sector-toast.active {
+  bottom: var(--toast-active-bottom);
+  display: flex;
+}
