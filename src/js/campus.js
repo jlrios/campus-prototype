@@ -26,7 +26,7 @@ import notImplementedTpl from "./../templates/not-implemented.html?raw";
 
 // Generic template and JSON content
 import infoPanelTemplate from "./../templates/info-panel-content.html?raw";
-import sectorsContent from "./../data/info-sectors.json"
+import sectorsContent from "./../data/info-sectors.json";
 
 /* ========================================
   DOM Elements
@@ -63,8 +63,8 @@ export const maps = {
       groundFloor: {
         id: "bldgHGrnd",
         urlMap: bldgHGrndMap,
-      }
-    }
+      },
+    },
   },
 
   H2: {
@@ -74,9 +74,9 @@ export const maps = {
       upperFloor: {
         id: "bldgHUpper",
         urlMap: bldgHUpperMap,
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 /* ========================================
@@ -96,7 +96,7 @@ export async function loadSVGMap(mapId, mapSVG) {
     }
 
     loadedMaps[mapId] = await response.text();
-    
+
     //currentMapId = mapId;
   } catch (error) {
     console.error(error);
@@ -123,91 +123,54 @@ export function showMap(mapId) {
 ======================================== */
 
 // Load the main campus map before rendering it.
-await Promise.all([loadSVGMap(maps.C.id, maps.C.urlMap)]);
-await Promise.all([loadSVGMap(maps.H1.id, maps.H1.mainBuilding.groundFloor.urlMap)]);
-await Promise.all([loadSVGMap(maps.H2.id, maps.H2.mainBuilding.upperFloor.urlMap)]);
+// await Promise.all([loadSVGMap(maps.C.id, maps.C.urlMap)]);
+// await Promise.all([loadSVGMap(maps.H1.id, maps.H1.mainBuilding.groundFloor.urlMap)]);
+// await Promise.all([loadSVGMap(maps.H2.id, maps.H2.mainBuilding.upperFloor.urlMap)]);
 
-showMap(maps.C.id);
-initializeMapSignage();
+//showMap(maps.C.id);
+// initializeMapSignage();
 
-/* ========================================
-  Campus Map Elements
-======================================== */
+async function initializeCampusMaps() {
+  await Promise.all([
+    loadSVGMap(maps.C.id, maps.C.urlMap),
+    loadSVGMap(maps.H1.id, maps.H1.mainBuilding.groundFloor.urlMap),
+    loadSVGMap(maps.H2.id, maps.H2.mainBuilding.upperFloor.urlMap),
+  ]);
 
-// Cache the SVG element and toast content elements.
-const campusSVG = mapArea.querySelector("svg");
+  showMap(maps.C.id);
 
-console.log(campusSVG);
+  const campusSVG = mapArea.querySelector("svg");
 
-const title = sectorSelected.querySelector(".sector-text h3");
-const description = sectorSelected.querySelector(".sector-text p");
-const icon = sectorSelected.querySelector(".sector-icon i");
+  if (!campusSVG) {
+    console.error("Mapa del campus no se puede inicializar.");
+    return;
+  }
 
-/* ========================================
-  Sector Toasts
-======================================== */
+  initializeMapSignage();
+  initializeCampusElementsAndEvents(campusSVG);
+}
 
-/**
- * Displays sector information when the pointer enters a sector.
- */
-campusSVG.addEventListener("pointerover", (e) => {
-  const sector = e.target.closest('[data-cell-id^="sector-"]');
-
-  if (!sector) return;
-
-  // Ignore pointer movement between children of the same sector.
-  const previousSector = e.relatedTarget?.closest?.(
-    '[data-cell-id^="sector-"]',
-  );
-
-  if (previousSector === sector) return;
-
-  // Retrieve the toast data associated with the sector.
-  const sectorKey = sector.dataset.cellId.replace("sector-", "");
-  const sectorData = mainMapToasts[sectorKey];
-
-  if (!sectorData) return;
-
-  // Update the toast content and make it visible.
-  title.textContent = sectorData.title;
-  description.textContent = sectorData.description;
-  icon.className = sectorData.icon;
-
-  sectorToast.classList.add("active");
-});
-
-/**
- * Hides sector information when the pointer leaves a sector.
- */
-campusSVG.addEventListener("pointerout", (e) => {
-  const sector = e.target.closest('[data-cell-id^="sector-"]');
-
-  if (!sector) return;
-
-  // Ignore pointer movement between children of the same sector.
-  const nextSector = e.relatedTarget?.closest?.('[data-cell-id^="sector-"]');
-
-  if (nextSector === sector) return;
-
-  sectorToast.classList.remove("active");
-});
+/* ============================== 
+  Entry point 
+  ============================== */
+initializeCampusMaps();
 
 /* ========================================
   Sector Information Panels
-======================================== */
+  ======================================== */
 
 // Define the content and appearance of each sector's information panel.
 const sectorPanels = {
   "sector-h": {
     template: sectorHTpl,
     title: "Sector H",
-    icon: "fa-solid fa-building-circle-check fa-2x"
+    icon: "fa-solid fa-building-circle-check fa-2x",
   },
 
   "sector-d": {
     template: notImplementedTpl,
     title: "Sector D",
-    icon: "fa-solid fa-landmark-dome fa-2x"
+    icon: "fa-solid fa-landmark-dome fa-2x",
   },
 
   "sector-m": {
@@ -229,70 +192,16 @@ const sectorPanels = {
   },
 };
 
-/* ========================================
-  Sector Selection
-======================================== */
-
-let selectedSector = null;
-
-/**
- * Toggles sector selection and displays its information panel.
- * Clicking the selected sector again clears the selection.
- */
-campusSVG.addEventListener("click", (e) => {
-  const sector = e.target.closest('[data-cell-id^="sector-"]');
-
-  if (!sector) return;
-
-  // Deselect the current sector when it is clicked again.
-  if (selectedSector?.dataset.cellId === sector.dataset.cellId) {
-    selectedSector.classList.remove("selected");
-    selectedSector = null;
-
-    panelContainer.innerHTML = "";
-  
-    panel.classList.remove("open");
-
-    return;
-  }
-
-  // Remove the previous sector selection.
-  selectedSector?.classList.remove("selected");
-
-  // Select the clicked sector.
-  sector.classList.add("selected");
-  
-  selectedSector = sector;
-
-  //console.log(sector.dataset.cellId);
-
-  // Retrieve the selected sector's panel configuration.
-  const dataSector = sectorPanels[sector.dataset.cellId];
-  const dataSectorId = sector.dataset.cellId;
-
-  console.log(dataSectorId);
-
-  if (!dataSector) return;
-
-  //const template = dataSector.template;
-  
-  // Display the selected sector's information panel.
-  showInfoPanel(panelContainer, infoPanelTemplate, dataSector.title, dataSector.icon, dataSectorId);
-
-  /* ========================================
-    Sector H
-  ======================================== */
-  
-  if (dataSector.title !== "Sector H") return;
-
-  initializeSectorHMap();
-
-});
-
 /**
  * Renders the selected sector's template and updates its header.
  */
-export function showInfoPanel(panelContainer, template, sectorTitle, sectorIcon, dataSectorId) {
+export function showInfoPanel(
+  panelContainer,
+  template,
+  sectorTitle,
+  sectorIcon,
+  dataSectorId,
+) {
   let spaces = sectorsContent[dataSectorId].spaces;
   let sectorDescription = sectorsContent[dataSectorId].description;
 
@@ -309,7 +218,6 @@ export function showInfoPanel(panelContainer, template, sectorTitle, sectorIcon,
   infoDescription.textContent = sectorDescription;
 
   let servicesContainer = document.querySelector(".services-grid");
-  
 
   spaces.forEach((element) => {
     let serviceItem = document.createElement("div");
@@ -334,29 +242,132 @@ export function showInfoPanel(panelContainer, template, sectorTitle, sectorIcon,
   panel.classList.add("open");
 }
 
-/** 
- * Entry point 
- */
+function initializeCampusElementsAndEvents(campusSVG) {
+  /* ========================================
+  Campus Map Elements
+======================================== */
 
-/*async function initializeCampusMaps() {
-  await Promise.all([
-    loadSVGMap(maps.C.id, maps.C.urlMap),
-    loadSVGMap(maps.H1.id, maps.H1.mainBuilding.groundFloor.urlMap),
-    loadSVGMap(maps.H2.id, maps.H2.mainBuilding.upperFloor.urlMap),
-  ]);
+  // Cache the SVG element and toast content elements.
+  campusSVG = mapArea.querySelector("svg");
 
-  showMap(maps.C.id);
+  console.log(campusSVG);
 
-  const campusSVG = mapArea.querySelector("svg");
+  const title = sectorSelected.querySelector(".sector-text h3");
+  const description = sectorSelected.querySelector(".sector-text p");
+  const icon = sectorSelected.querySelector(".sector-icon i");
 
-  if (!campusSVG) {
-    console.error("Mapa del campus no se puede inicializar.");
-    return;
-  }
+  /* ========================================
+  Sector Toasts
+======================================== */
 
-  initializeMapSignage();
-  initializeCampusMapEvents(campusSVG);
-}*/
-// Initialize the campus maps.
-//initializeCampusMaps();
+  /**
+   * Displays sector information when the pointer enters a sector.
+   */
+  campusSVG.addEventListener("pointerover", (e) => {
+    const sector = e.target.closest('[data-cell-id^="sector-"]');
+
+    if (!sector) return;
+
+    // Ignore pointer movement between children of the same sector.
+    const previousSector = e.relatedTarget?.closest?.(
+      '[data-cell-id^="sector-"]',
+    );
+
+    if (previousSector === sector) return;
+
+    // Retrieve the toast data associated with the sector.
+    const sectorKey = sector.dataset.cellId.replace("sector-", "");
+    const sectorData = mainMapToasts[sectorKey];
+
+    if (!sectorData) return;
+
+    // Update the toast content and make it visible.
+    title.textContent = sectorData.title;
+    description.textContent = sectorData.description;
+    icon.className = sectorData.icon;
+
+    sectorToast.classList.add("active");
+  });
+
+  /**
+   * Hides sector information when the pointer leaves a sector.
+   */
+  campusSVG.addEventListener("pointerout", (e) => {
+    const sector = e.target.closest('[data-cell-id^="sector-"]');
+
+    if (!sector) return;
+
+    // Ignore pointer movement between children of the same sector.
+    const nextSector = e.relatedTarget?.closest?.('[data-cell-id^="sector-"]');
+
+    if (nextSector === sector) return;
+
+    sectorToast.classList.remove("active");
+  });
+
+  /* ========================================
+  Sector Selection
+======================================== */
+
+  let selectedSector = null;
+
+  /**
+   * Toggles sector selection and displays its information panel.
+   * Clicking the selected sector again clears the selection.
+   */
+  campusSVG.addEventListener("click", (e) => {
+    const sector = e.target.closest('[data-cell-id^="sector-"]');
+
+    if (!sector) return;
+
+    // Deselect the current sector when it is clicked again.
+    if (selectedSector?.dataset.cellId === sector.dataset.cellId) {
+      selectedSector.classList.remove("selected");
+      selectedSector = null;
+
+      panelContainer.innerHTML = "";
+
+      panel.classList.remove("open");
+
+      return;
+    }
+
+    // Remove the previous sector selection.
+    selectedSector?.classList.remove("selected");
+
+    // Select the clicked sector.
+    sector.classList.add("selected");
+
+    selectedSector = sector;
+
+    //console.log(sector.dataset.cellId);
+
+    // Retrieve the selected sector's panel configuration.
+    const dataSector = sectorPanels[sector.dataset.cellId];
+    const dataSectorId = sector.dataset.cellId;
+
+    console.log(dataSectorId);
+
+    if (!dataSector) return;
+
+    //const template = dataSector.template;
+
+    // Display the selected sector's information panel.
+    showInfoPanel(
+      panelContainer,
+      infoPanelTemplate,
+      dataSector.title,
+      dataSector.icon,
+      dataSectorId,
+    );
+
+    /* ========================================
+    Sector H
+  ======================================== */
+
+    if (dataSector.title !== "Sector H") return;
+
+    initializeSectorHMap();
+  });
+}
 

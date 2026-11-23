@@ -349,6 +349,8 @@ upperFloor.addEventListener("click", () => {
 });
 
 function createCameraViewer() {
+  console.log("Enter...");
+  
   const cameraPanel = document.createElement("div");
 
   cameraPanel.className = "camera-viewer";
